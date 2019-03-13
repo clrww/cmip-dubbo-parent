@@ -18,7 +18,7 @@ public class DubboController {
     @Reference
 DubboService dubboService;
 
-    @RequestMapping("sayHello")
+    @RequestMapping("/sayHello")
     public void sayHello() {
         System.out.println("dubbo开始调用");
         dubboService.sayHello("consumer 请求服务");
