@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title></title>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17-beta.0/vue.js"></script>-->
+</head>
+<body>
+
+<!--v-model 用法-->
+<h1>helle Vue</h1>
+<div id="app">
+    {{ message }}
+    <input v-model="message"/>
+</div>
+
+<div id="app-2">
+  <span v-bind:title="message">
+      {{message}}
+    Hover your mouse over me for a few seconds to see my dynamically bound title!
+  </span>
+</div>
+
+ <!--v-if 判断用法-->
+<div id="app-3">
+    <p v-if="seen">Now you see me</p>
+</div>
+
+
+<!--v-for 循环用法-->
+<div id="app-4">
+    <ol>
+        <li v-for="obj in todos">
+            {{ obj.text }}
+        </li>
+    </ol>
+</div>
+
+<!--v-on:click 点击事件-->
+<div id="app-5">
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+
+<script src="vue.js"></script>
+<script src="1.js"></script>
+
+
+</body>
+</html>

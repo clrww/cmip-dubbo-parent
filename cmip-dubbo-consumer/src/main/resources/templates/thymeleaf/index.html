@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>vue学习 语法demo1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div id="app">
+    <div>
+        <input type="text" v-model="name">
+        <span v-show="name">姓名：{{name}}</span>
+    </div>
+    <div>
+        <input type="text" v-model="age">
+        <span v-show="age">年龄{{age}}</span>
+    </div>
+    <div>
+        <input type="text" v-model="sex">
+        <span v-show="sex">性别：{{sex}}</span>
+    </div>
+
+</div>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17-beta.0/vue.js"></script>-->
+<script src="vue.js"/>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            name: null,
+            age: null,
+            sex: null
+        }
+    });
+</script>
+</body>
+</html>
