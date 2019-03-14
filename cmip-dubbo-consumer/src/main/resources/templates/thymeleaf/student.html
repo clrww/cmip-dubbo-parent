@@ -10,20 +10,20 @@ thymeleaf模板引擎
 
 <h1 th:text="${name}"></h1>
 <div>
-    <input th:id="${student.name}"  th:name="${student.name}" th:value="${student.name}">
-    <input th:value="${student.userId}">
-    <input th:value="${student.age}">
-    <input th:value="${#dates.format(student.birthday,'yyyy-MM-dd')}">
+    <input th:id="${student.name}"  th:name="${student.name}" th:value="${student.name}"/>
+    <input th:value="${student.userId}"/>
+    <input th:value="${student.age}"/>
+    <input th:value="${#dates.format(student.birthday,'yyyy-MM-dd')}"/>
 </div>
 
 <br/>
 <br/>
 <!--简洁写法-->
 <div th:object="${student}">
-    <input th:id="*{name}"  th:name="*{name}" th:value="*{name}">
-    <input th:value="*{userId}">
-    <input th:value="*{age}">
-    <input th:value="*{#dates.format(birthday,'yyyy-MM-dd')}">
+    <input th:id="*{name}"  th:name="*{name}" th:value="*{name}"/>
+    <input th:value="*{userId}"/>
+    <input th:value="*{age}"/>
+    <input th:value="*{#dates.format(birthday,'yyyy-MM-dd')}"/>
 </div>
 
 <br/>
@@ -37,8 +37,8 @@ thymeleaf模板引擎
 <!--from表单请求-->
 <br/>
 <form th:action="@{/th/postform}" th:object="${student}" method="post" th:method="post">
-<input th:field="*{name}">
-    <input type="submit">
+<input th:field="*{name}"/>
+    <input type="submit"/>
 
     <br/>
 
@@ -70,7 +70,7 @@ thymeleaf模板引擎
 <tr th:each="person:${studentList}">
     <td th:text="${person.name}"></td>
     <td th:text="${person.age}"></td>
-    <td th:text="${#dates.format(person.birthday,'yyyy-MM-dd')}">
+    <td th:text="${#dates.format(person.birthday,'yyyy-MM-dd')}"/>
 </tr>
     </table>
 

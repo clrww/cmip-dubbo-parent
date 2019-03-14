@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class DubboController {
 
 //    @Resource
-//    @Reference(version = "1.0.0")
     @Reference
 DubboService dubboService;
 

@@ -6,7 +6,7 @@ import com.wwclr.api.service.DubboService;
 /**
  * Created by xebest on 2018/1/4.
  */
-@Service(version = "1.0.0")
+@Service
 public class DubboServiceImpl implements DubboService {
     @Override
     public void sayHello(String name) {
