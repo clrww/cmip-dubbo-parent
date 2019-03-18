@@ -43,4 +43,11 @@ public class UserController {
                 return busUserBeanList;
         }
 
+        @RequestMapping("/deleteUser")
+          public void deleteUser(){
+                BusUserBean busUserBean =new BusUserBean();
+                busUserBean.setId(12);
+                busUserInterface.deleteUser(busUserBean);
+        }
+
 }

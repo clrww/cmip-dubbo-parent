@@ -10,4 +10,5 @@ import java.util.List;
 public interface BusUserInterface {
         public void saveUser(BusUserBean busUserBean);
         public List<BusUserBean> findAllUser();
+        public void deleteUser(BusUserBean busUserBean) ;
 }
