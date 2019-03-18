@@ -1,36 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wwclr.consumer.mapper.BusUserMapper">
-  <resultMap id="BaseResultMap" type="com.wwclr.consumer.pojo.BusUser">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <result column="id" jdbcType="INTEGER" property="id" />
-    <result column="userId" jdbcType="VARCHAR" property="userid" />
-    <result column="userName" jdbcType="VARCHAR" property="username" />
-    <result column="phone" jdbcType="INTEGER" property="phone" />
-    <result column="age" jdbcType="INTEGER" property="age" />
-    <result column="job" jdbcType="INTEGER" property="job" />
-    <result column="memberCode" jdbcType="INTEGER" property="membercode" />
-    <result column="role" jdbcType="INTEGER" property="role" />
-    <result column="crateTime" jdbcType="TIMESTAMP" property="cratetime" />
-    <result column="lastModify" jdbcType="TIMESTAMP" property="lastmodify" />
-    <result column="logicalDeleted" jdbcType="BIT" property="logicaldeleted" />
-  </resultMap>
-  <!--<resultMap id="BaseResultMap" type="com.wwclr.consumer.pojo.BusUser">-->
-    <!--&lt;!&ndash;-->
-      <!--WARNING - @mbg.generated-->
-    <!--&ndash;&gt;-->
-    <!--<id column="id" jdbcType="INTEGER" property="id" />-->
-    <!--<result column="userId" jdbcType="VARCHAR" property="userid" />-->
-    <!--<result column="userName" jdbcType="VARCHAR" property="username" />-->
+<mapper namespace="com.wwclr.provide.mapper.BusUserMapper">
+  <!--<resultMap id="BaseResultMap" type="com.wwclr.provide.pojo.BusUser">-->
+    <!--<result column="id" jdbcType="INTEGER" property="id" />-->
+    <!--<result column="userid" jdbcType="VARCHAR" property="userid" />-->
+    <!--<result column="username" jdbcType="VARCHAR" property="username" />-->
     <!--<result column="phone" jdbcType="INTEGER" property="phone" />-->
     <!--<result column="age" jdbcType="INTEGER" property="age" />-->
     <!--<result column="job" jdbcType="INTEGER" property="job" />-->
-    <!--<result column="memberCode" jdbcType="INTEGER" property="membercode" />-->
+    <!--<result column="membercode" jdbcType="INTEGER" property="membercode" />-->
     <!--<result column="role" jdbcType="INTEGER" property="role" />-->
-    <!--<result column="crateTime" jdbcType="TIMESTAMP" property="cratetime" />-->
-    <!--<result column="lastModify" jdbcType="TIMESTAMP" property="lastmodify" />-->
-    <!--<result column="logicalDeleted" jdbcType="BIT" property="logicaldeleted" />-->
+    <!--<result column="cratetime" jdbcType="TIMESTAMP" property="cratetime" />-->
+    <!--<result column="lastmodify" jdbcType="TIMESTAMP" property="lastmodify" />-->
+    <!--<result column="logicaldeleted" jdbcType="BIT" property="logicaldeleted" />-->
   <!--</resultMap>-->
+  <resultMap id="BaseResultMap" type="com.wwclr.provide.pojo.BusUser">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="userId" jdbcType="VARCHAR" property="userId" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="phone" jdbcType="INTEGER" property="phone" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="job" jdbcType="INTEGER" property="job" />
+    <result column="memberCode" jdbcType="INTEGER" property="memberCode" />
+    <result column="role" jdbcType="INTEGER" property="role" />
+    <result column="crateTime" jdbcType="TIMESTAMP" property="crateTime" />
+    <result column="lastModify" jdbcType="TIMESTAMP" property="lastModify" />
+    <result column="logicalDeleted" jdbcType="BIT" property="logicalDeleted" />
+  </resultMap>
+
+  <!--<insert id="saveUser" parameterType="com.wwclr.provide.pojo.BusUser">-->
+    <!--<![CDATA[-->
+<!--INSERT INTO bus_user  (userId,userName,phone,age,job,memberCode,role,crateTime,lastModify,logicalDeleted ) VALUES( #{userId},#{userName},#{phone},#{age},#{job},#{memberCode},#{role},#{crateTime},#{lastModify},#{logicalDeleted} )-->
+<!--]]>-->
+<!--</insert>-->
+  <!--<select id="findAllUser" resultType="com.wwclr.provide.pojo.BusUser">-->
+    <!--<![CDATA[-->
+     <!--SELECT userId,userName,phone,age,job,memberCode,role,crateTime,lastModify,logicalDeleted FROM  bus_user-->
+     <!--]]>-->
+  <!--</select>-->
 </mapper>

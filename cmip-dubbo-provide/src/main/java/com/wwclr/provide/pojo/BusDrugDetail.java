@@ -1,19 +1,14 @@
-package com.wwclr.consumer.pojo;
+package com.wwclr.provide.pojo;
 
+import javax.persistence.Table;
 import java.util.Date;
-import javax.persistence.*;
 
-@Table(name = "drug_purchase_record")
-public class DrugPurchaseRecord {
+@Table(name = "bus_drug_detail")
+public class BusDrugDetail {
     /**
      * 自增主键
      */
     private Integer id;
-
-    /**
-     * 订单编号
-     */
-    private String purchaseCode;
 
     /**
      * 药物编码
@@ -26,19 +21,39 @@ public class DrugPurchaseRecord {
     private String drugName;
 
     /**
-     * 用户Id
+     * 药物图片地址
      */
-    private String userId;
+    private String drugImgUrl;
 
     /**
-     * 用户名称
+     * 药物描述
      */
-    private String userName;
+    private String describe;
 
     /**
-     * 购买数量
+     * 药物产地
      */
-    private Integer purchaseNumber;
+    private String origin;
+
+    /**
+     * 药品类型
+     */
+    private Integer type;
+
+    /**
+     * 药品规格
+     */
+    private String drmodel;
+
+    /**
+     * 药品包装
+     */
+    private String pack;
+
+    /**
+     * 药品包装单位
+     */
+    private String packUnit;
 
     /**
      * 创建时间
@@ -71,24 +86,6 @@ public class DrugPurchaseRecord {
      */
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    /**
-     * 获取订单编号
-     *
-     * @return purchaseCode - 订单编号
-     */
-    public String getPurchaseCode() {
-        return purchaseCode;
-    }
-
-    /**
-     * 设置订单编号
-     *
-     * @param purchaseCode 订单编号
-     */
-    public void setPurchaseCode(String purchaseCode) {
-        this.purchaseCode = purchaseCode;
     }
 
     /**
@@ -128,57 +125,129 @@ public class DrugPurchaseRecord {
     }
 
     /**
-     * 获取用户Id
+     * 获取药物图片地址
      *
-     * @return userId - 用户Id
+     * @return drugImgUrl - 药物图片地址
      */
-    public String getUserId() {
-        return userId;
+    public String getDrugImgUrl() {
+        return drugImgUrl;
     }
 
     /**
-     * 设置用户Id
+     * 设置药物图片地址
      *
-     * @param userId 用户Id
+     * @param drugImgUrl 药物图片地址
      */
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setDrugImgUrl(String drugImgUrl) {
+        this.drugImgUrl = drugImgUrl;
     }
 
     /**
-     * 获取用户名称
+     * 获取药物描述
      *
-     * @return userName - 用户名称
+     * @return describe - 药物描述
      */
-    public String getUserName() {
-        return userName;
+    public String getDescribe() {
+        return describe;
     }
 
     /**
-     * 设置用户名称
+     * 设置药物描述
      *
-     * @param userName 用户名称
+     * @param describe 药物描述
      */
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setDescribe(String describe) {
+        this.describe = describe;
     }
 
     /**
-     * 获取购买数量
+     * 获取药物产地
      *
-     * @return purchaseNumber - 购买数量
+     * @return origin - 药物产地
      */
-    public Integer getPurchaseNumber() {
-        return purchaseNumber;
+    public String getOrigin() {
+        return origin;
     }
 
     /**
-     * 设置购买数量
+     * 设置药物产地
      *
-     * @param purchaseNumber 购买数量
+     * @param origin 药物产地
      */
-    public void setPurchaseNumber(Integer purchaseNumber) {
-        this.purchaseNumber = purchaseNumber;
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
+    /**
+     * 获取药品类型
+     *
+     * @return type - 药品类型
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    /**
+     * 设置药品类型
+     *
+     * @param type 药品类型
+     */
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    /**
+     * 获取药品规格
+     *
+     * @return drmodel - 药品规格
+     */
+    public String getDrmodel() {
+        return drmodel;
+    }
+
+    /**
+     * 设置药品规格
+     *
+     * @param drmodel 药品规格
+     */
+    public void setDrmodel(String drmodel) {
+        this.drmodel = drmodel;
+    }
+
+    /**
+     * 获取药品包装
+     *
+     * @return pack - 药品包装
+     */
+    public String getPack() {
+        return pack;
+    }
+
+    /**
+     * 设置药品包装
+     *
+     * @param pack 药品包装
+     */
+    public void setPack(String pack) {
+        this.pack = pack;
+    }
+
+    /**
+     * 获取药品包装单位
+     *
+     * @return packUnit - 药品包装单位
+     */
+    public String getPackUnit() {
+        return packUnit;
+    }
+
+    /**
+     * 设置药品包装单位
+     *
+     * @param packUnit 药品包装单位
+     */
+    public void setPackUnit(String packUnit) {
+        this.packUnit = packUnit;
     }
 
     /**

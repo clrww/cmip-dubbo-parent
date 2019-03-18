@@ -1,4 +1,4 @@
-package com.wwclr.consumer.pojo;
+package com.wwclr.provide.pojo;
 
 import java.util.Date;
 import javax.persistence.*;
@@ -8,54 +8,60 @@ public class BusUser {
     /**
      * 自增主键
      */
-    private Integer id;
+    public Integer id;
 
-    private String user_Id;
+    @Column(name = "userId")
+    public String userId;
 
     /**
      * 用户名称
      */
-    private String user_Name;
+    @Column(name = "userName")
+    public String userName;
 
     /**
      * 电话
      */
-    private Integer phone;
+    public Integer phone;
 
     /**
      * 年龄
      */
-    private Integer age;
+    public Integer age;
 
     /**
      * 职业
      */
-    private Integer job;
+    public Integer job;
 
     /**
      * 会员卡号
      */
-    private Integer member_Code;
+    @Column(name = "memberCode")
+    public Integer memberCode;
 
     /**
      * (0： 非会员,1： 普通会员,2： 黄金会员,3： 钻石会员)
      */
-    private Integer role;
+    public Integer role;
 
     /**
      * 创建时间
      */
-    private Date crate_Time;
+    @Column(name = "crateTime")
+    public Date crateTime;
 
     /**
      * 最后修改时间
      */
-    private Date last_Modify;
+    @Column(name = "lastModify")
+    public Date lastModify;
 
     /**
      * 数据状态 (0： 逻辑删除， 1： 正常)
      */
-    private Boolean logical_Deleted;
+    @Column(name = "logicalDeleted")
+    public Boolean logicalDeleted;
 
     /**
      * 获取自增主键
@@ -76,35 +82,35 @@ public class BusUser {
     }
 
     /**
-     * @return user_Id
+     * @return userId
      */
-    public String getUser_Id() {
-        return user_Id;
+    public String getUserid() {
+        return userId;
     }
 
     /**
-     * @param user_Id
+     * @param userid
      */
-    public void setUser_Id(String user_Id) {
-        this.user_Id = user_Id;
+    public void setUserid(String userid) {
+        this.userId = userid;
     }
 
     /**
      * 获取用户名称
      *
-     * @return user_Name - 用户名称
+     * @return userName - 用户名称
      */
-    public String getUser_Name() {
-        return user_Name;
+    public String getUsername() {
+        return userName;
     }
 
     /**
      * 设置用户名称
      *
-     * @param user_Name 用户名称
+     * @param username 用户名称
      */
-    public void setUser_Name(String user_Name) {
-        this.user_Name = user_Name;
+    public void setUsername(String username) {
+        this.userName = username;
     }
 
     /**
@@ -164,19 +170,19 @@ public class BusUser {
     /**
      * 获取会员卡号
      *
-     * @return member_Code - 会员卡号
+     * @return memberCode - 会员卡号
      */
-    public Integer getMember_Code() {
-        return member_Code;
+    public Integer getMembercode() {
+        return memberCode;
     }
 
     /**
      * 设置会员卡号
      *
-     * @param member_Code 会员卡号
+     * @param membercode 会员卡号
      */
-    public void setMember_Code(Integer member_Code) {
-        this.member_Code = member_Code;
+    public void setMembercode(Integer membercode) {
+        this.memberCode = membercode;
     }
 
     /**
@@ -200,54 +206,54 @@ public class BusUser {
     /**
      * 获取创建时间
      *
-     * @return crate_Time - 创建时间
+     * @return crateTime - 创建时间
      */
-    public Date getCrate_Time() {
-        return crate_Time;
+    public Date getCratetime() {
+        return crateTime;
     }
 
     /**
      * 设置创建时间
      *
-     * @param crate_Time 创建时间
+     * @param cratetime 创建时间
      */
-    public void setCrate_Time(Date crate_Time) {
-        this.crate_Time = crate_Time;
+    public void setCratetime(Date cratetime) {
+        this.crateTime = cratetime;
     }
 
     /**
      * 获取最后修改时间
      *
-     * @return last_Modify - 最后修改时间
+     * @return lastModify - 最后修改时间
      */
-    public Date getLast_Modify() {
-        return last_Modify;
+    public Date getLastmodify() {
+        return lastModify;
     }
 
     /**
      * 设置最后修改时间
      *
-     * @param last_Modify 最后修改时间
+     * @param lastmodify 最后修改时间
      */
-    public void setLast_Modify(Date last_Modify) {
-        this.last_Modify = last_Modify;
+    public void setLastmodify(Date lastmodify) {
+        this.lastModify = lastmodify;
     }
 
     /**
      * 获取数据状态 (0： 逻辑删除， 1： 正常)
      *
-     * @return logical_Deleted - 数据状态 (0： 逻辑删除， 1： 正常)
+     * @return logicalDeleted - 数据状态 (0： 逻辑删除， 1： 正常)
      */
-    public Boolean getLogical_Deleted() {
-        return logical_Deleted;
+    public Boolean getLogicaldeleted() {
+        return logicalDeleted;
     }
 
     /**
      * 设置数据状态 (0： 逻辑删除， 1： 正常)
      *
-     * @param logical_Deleted 数据状态 (0： 逻辑删除， 1： 正常)
+     * @param logicaldeleted 数据状态 (0： 逻辑删除， 1： 正常)
      */
-    public void setLogical_Deleted(Boolean logical_Deleted) {
-        this.logical_Deleted = logical_Deleted;
+    public void setLogicaldeleted(Boolean logicaldeleted) {
+        this.logicalDeleted = logicaldeleted;
     }
 }

@@ -1,7 +1,7 @@
-package com.wwclr.consumer.pojo;
+package com.wwclr.provide.pojo;
 
+import javax.persistence.Table;
 import java.util.Date;
-import javax.persistence.*;
 
 @Table(name = "drug_purchase_record")
 public class DrugPurchaseRecord {

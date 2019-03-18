@@ -16,10 +16,13 @@
             <artifactId>cmip-dubbo-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
-
-
+        <dependency>
+            <groupId>com.wwclr</groupId>
+            <artifactId>cmip-dubbo-consumer</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -27,5 +30,13 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 </project>

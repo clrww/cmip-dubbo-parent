@@ -10,6 +10,9 @@
     <dubbo:application name="${dubbo.application.name}"/>
     <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}"/>
     <dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}"/>
-    <dubbo:service interface="com.wwclr.api.service.DubboService" ref="dubboService" timeout="6000"/>
+    <dubbo:service interface="com.wwclr.api.service.DubboService" ref="dubboService"/>
     <bean id="dubboService" class="com.wwclr.provide.service.impl.DubboServiceImpl"/>
+
+    <dubbo:service interface="com.wwclr.api.service.BusUserInterface" ref="busUserInterface"/>
+    <bean id="busUserInterface" class="com.wwclr.provide.service.impl.BusUserServiceImpl"/>
 </beans>

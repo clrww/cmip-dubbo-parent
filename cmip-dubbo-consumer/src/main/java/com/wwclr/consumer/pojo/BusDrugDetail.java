@@ -1,8 +1,7 @@
 package com.wwclr.consumer.pojo;
 
-import javax.persistence.Column;
-import javax.persistence.Table;
 import java.util.Date;
+import javax.persistence.*;
 
 @Table(name = "bus_drug_detail")
 public class BusDrugDetail {
@@ -14,20 +13,17 @@ public class BusDrugDetail {
     /**
      * 药物编码
      */
-    @Column(name = "drugCode")
-    private String drugcode;
+    private String drugCode;
 
     /**
      * 药物名称
      */
-    @Column(name = "drugName")
-    private String drugname;
+    private String drugName;
 
     /**
      * 药物图片地址
      */
-    @Column(name = "drugImgUrl")
-    private String drugimgurl;
+    private String drugImgUrl;
 
     /**
      * 药物描述
@@ -57,26 +53,22 @@ public class BusDrugDetail {
     /**
      * 药品包装单位
      */
-    @Column(name = "packUnit")
-    private String packunit;
+    private String packUnit;
 
     /**
      * 创建时间
      */
-    @Column(name = "crateTime")
-    private Date cratetime;
+    private Date crateTime;
 
     /**
      * 最后修改时间
      */
-    @Column(name = "lastModify")
-    private Date lastmodify;
+    private Date lastModify;
 
     /**
      * 数据状态 (0： 逻辑删除， 1： 正常)
      */
-    @Column(name = "logicalDeleted")
-    private Boolean logicaldeleted;
+    private Boolean logicalDeleted;
 
     /**
      * 获取自增主键
@@ -101,17 +93,17 @@ public class BusDrugDetail {
      *
      * @return drugCode - 药物编码
      */
-    public String getDrugcode() {
-        return drugcode;
+    public String getDrugCode() {
+        return drugCode;
     }
 
     /**
      * 设置药物编码
      *
-     * @param drugcode 药物编码
+     * @param drugCode 药物编码
      */
-    public void setDrugcode(String drugcode) {
-        this.drugcode = drugcode;
+    public void setDrugCode(String drugCode) {
+        this.drugCode = drugCode;
     }
 
     /**
@@ -119,17 +111,17 @@ public class BusDrugDetail {
      *
      * @return drugName - 药物名称
      */
-    public String getDrugname() {
-        return drugname;
+    public String getDrugName() {
+        return drugName;
     }
 
     /**
      * 设置药物名称
      *
-     * @param drugname 药物名称
+     * @param drugName 药物名称
      */
-    public void setDrugname(String drugname) {
-        this.drugname = drugname;
+    public void setDrugName(String drugName) {
+        this.drugName = drugName;
     }
 
     /**
@@ -137,17 +129,17 @@ public class BusDrugDetail {
      *
      * @return drugImgUrl - 药物图片地址
      */
-    public String getDrugimgurl() {
-        return drugimgurl;
+    public String getDrugImgUrl() {
+        return drugImgUrl;
     }
 
     /**
      * 设置药物图片地址
      *
-     * @param drugimgurl 药物图片地址
+     * @param drugImgUrl 药物图片地址
      */
-    public void setDrugimgurl(String drugimgurl) {
-        this.drugimgurl = drugimgurl;
+    public void setDrugImgUrl(String drugImgUrl) {
+        this.drugImgUrl = drugImgUrl;
     }
 
     /**
@@ -245,17 +237,17 @@ public class BusDrugDetail {
      *
      * @return packUnit - 药品包装单位
      */
-    public String getPackunit() {
-        return packunit;
+    public String getPackUnit() {
+        return packUnit;
     }
 
     /**
      * 设置药品包装单位
      *
-     * @param packunit 药品包装单位
+     * @param packUnit 药品包装单位
      */
-    public void setPackunit(String packunit) {
-        this.packunit = packunit;
+    public void setPackUnit(String packUnit) {
+        this.packUnit = packUnit;
     }
 
     /**
@@ -263,17 +255,17 @@ public class BusDrugDetail {
      *
      * @return crateTime - 创建时间
      */
-    public Date getCratetime() {
-        return cratetime;
+    public Date getCrateTime() {
+        return crateTime;
     }
 
     /**
      * 设置创建时间
      *
-     * @param cratetime 创建时间
+     * @param crateTime 创建时间
      */
-    public void setCratetime(Date cratetime) {
-        this.cratetime = cratetime;
+    public void setCrateTime(Date crateTime) {
+        this.crateTime = crateTime;
     }
 
     /**
@@ -281,17 +273,17 @@ public class BusDrugDetail {
      *
      * @return lastModify - 最后修改时间
      */
-    public Date getLastmodify() {
-        return lastmodify;
+    public Date getLastModify() {
+        return lastModify;
     }
 
     /**
      * 设置最后修改时间
      *
-     * @param lastmodify 最后修改时间
+     * @param lastModify 最后修改时间
      */
-    public void setLastmodify(Date lastmodify) {
-        this.lastmodify = lastmodify;
+    public void setLastModify(Date lastModify) {
+        this.lastModify = lastModify;
     }
 
     /**
@@ -299,16 +291,16 @@ public class BusDrugDetail {
      *
      * @return logicalDeleted - 数据状态 (0： 逻辑删除， 1： 正常)
      */
-    public Boolean getLogicaldeleted() {
-        return logicaldeleted;
+    public Boolean getLogicalDeleted() {
+        return logicalDeleted;
     }
 
     /**
      * 设置数据状态 (0： 逻辑删除， 1： 正常)
      *
-     * @param logicaldeleted 数据状态 (0： 逻辑删除， 1： 正常)
+     * @param logicalDeleted 数据状态 (0： 逻辑删除， 1： 正常)
      */
-    public void setLogicaldeleted(Boolean logicaldeleted) {
-        this.logicaldeleted = logicaldeleted;
+    public void setLogicalDeleted(Boolean logicalDeleted) {
+        this.logicalDeleted = logicalDeleted;
     }
 }

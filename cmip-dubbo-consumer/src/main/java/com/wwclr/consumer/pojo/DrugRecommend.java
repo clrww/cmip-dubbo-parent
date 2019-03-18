@@ -1,8 +1,7 @@
 package com.wwclr.consumer.pojo;
 
-import javax.persistence.Column;
-import javax.persistence.Table;
 import java.util.Date;
+import javax.persistence.*;
 
 @Table(name = "drug_recommend")
 public class DrugRecommend {
@@ -14,44 +13,37 @@ public class DrugRecommend {
     /**
      * 药品编号
      */
-    @Column(name = "drugCode")
-    private String drugcode;
+    private String drugCode;
 
     /**
      * 推荐天数
      */
-    @Column(name = "recommendTime")
-    private Integer recommendtime;
+    private Integer recommendTime;
 
     /**
      * 推荐开始时间
      */
-    @Column(name = "recommendStartTime")
-    private Date recommendstarttime;
+    private Date recommendStartTime;
 
     /**
      * 推荐结束时间
      */
-    @Column(name = "recommendEndTime")
-    private Date recommendendtime;
+    private Date recommendEndTime;
 
     /**
      * 创建时间
      */
-    @Column(name = "crateTime")
-    private Date cratetime;
+    private Date crateTime;
 
     /**
      * 最后修改时间
      */
-    @Column(name = "lastModify")
-    private Date lastmodify;
+    private Date lastModify;
 
     /**
      * 数据状态 (0： 逻辑删除， 1： 正常)
      */
-    @Column(name = "logicalDeleted")
-    private Boolean logicaldeleted;
+    private Boolean logicalDeleted;
 
     /**
      * 获取自增主键
@@ -76,17 +68,17 @@ public class DrugRecommend {
      *
      * @return drugCode - 药品编号
      */
-    public String getDrugcode() {
-        return drugcode;
+    public String getDrugCode() {
+        return drugCode;
     }
 
     /**
      * 设置药品编号
      *
-     * @param drugcode 药品编号
+     * @param drugCode 药品编号
      */
-    public void setDrugcode(String drugcode) {
-        this.drugcode = drugcode;
+    public void setDrugCode(String drugCode) {
+        this.drugCode = drugCode;
     }
 
     /**
@@ -94,17 +86,17 @@ public class DrugRecommend {
      *
      * @return recommendTime - 推荐天数
      */
-    public Integer getRecommendtime() {
-        return recommendtime;
+    public Integer getRecommendTime() {
+        return recommendTime;
     }
 
     /**
      * 设置推荐天数
      *
-     * @param recommendtime 推荐天数
+     * @param recommendTime 推荐天数
      */
-    public void setRecommendtime(Integer recommendtime) {
-        this.recommendtime = recommendtime;
+    public void setRecommendTime(Integer recommendTime) {
+        this.recommendTime = recommendTime;
     }
 
     /**
@@ -112,17 +104,17 @@ public class DrugRecommend {
      *
      * @return recommendStartTime - 推荐开始时间
      */
-    public Date getRecommendstarttime() {
-        return recommendstarttime;
+    public Date getRecommendStartTime() {
+        return recommendStartTime;
     }
 
     /**
      * 设置推荐开始时间
      *
-     * @param recommendstarttime 推荐开始时间
+     * @param recommendStartTime 推荐开始时间
      */
-    public void setRecommendstarttime(Date recommendstarttime) {
-        this.recommendstarttime = recommendstarttime;
+    public void setRecommendStartTime(Date recommendStartTime) {
+        this.recommendStartTime = recommendStartTime;
     }
 
     /**
@@ -130,17 +122,17 @@ public class DrugRecommend {
      *
      * @return recommendEndTime - 推荐结束时间
      */
-    public Date getRecommendendtime() {
-        return recommendendtime;
+    public Date getRecommendEndTime() {
+        return recommendEndTime;
     }
 
     /**
      * 设置推荐结束时间
      *
-     * @param recommendendtime 推荐结束时间
+     * @param recommendEndTime 推荐结束时间
      */
-    public void setRecommendendtime(Date recommendendtime) {
-        this.recommendendtime = recommendendtime;
+    public void setRecommendEndTime(Date recommendEndTime) {
+        this.recommendEndTime = recommendEndTime;
     }
 
     /**
@@ -148,17 +140,17 @@ public class DrugRecommend {
      *
      * @return crateTime - 创建时间
      */
-    public Date getCratetime() {
-        return cratetime;
+    public Date getCrateTime() {
+        return crateTime;
     }
 
     /**
      * 设置创建时间
      *
-     * @param cratetime 创建时间
+     * @param crateTime 创建时间
      */
-    public void setCratetime(Date cratetime) {
-        this.cratetime = cratetime;
+    public void setCrateTime(Date crateTime) {
+        this.crateTime = crateTime;
     }
 
     /**
@@ -166,17 +158,17 @@ public class DrugRecommend {
      *
      * @return lastModify - 最后修改时间
      */
-    public Date getLastmodify() {
-        return lastmodify;
+    public Date getLastModify() {
+        return lastModify;
     }
 
     /**
      * 设置最后修改时间
      *
-     * @param lastmodify 最后修改时间
+     * @param lastModify 最后修改时间
      */
-    public void setLastmodify(Date lastmodify) {
-        this.lastmodify = lastmodify;
+    public void setLastModify(Date lastModify) {
+        this.lastModify = lastModify;
     }
 
     /**
@@ -184,16 +176,16 @@ public class DrugRecommend {
      *
      * @return logicalDeleted - 数据状态 (0： 逻辑删除， 1： 正常)
      */
-    public Boolean getLogicaldeleted() {
-        return logicaldeleted;
+    public Boolean getLogicalDeleted() {
+        return logicalDeleted;
     }
 
     /**
      * 设置数据状态 (0： 逻辑删除， 1： 正常)
      *
-     * @param logicaldeleted 数据状态 (0： 逻辑删除， 1： 正常)
+     * @param logicalDeleted 数据状态 (0： 逻辑删除， 1： 正常)
      */
-    public void setLogicaldeleted(Boolean logicaldeleted) {
-        this.logicaldeleted = logicaldeleted;
+    public void setLogicalDeleted(Boolean logicalDeleted) {
+        this.logicalDeleted = logicalDeleted;
     }
 }

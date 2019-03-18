@@ -1,7 +1,7 @@
-package com.wwclr.consumer.pojo;
+package com.wwclr.provide.pojo;
 
+import javax.persistence.Table;
 import java.util.Date;
-import javax.persistence.*;
 
 @Table(name = "bus_members")
 public class BusMembers {

@@ -1,44 +1,34 @@
-package com.wwclr.consumer.pojo;
+package com.wwclr.provide.pojo;
 
+import javax.persistence.Table;
 import java.util.Date;
-import javax.persistence.*;
 
-@Table(name = "drug_purchase_record")
-public class DrugPurchaseRecord {
+@Table(name = "drug_recommend")
+public class DrugRecommend {
     /**
      * 自增主键
      */
     private Integer id;
 
     /**
-     * 订单编号
-     */
-    private String purchaseCode;
-
-    /**
-     * 药物编码
+     * 药品编号
      */
     private String drugCode;
 
     /**
-     * 药物名称
+     * 推荐天数
      */
-    private String drugName;
+    private Integer recommendTime;
 
     /**
-     * 用户Id
+     * 推荐开始时间
      */
-    private String userId;
+    private Date recommendStartTime;
 
     /**
-     * 用户名称
+     * 推荐结束时间
      */
-    private String userName;
-
-    /**
-     * 购买数量
-     */
-    private Integer purchaseNumber;
+    private Date recommendEndTime;
 
     /**
      * 创建时间
@@ -74,111 +64,75 @@ public class DrugPurchaseRecord {
     }
 
     /**
-     * 获取订单编号
+     * 获取药品编号
      *
-     * @return purchaseCode - 订单编号
-     */
-    public String getPurchaseCode() {
-        return purchaseCode;
-    }
-
-    /**
-     * 设置订单编号
-     *
-     * @param purchaseCode 订单编号
-     */
-    public void setPurchaseCode(String purchaseCode) {
-        this.purchaseCode = purchaseCode;
-    }
-
-    /**
-     * 获取药物编码
-     *
-     * @return drugCode - 药物编码
+     * @return drugCode - 药品编号
      */
     public String getDrugCode() {
         return drugCode;
     }
 
     /**
-     * 设置药物编码
+     * 设置药品编号
      *
-     * @param drugCode 药物编码
+     * @param drugCode 药品编号
      */
     public void setDrugCode(String drugCode) {
         this.drugCode = drugCode;
     }
 
     /**
-     * 获取药物名称
+     * 获取推荐天数
      *
-     * @return drugName - 药物名称
+     * @return recommendTime - 推荐天数
      */
-    public String getDrugName() {
-        return drugName;
+    public Integer getRecommendTime() {
+        return recommendTime;
     }
 
     /**
-     * 设置药物名称
+     * 设置推荐天数
      *
-     * @param drugName 药物名称
+     * @param recommendTime 推荐天数
      */
-    public void setDrugName(String drugName) {
-        this.drugName = drugName;
+    public void setRecommendTime(Integer recommendTime) {
+        this.recommendTime = recommendTime;
     }
 
     /**
-     * 获取用户Id
+     * 获取推荐开始时间
      *
-     * @return userId - 用户Id
+     * @return recommendStartTime - 推荐开始时间
      */
-    public String getUserId() {
-        return userId;
+    public Date getRecommendStartTime() {
+        return recommendStartTime;
     }
 
     /**
-     * 设置用户Id
+     * 设置推荐开始时间
      *
-     * @param userId 用户Id
+     * @param recommendStartTime 推荐开始时间
      */
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setRecommendStartTime(Date recommendStartTime) {
+        this.recommendStartTime = recommendStartTime;
     }
 
     /**
-     * 获取用户名称
+     * 获取推荐结束时间
      *
-     * @return userName - 用户名称
+     * @return recommendEndTime - 推荐结束时间
      */
-    public String getUserName() {
-        return userName;
+    public Date getRecommendEndTime() {
+        return recommendEndTime;
     }
 
     /**
-     * 设置用户名称
+     * 设置推荐结束时间
      *
-     * @param userName 用户名称
+     * @param recommendEndTime 推荐结束时间
      */
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    /**
-     * 获取购买数量
-     *
-     * @return purchaseNumber - 购买数量
-     */
-    public Integer getPurchaseNumber() {
-        return purchaseNumber;
-    }
-
-    /**
-     * 设置购买数量
-     *
-     * @param purchaseNumber 购买数量
-     */
-    public void setPurchaseNumber(Integer purchaseNumber) {
-        this.purchaseNumber = purchaseNumber;
+    public void setRecommendEndTime(Date recommendEndTime) {
+        this.recommendEndTime = recommendEndTime;
     }
 
     /**
