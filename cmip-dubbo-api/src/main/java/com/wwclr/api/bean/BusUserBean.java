@@ -1,6 +1,5 @@
 package com.wwclr.api.bean;
 
-import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
