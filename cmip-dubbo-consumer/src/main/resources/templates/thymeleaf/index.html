@@ -44,18 +44,18 @@
 <!--<input th:value="*{age}"/>-->
 <!--<input th:value="*{#dates.format(birthday,'yyyy-MM-dd')}"/>-->
 <!--</div>-->
-<table>
-  <tr>
-    <th>姓名</th>
-    <th>年龄</th>
-    <th>生日</th>
-  </tr>
-  <tr th:each="person:${userList}">
-    <td th:text="${person.userName}"></td>
-    <td th:text="${person.age}"></td>
-    <td th:text="${#dates.format(person.crateTime,'yyyy-MM-dd')}"/>
-  </tr>
-</table>
+<!--<table>-->
+  <!--<tr>-->
+    <!--<th>姓名</th>-->
+    <!--<th>年龄</th>-->
+    <!--<th>生日</th>-->
+  <!--</tr>-->
+  <!--<tr th:each="person:${userList}">-->
+    <!--<td th:text="${person.userName}"></td>-->
+    <!--<td th:text="${person.age}"></td>-->
+    <!--<td th:text="${#dates.format(person.crateTime,'yyyy-MM-dd')}"/>-->
+  <!--</tr>-->
+<!--</table>-->
 <div class="blast-box">
   <div class="blast-icon"><span class="fas fa-tint"></span></div>
   <div class="blast-frame">
@@ -143,7 +143,7 @@
           <div class="slider-img one-img">
             <div class="container">
               <div class="slider-info text-left">
-                <h4 >来自长白山</h4>
+                <!--<h4 >来自长白山</h4>-->
                 <h5>养生 保健 养颜</h5>
                 <p>适合中老年人，益气补血
                 </p>
@@ -158,7 +158,7 @@
           <div class="slider-img two-img">
             <div class="container">
               <div class="slider-info text-left">
-                <h4>中药世家</h4>
+                <!--<h4>中药世家</h4>-->
                 <h5>当归 枸杞 龙葵</h5>
                 <p>多味中草药，调出好身体
                 </p>
@@ -173,9 +173,9 @@
           <div class="slider-img three-img">
             <div class="container">
               <div class="slider-info text-left">
-                <h4>Class</h4>
-                <h5>Ipsum Dolor Eiusmo</h5>
-                <p>velit sagittis vehicula
+                <!--<h4></h4>-->
+                <h5>儿茶 八角 丁香</h5>
+                <p>好药材，制好药
                 </p>
                 <div class="outs_more-buttn">
                   <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
@@ -231,17 +231,17 @@
     <!--Horizontal Tab-->
     <div id="horizontalTab">
       <ul class="resp-tabs-list justify-content-center">
-        <li data-blast="bgColor">Course</li>
-        <li data-blast="bgColor">Academics</li>
-        <li data-blast="bgColor">Admission</li>
-        <li data-blast="bgColor">Mission</li>
+        <li data-blast="bgColor">起源</li>
+        <li data-blast="bgColor">现状</li>
+        <li data-blast="bgColor">未来</li>
+        <li data-blast="bgColor">目标</li>
       </ul>
       <div class="resp-tabs-container">
         <div class="tab1" >
           <div class="row mt-lg-4 mt-3">
             <div class="col-md-7 latest-list">
               <div class="about-jewel-agile-left">
-                <h4 class="mb-3" data-blast="color">Dolor sit </h4>
+                <h4 class="mb-3" data-blast="color">11Dolor sit </h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque</p>
                 <h5 data-blast="color"> Who we are</h5>
               </div>
@@ -258,9 +258,12 @@
             </div>
             <div class="col-md-7 latest-list">
               <div class="about-jewel-agile-left">
-                <h4 class="mb-3" data-blast="color"> ipsum dolor</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque</p>
-                <h5 data-blast="color">What We do</h5>
+                <h4 class="mb-3" data-blast="color"> </h4>
+                <h4 style="color: black">中医药也叫汉族医药，它是中华民族的宝贵财富，为中华民族的繁衍昌盛作出了巨大贡献。传统医学的治疗理念正逐渐被世界所接受，传统医药受到国际社会越来越多的关注，世界范围内对中医药的需求日益增长，这为中医药的发展提供了广阔的空间。
+               <br>
+                <br>
+                2016年12月6日，国务院新闻办发表《中国的中医药》白皮书。这是中国政府首次就中医药发展发表白皮书。白皮书系统介绍了中医药的发展脉络及其特点，充分介绍了中国发展中医药的国家政策和主要措施，展示了中医药的科学价值和文化特点。</h4>
+                <!--<h5 data-blast="color">What We do</h5>-->
               </div>
             </div>
           </div>
