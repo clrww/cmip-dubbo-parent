@@ -17,6 +17,15 @@ public class BusUserBean implements Serializable{
     public Date crateTime;
     public Date lastModify;
     public Boolean logicalDeleted;
+    public String passWord;
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
+    }
 
     public Integer getId() {
         return id;

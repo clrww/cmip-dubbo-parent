@@ -45,4 +45,11 @@ public class BusUserServiceImpl  extends BaseService implements BusUserInterface
                 BusUser busUser=transferObjectIgnoreCase(busUserBean, BusUser.class);
                 busUserMapper.delete(busUser);
         }
+
+        @Override
+        public BusUserBean findUser(BusUserBean busUserBean) {
+                BusUser busUser=transferObjectIgnoreCase(busUserBean, BusUser.class);
+                BusUserBean bean=transferObjectIgnoreCase( busUserMapper.selectOne(busUser),BusUserBean.class);
+                return bean;
+        }
 }

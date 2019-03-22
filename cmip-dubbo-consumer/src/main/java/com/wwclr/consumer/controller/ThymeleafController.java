@@ -9,7 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -68,18 +70,37 @@ public class ThymeleafController {
         }
 
         @RequestMapping("/index")
-        public Object index11(ModelMap modelMap){
-                List<BusUserBean> userList=busUserInterface.findAllUser();
+        public Object index(BusUserBean busUserBean){
+//                List<BusUserBean> userList=busUserInterface.findAllUser();
 //                ModelMap modelMap =new ModelMap();
 //                Student student=new Student("123","supermanager",18,new Date());
 //                modelMap.addAttribute("student",student);
 //                modelMap.addAttribute("name","wangwu");
 //                modelMap.addAttribute("userList",userList);
+                busUserBean.setUserId("1234561");
+                BusUserBean bean=busUserInterface.findUser(busUserBean);
                 ModelAndView modelAndView=new ModelAndView();
-                modelAndView.addObject("name","王武");
+//                modelAndView.addObject("name","王武");
+                modelAndView.addObject("user",bean);
                 modelAndView.setViewName("thymeleaf/index");
                 return modelAndView;
 //                LOGGER.info("UserController  saveUser ={}", JSONObject.toJSON(student));
 //                return "thymeleaf/index";
+        }
+
+
+        @RequestMapping("/login")
+        @ResponseBody
+        public Object login(BusUserBean busUserBean){
+                ModelAndView modelAndView=new ModelAndView();
+                BusUserBean bean=busUserInterface.findUser(busUserBean);
+                if(StringUtils.isEmpty(bean)){
+                        modelAndView.addObject("user",false);
+//                        modelAndView.setViewName("thymeleaf/index");
+                        return "账号或密码错误";
+                }
+                modelAndView.addObject("user",bean);
+                modelAndView.setViewName("thymeleaf/index");
+                return bean;
         }
 }

@@ -31,7 +31,8 @@
   <link href="http://fonts.googleapis.com/css?family=Merriweather:300,400,700,900" rel="stylesheet">
 </head>
 <body>
-<h1 th:text="${name}"></h1>
+<!--<h1 th:text="${name}"></h1>-->
+
 <!--<div class="mytest">-->
   <!--<input th:id="${student.name}"  th:name="${student.name}" th:value="${student.name}"/>-->
   <!--<input th:value="${student.userId}"/>-->
@@ -76,6 +77,12 @@
       <div class="row headder-contact">
         <div class="col-lg-6 col-md-7 col-sm-9 info-contact-agile">
           <ul>
+            <li th:if="${user}">
+                <p>您好，</p><p th:text="${user.userName}"></p>
+            </li>
+            <li  th:unless="${user}">
+                <p><a href="#" data-toggle="modal" data-target="#loginModalLive">请登录</a></p>
+            </li>
             <li>
               <span class="fas fa-phone-volume" ></span>
               <p>15868859893</p>
@@ -148,7 +155,7 @@
                 <p>适合中老年人，益气补血
                 </p>
                 <div class="outs_more-buttn" >
-                  <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
+                  <a href="#" data-toggle="modal" data-target="#loginModalLive" data-blast="bgColor">More1</a>
                 </div>
               </div>
             </div>
@@ -163,7 +170,7 @@
                 <p>多味中草药，调出好身体
                 </p>
                 <div class="outs_more-buttn">
-                  <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
+                  <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More2</a>
                 </div>
               </div>
             </div>
@@ -178,7 +185,7 @@
                 <p>好药材，制好药
                 </p>
                 <div class="outs_more-buttn">
-                  <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
+                  <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More3</a>
                 </div>
               </div>
             </div>
@@ -911,6 +918,73 @@
     </div>
   </div>
 </div>
+  <!--登陆模态框-->
+<div id="loginModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="loginModalLiveLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="loginModalLiveLabel" data-blast="color">请登录</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <form th:action="@{/th/login}"  id="loginform"  th:method="post">
+
+        <div class="modal-body">
+          <!--<img src="../../static/images/b2.jpg" alt="" class="img-fluid">-->
+          <!--<p>请你登陆咯兄弟</p>-->
+          <h2>用户名：</h2>
+          <!--<input name="*{userName}" th:field="*{userName}"/>-->
+          <!--<h2>密码：</h2>-->
+          <!--<input name="*{passWord}" th:field="*{passWord}"/>-->
+          <input name="userName"/>
+          <h2>密码：</h2>
+          <input name="passWord"/>
+          <a id="errortext" style="display: none;color: red">账号或密码不正确</a>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+          <!--<button type="submit" class="btn btn-primary">登陆</button>-->
+          <button type="button" th:onclick="|javascript:login()|"  class="btn btn-primary">登陆</button>
+
+        </div>
+
+      </form>
+
+
+
+    </div>
+  </div>
+</div>
+
+<script  type="text/javascript">
+  function login() {
+    $.ajax({
+      type: "POST",
+      dataType: "json",
+      url: "/th/login" ,
+      data: $('#loginform').serialize(),
+      success: function (data) {
+        alert("成功"+data);
+        var jsonText = JSON.stringify(data);
+        alert(jsonText);
+//        result=eval("("+data+")");
+//        alert(result);
+      },
+      error : function() {
+//        var jsonText = JSON.stringify(data);
+//        alert(jsonText);
+//        alert( $('#errortext').att);
+//        $('#errortext').style.display="block";
+        $("#errortext").css("display","block");
+      }
+    });
+  }
+
+</script>
+
 <!--//model-->
 <!--js working-->
 <script src="../../static/js/bootstrap/jquery-2.2.3.min.js"></script>
