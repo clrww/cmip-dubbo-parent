@@ -396,116 +396,149 @@
 <!--blog -->
 <section class="blog py-lg-4 py-md-3 py-sm-3 py-3" id="blog">
   <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
-    <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Our Blog </h3>
+    <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">博客</h3>
     <div class="row">
-      <div class="col-lg-4 col-md-6 col-sm-6 blog-grid-flex">
+
+      <div class="col-lg-4 col-md-6 col-sm-6 blog-grid-flex" th:each="record:${drugPostRecordBeanList}">
         <div class="clients-color">
           <img src="../../static/images/ab3.jpg" class="img-fluid" alt="">
           <div class="blog-txt-info">
-            <h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">Quisque a rhoncus </a></h4>
+            <h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color" th:text="${record.title}"></a></h4>
             <div class="news-date my-3">
               <ul>
-                <li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>
-                <li><span class="far fa-comments"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">5 Comments</a></li>
+                <li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive" th:text="${#dates.format(record.createTime,'yyyy-MM-dd')}"></a></li>
+                <li><span class="far fa-comments"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive" th:text="${record.getBrowseNumber}"></a></li>
               </ul>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
+            <!--<p>复阿胶浆药物组:阿胶、桂圆、枸杞、枣、甘草、红糖、葡萄糖酸亚铁、参、熟黄、党参、山楂等临床治疗复阿胶浆具四功效:(1)骨髓造血系统保护作用升高白细胞白细胞减少症肿瘤细胞侵入骨髓、细胞类毒药物、放射线等能直接作用于骨髓抑制骨髓粒细胞引起复阿胶浆能预防、抗、减低细胞毒素骨髓造血系统损伤、保护造血干细胞裂与增白细胞明显增加放疗、化疗、药物、职业素及其原引起白细胞减少症显著疗效(2)促进造血系统功能显著补血作用复阿胶浆促进造血功能显著补血作用(3)增强免疫功能免疫功能低血虚症病见症状并易发呼吸消化道染、易冒、便血、尿血、牙龈血、流鼻血等复阿胶浆使机体内巨噬细胞吞噬功能提高倍增加体内免疫球蛋白数量使机体自身清除外侵病毒、细胞能力增强提高免疫力减少述疾病发(4)增强体力迅速消除疲劳复阿胶浆骨髓造血机能促进作用随着血色素提高全身各细胞供氧量增加疲劳耐受性增强 复阿胶浆具四功效服用复阿胶浆治疗气血两虚晕目眩悸失眠食欲振及白细胞减少症贫血</p>-->
+            <p th:text="${record.shortDescribe}"></p>
+
             <div class="outs_more-buttn" >
               <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-sm-6  blog-grid-flex">
-        <div class="clients-color">
-          <img src="../../static/images/ab1.jpg" class="img-fluid" alt="">
-          <div class="blog-txt-info">
-            <h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">Quisque a rhoncus </a></h4>
-            <div class="news-date my-3">
-              <ul>
-                <li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>
-                <li><span class="far fa-comments"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">5 Comments</a></li>
-              </ul>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-            <div class="outs_more-buttn" >
-              <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 blog-grid-flex">
-        <div class="clients-color">
-          <img src="../../static/images/ab2.jpg" class="img-fluid" alt="">
-          <div class="blog-txt-info">
-            <h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">Quisque a rhoncus </a></h4>
-            <div class="news-date my-3">
-              <ul>
-                <li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>
-                <li><span class="far fa-comments"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">5 Comments</a></li>
-              </ul>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-            <div class="outs_more-buttn" >
-              <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 blog-grid-flex mt-lg-5 mt-md-4 mt-sm-3 mt-3">
-        <div class="clients-color">
-          <img src="../../static/images/ab3.jpg" class="img-fluid" alt="">
-          <div class="blog-txt-info">
-            <h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">Quisque a rhoncus </a></h4>
-            <div class="news-date my-3">
-              <ul>
-                <li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive" >12/4/2019</a></li>
-                <li><span class="far fa-comments"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive" >5 Comments</a></li>
-              </ul>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-            <div class="outs_more-buttn" >
-              <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 blog-grid-flex mt-lg-5 mt-md-4 mt-sm-3 mt-3" >
-        <div class="clients-color">
-          <img src="../../static/images/ab1.jpg" class="img-fluid" alt="">
-          <div class="blog-txt-info">
-            <h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">Quisque a rhoncus </a></h4>
-            <div class="news-date my-3">
-              <ul>
-                <li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>
-                <li><span class="far fa-comments"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">5 Comments</a></li>
-              </ul>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-            <div class="outs_more-buttn" >
-              <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 blog-grid-flex mt-lg-5 mt-md-4 mt-sm-3 mt-3">
-        <div class="clients-color">
-          <img src="../../static/images/ab2.jpg" class="img-fluid" alt="">
-          <div class="blog-txt-info">
-            <h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">Quisque a rhoncus </a></h4>
-            <div class="news-date my-3">
-              <ul>
-                <li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>
-                <li><span class="far fa-comments"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">5 Comments</a></li>
-              </ul>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-            <div class="outs_more-buttn" >
-              <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
+
+      <!--<div class="col-lg-4 col-md-6 col-sm-6 blog-grid-flex">-->
+        <!--<div class="clients-color">-->
+          <!--<img src="../../static/images/ab3.jpg" class="img-fluid" alt="">-->
+          <!--<div class="blog-txt-info">-->
+            <!--<h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">阿胶可以入药吗？针对哪些病，有什么功效吗</a></h4>-->
+            <!--<div class="news-date my-3">-->
+              <!--<ul>-->
+                <!--<li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">2019/3/3</a></li>-->
+                <!--<li><span class="far fa-comments"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">5 Comments</a></li>-->
+              <!--</ul>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<p>复阿胶浆药物组:阿胶、桂圆、枸杞、枣、甘草、红糖、葡萄糖酸亚铁、参、熟黄、党参、山楂等临床治疗复阿胶浆具四功效:(1)骨髓造血系统保护作用升高白细胞白细胞减少症肿瘤细胞侵入骨髓、细胞类毒药物、放射线等能直接作用于骨髓抑制骨髓粒细胞引起复阿胶浆能预防、抗、减低细胞毒素骨髓造血系统损伤、保护造血干细胞裂与增白细胞明显增加放疗、化疗、药物、职业素及其原引起白细胞减少症显著疗效(2)促进造血系统功能显著补血作用复阿胶浆促进造血功能显著补血作用(3)增强免疫功能免疫功能低血虚症病见症状并易发呼吸消化道染、易冒、便血、尿血、牙龈血、流鼻血等复阿胶浆使机体内巨噬细胞吞噬功能提高倍增加体内免疫球蛋白数量使机体自身清除外侵病毒、细胞能力增强提高免疫力减少述疾病发(4)增强体力迅速消除疲劳复阿胶浆骨髓造血机能促进作用随着血色素提高全身各细胞供氧量增加疲劳耐受性增强 复阿胶浆具四功效服用复阿胶浆治疗气血两虚晕目眩悸失眠食欲振及白细胞减少症贫血</p>&ndash;&gt;-->
+            <!--<p>复阿胶浆药物组:阿胶、桂圆、枸杞、枣、甘草、红糖、葡萄糖酸亚铁、参、熟黄、党参、山楂等临床治疗复阿胶浆具四功效:(1)骨髓造血系统保护作用....</p>-->
+
+            <!--<div class="outs_more-buttn" >-->
+              <!--<a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--<div class="col-lg-4 col-md-6 col-sm-6  blog-grid-flex">-->
+        <!--<div class="clients-color">-->
+          <!--<img src="../../static/images/ab1.jpg" class="img-fluid" alt="">-->
+          <!--<div class="blog-txt-info">-->
+            <!--<h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">Quisque a rhoncus </a></h4>-->
+            <!--<div class="news-date my-3">-->
+              <!--<ul>-->
+                <!--<li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>-->
+                <!--<li><span class="far fa-comments"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">5 Comments</a></li>-->
+              <!--</ul>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<p>首先需要说明，无论中药还是西药都是用来治病救人的，本质上没有什么差别，它们之间也没有绝对的优劣之分。西药更注重药到病除，而重要则更注重整体的恢复，中药多采用口服的方式，通过改善人体的内环境提高人体抵抗疾病的能力，顺其自然的治好疾病。而西药大多采取注射等直接将药物送达患处的方式，强行改变了人体内的内环境，容易导致很多的副作用。在副作用方面谁的副作用更小一些是有目共睹的。在大病上，相对于西药来说，中药的价钱要相对低很多，例如白血病好了，用西药及化疗治白血病,不仅使病人倍受折磨,而且医疗费用高昂,使得大多数患者及一般家庭经济能力难以承受。而中药还可对化疗的并发症进行调解和治疗。从小病入眼也是如此，相对于西药来说，中药的毒副作用更小一些，就拿感冒来说好了，现在广告上的感冒药感叹号即是如此，它的主要成分氨酚烷胺，服用过后可能会引起服用者嗜睡，头晕，恶心等症状的发生，而中药成分的感冒药则无此担忧，即使是忙于工作和学习的人也可以放心服用，不用担心服用过后的困顿影响到正常的工作和学习。 但是现在，中药和西药的分界已不明显，很多中药里添加了西药的成分，而很多西药为了降低副作用也相应的添加了中药进去。</p>&ndash;&gt;-->
+            <!--<div class="outs_more-buttn" >-->
+              <!--<a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!---->
+      <!---->
+      <!--<div class="col-lg-4 col-md-6 col-sm-6 blog-grid-flex">-->
+        <!--<div class="clients-color">-->
+          <!--<img src="../../static/images/ab2.jpg" class="img-fluid" alt="">-->
+          <!--<div class="blog-txt-info">-->
+            <!--<h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">Quisque a rhoncus </a></h4>-->
+            <!--<div class="news-date my-3">-->
+              <!--<ul>-->
+                <!--<li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>-->
+                <!--<li><span class="far fa-comments"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">5 Comments</a></li>-->
+              <!--</ul>-->
+            <!--</div>-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>-->
+            <!--<div class="outs_more-buttn" >-->
+              <!--<a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+
+      <!--<div class="col-lg-4 col-md-6 col-sm-6 blog-grid-flex mt-lg-5 mt-md-4 mt-sm-3 mt-3">-->
+        <!--<div class="clients-color">-->
+          <!--<img src="../../static/images/ab3.jpg" class="img-fluid" alt="">-->
+          <!--<div class="blog-txt-info">-->
+            <!--<h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">Quisque a rhoncus </a></h4>-->
+            <!--<div class="news-date my-3">-->
+              <!--<ul>-->
+                <!--<li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive" >12/4/2019</a></li>-->
+                <!--<li><span class="far fa-comments"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive" >5 Comments</a></li>-->
+              <!--</ul>-->
+            <!--</div>-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>-->
+            <!--<div class="outs_more-buttn" >-->
+              <!--<a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-lg-4 col-md-6 col-sm-6 blog-grid-flex mt-lg-5 mt-md-4 mt-sm-3 mt-3" >-->
+        <!--<div class="clients-color">-->
+          <!--<img src="../../static/images/ab1.jpg" class="img-fluid" alt="">-->
+          <!--<div class="blog-txt-info">-->
+            <!--<h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">Quisque a rhoncus </a></h4>-->
+            <!--<div class="news-date my-3">-->
+              <!--<ul>-->
+                <!--<li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>-->
+                <!--<li><span class="far fa-comments"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">5 Comments</a></li>-->
+              <!--</ul>-->
+            <!--</div>-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>-->
+            <!--<div class="outs_more-buttn" >-->
+              <!--<a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-lg-4 col-md-6 col-sm-6 blog-grid-flex mt-lg-5 mt-md-4 mt-sm-3 mt-3">-->
+        <!--<div class="clients-color">-->
+          <!--<img src="../../static/images/ab2.jpg" class="img-fluid" alt="">-->
+          <!--<div class="blog-txt-info">-->
+            <!--<h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">Quisque a rhoncus </a></h4>-->
+            <!--<div class="news-date my-3">-->
+              <!--<ul>-->
+                <!--<li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>-->
+                <!--<li><span class="far fa-comments"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive">5 Comments</a></li>-->
+              <!--</ul>-->
+            <!--</div>-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>-->
+            <!--<div class="outs_more-buttn" >-->
+              <!--<a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+
     </div>
   </div>
 </section>
@@ -515,7 +548,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6 subscrib-w3layouts text-center">
-        <h2 data-blast="color">Subscribe Us</h2>
+        <h2 data-blast="color">联系我们</h2>
       </div>
       <div class="col-lg-6 col-md-6">
         <div class="newsletter">
@@ -534,38 +567,38 @@
 <!--stats-->
 <section class="stats py-lg-4 py-md-3 py-sm-3 py-3" id="stats">
   <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
-    <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Our Stats </h3>
+    <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">了解中医 </h3>
     <div class="jst-must-info text-center">
       <div class="row stats-info">
         <div class="col-lg-3 col-md-6 col-sm-6 col-6 stats-grid-1">
           <div class="stats-grid" data-blast="bgColor">
-            <div class="counter">2045</div>
+            <div class="counter">5000</div>
             <div class="stat-info">
-              <h5 class="pt-2">Experience </h5>
+              <h5 class="pt-2">年</h5>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6 col-6 stats-grid-2">
           <div class=" stats-grid" data-blast="bgColor">
-            <div class="counter">350</div>
+            <div class="counter">8000</div>
             <div class="stat-info">
-              <h5 class="pt-2"> Staff</h5>
+              <h5 class="pt-2"> 味</h5>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6 col-6 stats-grid-3">
           <div class=" stats-grid" data-blast="bgColor">
-            <div class="counter">1000</div>
+            <div class="counter">21</div>
             <div class="stat-info">
-              <h5 class="pt-2"> Coffee</h5>
+              <h5 class="pt-2"> 类</h5>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6 col-6 stats-grid-4">
           <div class=" stats-grid" data-blast="bgColor">
-            <div class="counter">650</div>
+            <div class="counter">10</div>
             <div class="stat-info">
-              <h5 class="pt-2"> Projects </h5>
+              <h5 class="pt-2"> 派</h5>
             </div>
           </div>
         </div>
@@ -929,7 +962,7 @@
         </button>
       </div>
 
-      <form th:action="@{/th/login}"  id="loginform"  th:method="post">
+      <form th:action="@{/th/loginForIndex}"  id="loginform"  th:method="post">
 
         <div class="modal-body">
           <!--<img src="../../static/images/b2.jpg" alt="" class="img-fluid">-->
@@ -941,7 +974,7 @@
           <input name="userName"/>
           <h2>密码：</h2>
           <input name="passWord"/>
-          <a id="errortext" style="display: none;color: red">账号或密码不正确</a>
+          <a id="errorText" style="display: none;color: red">账号或密码不正确</a>
         </div>
 
         <div class="modal-footer">
@@ -967,18 +1000,20 @@
       url: "/th/login" ,
       data: $('#loginform').serialize(),
       success: function (data) {
-        alert("成功"+data);
-        var jsonText = JSON.stringify(data);
-        alert(jsonText);
+//        alert("成功"+data);
+//        var jsonText = JSON.stringify(data);
+//        alert(jsonText);
+
 //        result=eval("("+data+")");
 //        alert(result);
+        $("#loginform").submit();
       },
       error : function() {
 //        var jsonText = JSON.stringify(data);
 //        alert(jsonText);
 //        alert( $('#errortext').att);
 //        $('#errortext').style.display="block";
-        $("#errortext").css("display","block");
+        $("#errorText").css("display","block");
       }
     });
   }

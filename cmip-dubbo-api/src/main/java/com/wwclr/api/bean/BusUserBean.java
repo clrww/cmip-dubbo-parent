@@ -14,7 +14,7 @@ public class BusUserBean implements Serializable{
     public Integer job;
     public Integer memberCode;
     public Integer role;
-    public Date crateTime;
+    public Date createTime;
     public Date lastModify;
     public Boolean logicalDeleted;
     public String passWord;
@@ -92,11 +92,11 @@ public class BusUserBean implements Serializable{
     }
 
     public Date getCrateTime() {
-        return crateTime;
+        return createTime;
     }
 
     public void setCrateTime(Date crateTime) {
-        this.crateTime = crateTime;
+        this.createTime = crateTime;
     }
 
     public Date getLastModify() {

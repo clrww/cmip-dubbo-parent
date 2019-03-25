@@ -1,5 +1,6 @@
 package com.wwclr.provide.pojo;
 
+import javax.persistence.Column;
 import javax.persistence.Table;
 import java.util.Date;
 
@@ -8,67 +9,101 @@ public class DrugPostRecord {
     /**
      * 自增主键
      */
-    private Integer id;
+    public Integer id;
 
     /**
      * 帖子编号
      */
-    private String postCode;
+    @Column(name = "postCode")
+    public String postCode;
 
     /**
      * 帖子发起用户Name
      */
-    private String userName;
+    @Column(name = "userName")
+    public String userName;
 
     /**
      * 帖子发起用户Id
      */
-    private String userId;
+    @Column(name = "userId")
+    public String userId;
 
     /**
      * 是否置顶 (0： 否， 1： 是)
      */
-    private Boolean ifTop;
+    @Column(name = "ifTop")
+    public Boolean ifTop;
 
     /**
      * 是否精华帖 (0： 否， 1： 是)
      */
-    private Boolean ifEssence;
+    @Column(name = "ifEssence")
+    public Boolean ifEssence;
 
     /**
      * 帖子标题
      */
-    private String title;
+    public String title;
 
     /**
      * 帖子内容
      */
-    private String describe;
+    public String describe;
+
+    @Column(name = "shortDescribe")
+    public String shortDescribe;
+
 
     /**
      * 获取点赞数
      */
-    private Integer getStarNumber;
+    @Column(name = "getStarNumber")
+    public Integer getStarNumber;
 
     /**
      * 获得浏览数
      */
-    private Integer getBrowseNumber;
+    @Column(name = "getBrowseNumber")
+    public Integer getBrowseNumber;
+
+    @Column(name = "imageUrl")
+    public String imageUrl;
 
     /**
      * 创建时间
      */
-    private Date crateTime;
+    @Column(name = "createTime")
+    public Date createTime;
 
     /**
      * 最后修改时间
      */
-    private Date lastModify;
+    @Column(name = "lastModify")
+    public Date lastModify;
 
     /**
      * 数据状态 (0： 逻辑删除， 1： 正常)
      */
-    private Boolean logicalDeleted;
+    @Column(name = "logicalDeleted")
+    public Boolean logicalDeleted;
+
+
+    public String getShortDescribe() {
+        return shortDescribe;
+    }
+
+    public void setShortDescribe(String shortDescribe) {
+        this.shortDescribe = shortDescribe;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     /**
      * 获取自增主键
@@ -255,8 +290,8 @@ public class DrugPostRecord {
      *
      * @return crateTime - 创建时间
      */
-    public Date getCrateTime() {
-        return crateTime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
     /**
@@ -264,8 +299,8 @@ public class DrugPostRecord {
      *
      * @param crateTime 创建时间
      */
-    public void setCrateTime(Date crateTime) {
-        this.crateTime = crateTime;
+    public void setCreateTime(Date crateTime) {
+        this.createTime = crateTime;
     }
 
     /**

@@ -3,7 +3,9 @@ package com.wwclr.consumer.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSONObject;
 import com.wwclr.api.bean.BusUserBean;
+import com.wwclr.api.bean.DrugPostRecordBean;
 import com.wwclr.api.service.BusUserInterface;
+import com.wwclr.api.service.DrugPostRecordInterface;
 import com.wwclr.consumer.entity.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,13 +30,9 @@ public class ThymeleafController {
 
         @Reference
         BusUserInterface busUserInterface;
+        @Reference
+        DrugPostRecordInterface drugPostRecordInterface;
 
-
-        @RequestMapping("/indexceshi")
-        public String index(ModelMap modelMap){
-                modelMap.addAttribute("name1","wangwu");
-                return "thymeleaf/ceshi";
-        }
         @RequestMapping("/student")
         public String student(ModelMap modelMap){
                 modelMap.addAttribute("name","wangwu");
@@ -51,56 +49,67 @@ public class ThymeleafController {
                 return "thymeleaf/student";
         }
 
-        @RequestMapping("/postform")
-        public String postform(Student student){
-                System.out.println(student.getName());
-                return "redirect:/th/student";
-        }
-
-        @RequestMapping("/index22")
-        public String index22(BusUserBean busUserBean){
-                busUserBean.setCrateTime(new Date());
-                busUserBean.setUserId("987543121212121");
-                busUserBean.setAge(26);
-                busUserBean.setUserName("wangwu");
-                busUserBean.setPhone(10086);
-                LOGGER.info("UserController  saveUser ={}", JSONObject.toJSON(busUserBean));
-                busUserInterface.saveUser(busUserBean);
-                return "thymeleaf/index22";
-        }
-
+        /**
+         * 进入主页
+         */
         @RequestMapping("/index")
         public Object index(BusUserBean busUserBean){
-//                List<BusUserBean> userList=busUserInterface.findAllUser();
-//                ModelMap modelMap =new ModelMap();
-//                Student student=new Student("123","supermanager",18,new Date());
-//                modelMap.addAttribute("student",student);
-//                modelMap.addAttribute("name","wangwu");
-//                modelMap.addAttribute("userList",userList);
-                busUserBean.setUserId("1234561");
-                BusUserBean bean=busUserInterface.findUser(busUserBean);
                 ModelAndView modelAndView=new ModelAndView();
-//                modelAndView.addObject("name","王武");
-                modelAndView.addObject("user",bean);
-                modelAndView.setViewName("thymeleaf/index");
-                return modelAndView;
-//                LOGGER.info("UserController  saveUser ={}", JSONObject.toJSON(student));
-//                return "thymeleaf/index";
+                try {
+                        busUserBean.setUserId("1234561");
+                        BusUserBean bean=busUserInterface.findUser(busUserBean);
+                        List<DrugPostRecordBean> drugPostRecordBeanList=drugPostRecordInterface.findTopThreeRecord();
+                        modelAndView.addObject("user",bean);
+                        modelAndView.addObject("drugPostRecordBeanList",drugPostRecordBeanList);
+                        modelAndView.setViewName("thymeleaf/index");
+                        LOGGER.info("ThymeleafController  index  bean={}", JSONObject.toJSON(bean));
+                }catch (Exception e){
+                        e.printStackTrace();
+                }
+             return  modelAndView;
         }
 
 
+        /**
+         * 登陆验证账号密码
+         */
         @RequestMapping("/login")
         @ResponseBody
         public Object login(BusUserBean busUserBean){
-                ModelAndView modelAndView=new ModelAndView();
-                BusUserBean bean=busUserInterface.findUser(busUserBean);
-                if(StringUtils.isEmpty(bean)){
-                        modelAndView.addObject("user",false);
+                try{
+                        ModelAndView modelAndView=new ModelAndView();
+                        BusUserBean bean=busUserInterface.findUser(busUserBean);
+                        if(StringUtils.isEmpty(bean)){
+                                modelAndView.addObject("user",false);
 //                        modelAndView.setViewName("thymeleaf/index");
-                        return "账号或密码错误";
+                                return "账号或密码错误";
+                        }
+//                        modelAndView.addObject("user",bean);
+//                        modelAndView.setViewName("thymeleaf/index");
+                        LOGGER.info("ThymeleafController  login  bean={}", JSONObject.toJSON(bean));
+                        return bean;
+                }catch (Exception e){
+                        e.printStackTrace();
                 }
-                modelAndView.addObject("user",bean);
-                modelAndView.setViewName("thymeleaf/index");
-                return bean;
+              return null;
+        }
+
+        /**
+         * 登陆成功跳转主页
+         */
+        @RequestMapping("/loginForIndex")
+        public Object loginForIndex(BusUserBean busUserBean){
+                ModelAndView modelAndView=new ModelAndView();
+                try{
+                        BusUserBean bean=busUserInterface.findUser(busUserBean);
+                        List<DrugPostRecordBean> drugPostRecordBeanList=drugPostRecordInterface.findTopThreeRecord();
+                        modelAndView.addObject("user",bean);
+                        modelAndView.addObject("drugPostRecordBeanList",drugPostRecordBeanList);
+                        modelAndView.setViewName("thymeleaf/index");
+                        LOGGER.info("ThymeleafController  loginForIndex  bean={}", JSONObject.toJSON(bean));
+                }catch (Exception e){
+                        e.printStackTrace();
+                }
+                return modelAndView;
         }
 }

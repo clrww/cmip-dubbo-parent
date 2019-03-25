@@ -13,10 +13,19 @@
     <result column="ifEssence" property="ifessence" jdbcType="BIT" />
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="describe" property="describe" jdbcType="VARCHAR" />
+    <result column="shortDescribe" property="shortDescribe" jdbcType="VARCHAR" />
     <result column="getStarNumber" property="getstarnumber" jdbcType="INTEGER" />
     <result column="getBrowseNumber" property="getbrowsenumber" jdbcType="INTEGER" />
-    <result column="crateTime" property="cratetime" jdbcType="TIMESTAMP" />
+    <result column="imageUrl" property="imageUrl" jdbcType="VARCHAR" />
+    <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
     <result column="lastModify" property="lastmodify" jdbcType="TIMESTAMP" />
     <result column="logicalDeleted" property="logicaldeleted" jdbcType="BIT" />
   </resultMap>
+
+  <select id="findTopThreeRecord" resultType="com.wwclr.provide.pojo.DrugPostRecord">
+  <![CDATA[
+ SELECT * FROM drug_post_record ORDER BY case when  ifTop =1  THEN 1 ELSE 2 END
+  ]]>
+  </select>
+
 </mapper>

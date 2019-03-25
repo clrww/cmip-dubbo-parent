@@ -58,7 +58,7 @@ public class DrugPostRecord {
     /**
      * 创建时间
      */
-    private Date crateTime;
+    private Date createTime;
 
     /**
      * 最后修改时间
@@ -256,7 +256,7 @@ public class DrugPostRecord {
      * @return crateTime - 创建时间
      */
     public Date getCrateTime() {
-        return crateTime;
+        return createTime;
     }
 
     /**
@@ -265,7 +265,7 @@ public class DrugPostRecord {
      * @param crateTime 创建时间
      */
     public void setCrateTime(Date crateTime) {
-        this.crateTime = crateTime;
+        this.createTime = crateTime;
     }
 
     /**

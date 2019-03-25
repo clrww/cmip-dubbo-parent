@@ -49,7 +49,7 @@ public class BusUser {
      * 创建时间
      */
     @Column(name = "crateTime")
-    public Date crateTime;
+    public Date createTime;
 
     /**
      * 最后修改时间
@@ -137,11 +137,11 @@ public class BusUser {
     }
 
     public Date getCrateTime() {
-        return crateTime;
+        return createTime;
     }
 
     public void setCrateTime(Date crateTime) {
-        this.crateTime = crateTime;
+        this.createTime = crateTime;
     }
 
     public Date getLastModify() {
