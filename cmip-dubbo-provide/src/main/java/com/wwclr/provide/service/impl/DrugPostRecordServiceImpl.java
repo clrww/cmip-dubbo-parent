@@ -23,7 +23,10 @@ public class DrugPostRecordServiceImpl  extends BaseService implements DrugPostR
         @Autowired
         private DrugPostRecordMapper drugPostRecordMapper;
 
-
+        /**
+         * Created by wangwu on 2019/3/25.
+         *查找所有中医药帖子或博客信息
+         */
         @Override
         public List<DrugPostRecordBean> findTopThreeRecord() {
                 List<DrugPostRecord> drugPostRecordList=drugPostRecordMapper.findTopThreeRecord();

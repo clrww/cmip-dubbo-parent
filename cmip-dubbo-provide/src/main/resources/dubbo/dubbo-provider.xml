@@ -18,4 +18,7 @@
 
     <dubbo:service interface="com.wwclr.api.service.DrugPostRecordInterface" ref="drugPostRecordInterface"/>
     <bean id="drugPostRecordInterface" class="com.wwclr.provide.service.impl.DrugPostRecordServiceImpl"/>
+
+    <dubbo:service interface="com.wwclr.api.service.BusDrugDetailInterface" ref="busDrugDetailInterface"/>
+    <bean id="busDrugDetailInterface" class="com.wwclr.provide.service.impl.DrugPostRecordServiceImpl"/>
 </beans>

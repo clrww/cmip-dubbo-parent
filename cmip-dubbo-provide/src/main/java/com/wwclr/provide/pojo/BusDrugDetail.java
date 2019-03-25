@@ -1,5 +1,6 @@
 package com.wwclr.provide.pojo;
 
+import javax.persistence.Column;
 import javax.persistence.Table;
 import java.util.Date;
 
@@ -8,67 +9,74 @@ public class BusDrugDetail {
     /**
      * 自增主键
      */
-    private Integer id;
+    public Integer id;
 
     /**
      * 药物编码
      */
-    private String drugCode;
+    @Column(name = "drugCode")
+    public String drugCode;
 
     /**
      * 药物名称
      */
-    private String drugName;
+    @Column(name = "drugName")
+    public String drugName;
 
     /**
      * 药物图片地址
      */
-    private String drugImgUrl;
+    @Column(name = "drugImgUrl")
+    public String drugImgUrl;
 
     /**
      * 药物描述
      */
-    private String describe;
+    public String describe;
 
     /**
      * 药物产地
      */
-    private String origin;
+    public String origin;
 
     /**
      * 药品类型
      */
-    private Integer type;
+    public Integer type;
 
     /**
      * 药品规格
      */
-    private String drmodel;
+    public String drmodel;
 
     /**
      * 药品包装
      */
-    private String pack;
+    public String pack;
 
     /**
      * 药品包装单位
      */
-    private String packUnit;
+    @Column(name = "packUnit")
+    public String packUnit;
 
     /**
      * 创建时间
      */
-    private Date crateTime;
+    @Column(name = "createTime")
+    public Date createTime;
 
     /**
      * 最后修改时间
      */
-    private Date lastModify;
+    @Column(name = "lastModify")
+    public Date lastModify;
 
     /**
      * 数据状态 (0： 逻辑删除， 1： 正常)
      */
-    private Boolean logicalDeleted;
+    @Column(name = "logicalDeleted")
+    public Boolean logicalDeleted;
 
     /**
      * 获取自增主键
@@ -255,8 +263,8 @@ public class BusDrugDetail {
      *
      * @return crateTime - 创建时间
      */
-    public Date getCrateTime() {
-        return crateTime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
     /**
@@ -264,8 +272,8 @@ public class BusDrugDetail {
      *
      * @param crateTime 创建时间
      */
-    public void setCrateTime(Date crateTime) {
-        this.crateTime = crateTime;
+    public void setCreateTime(Date crateTime) {
+        this.createTime = crateTime;
     }
 
     /**

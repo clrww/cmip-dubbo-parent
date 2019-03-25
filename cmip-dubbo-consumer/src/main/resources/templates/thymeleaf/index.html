@@ -206,30 +206,52 @@
   <div class="container-fluid ">
     <div class="main row ">
       <!-- TENTH EXAMPLE -->
-      <div class="col-lg-4 view view-tenth">
-        <img src="../../static/images/ab1.jpg" alt="" class="img-fluid">
-        <div class="mask">
-          <h3 data-blast="bgColor">Success</h3>
-          <p>Vivamus sed poritor felis.ntesque habitant morbi senectus et netus</p>
-          <a href="#" class="info" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">Read More</a>
+
+      <div class="col-lg-4 view view-tenth" th:each="drugDetail:${busDrugDetailBeanList}">
+      <img th:src="${drugDetail.drugImgUrl}" alt="" class="img-fluid">
+      <div class="mask">
+      <h3 data-blast="bgColor" th:text="${drugDetail.drugName}"></h3>
+      <p th:text="${drugDetail.describe}"></p>
+        <div th:switch="${drugDetail.type}">
+          <a href="#" class="info" data-toggle="modal"  data-blast="bgColor" th:case="1">植物类</a>
+          <a href="#" class="info" data-toggle="modal"  data-blast="bgColor" th:case="2">动物类</a>
+          <a href="#" class="info" data-toggle="modal"  data-blast="bgColor" th:case="3">矿石类</a>
+          <a href="#" class="info" data-toggle="modal"  data-blast="bgColor" th:case="4">其他类型</a>
         </div>
+        <!--<a href="#" class="info" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">更多</a>-->
       </div>
-      <div class="col-lg-4 view view-tenth">
-        <img src="../../static/images/ab2.jpg" alt="" class="img-fluid">
-        <div class="mask">
-          <h3 data-blast="bgColor">Hard Work</h3>
-          <p>Vivamus sed poritor felis.ntesque habitant morbi senectus et netus</p>
-          <a href="#" class="info" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">Read More</a>
-        </div>
       </div>
-      <div class="col-lg-4 view view-tenth">
-        <img src="../../static/images/ab3.jpg" alt="" class="img-fluid">
-        <div class="mask">
-          <h3 data-blast="bgColor">Admission</h3>
-          <p>Vivamus sed poritor felis.ntesque habitant morbi senectus et netus</p>
-          <a href="#" class="info" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">Read More</a>
-        </div>
-      </div>
+
+      <!--<div class="col-lg-4 view view-tenth">-->
+        <!--<img src="../../static/images/ab1.jpg" alt="" class="img-fluid">-->
+        <!--<div class="mask">-->
+          <!--<h3 data-blast="bgColor">Success</h3>-->
+          <!--<p>Vivamus sed poritor felis.ntesque habitant morbi senectus et netus</p>-->
+          <!--<a href="#" class="info" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">Read More</a>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!---->
+
+      <!--<div class="col-lg-4 view view-tenth">-->
+        <!--<img src="../../static/images/ab2.jpg" alt="" class="img-fluid">-->
+        <!--<div class="mask">-->
+          <!--<h3 data-blast="bgColor">Hard Work</h3>-->
+          <!--<p>Vivamus sed poritor felis.ntesque habitant morbi senectus et netus</p>-->
+          <!--<a href="#" class="info" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">Read More</a>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!---->
+      <!---->
+      <!--<div class="col-lg-4 view view-tenth">-->
+        <!--<img src="../../static/images/ab3.jpg" alt="" class="img-fluid">-->
+        <!--<div class="mask">-->
+          <!--<h3 data-blast="bgColor">Admission</h3>-->
+          <!--<p>Vivamus sed poritor felis.ntesque habitant morbi senectus et netus</p>-->
+          <!--<a href="#" class="info" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">Read More</a>-->
+        <!--</div>-->
+      <!--</div>-->
+
+
     </div>
   </div>
 </section>
@@ -401,7 +423,7 @@
 
       <div class="col-lg-4 col-md-6 col-sm-6 blog-grid-flex" th:each="record:${drugPostRecordBeanList}">
         <div class="clients-color">
-          <img src="../../static/images/ab3.jpg" class="img-fluid" alt="">
+          <img th:src="${record.imageUrl}" class="img-fluid" alt="">
           <div class="blog-txt-info">
             <h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color" th:text="${record.title}"></a></h4>
             <div class="news-date my-3">

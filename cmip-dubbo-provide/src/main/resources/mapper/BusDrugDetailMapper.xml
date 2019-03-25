@@ -15,8 +15,14 @@
     <result column="drmodel" property="drmodel" jdbcType="VARCHAR" />
     <result column="pack" property="pack" jdbcType="VARCHAR" />
     <result column="packUnit" property="packunit" jdbcType="VARCHAR" />
-    <result column="crateTime" property="cratetime" jdbcType="TIMESTAMP" />
+    <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
     <result column="lastModify" property="lastmodify" jdbcType="TIMESTAMP" />
     <result column="logicalDeleted" property="logicaldeleted" jdbcType="BIT" />
   </resultMap>
+
+  <select id="findAllBusDrug" resultType="com.wwclr.provide.pojo.BusDrugDetail">
+    <![CDATA[
+SELECT * FROM bus_drug_detail  where logicalDeleted =1
+  ]]>
+  </select>
 </mapper>

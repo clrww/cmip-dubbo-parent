@@ -24,7 +24,7 @@
 
   <select id="findTopThreeRecord" resultType="com.wwclr.provide.pojo.DrugPostRecord">
   <![CDATA[
- SELECT * FROM drug_post_record ORDER BY case when  ifTop =1  THEN 1 ELSE 2 END
+ SELECT * FROM drug_post_record ORDER BY case when  ifTop =1  THEN 1 ELSE 2 END and logicalDeleted =1
   ]]>
   </select>
 

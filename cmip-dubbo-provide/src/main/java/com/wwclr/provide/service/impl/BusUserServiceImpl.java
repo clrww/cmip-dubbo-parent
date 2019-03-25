@@ -25,10 +25,7 @@ public class BusUserServiceImpl  extends BaseService implements BusUserInterface
        private BusUserMapper busUserMapper;
         @Override
         public void saveUser(BusUserBean busUserBean) {
-//                BusUser busUser=(BusUser)getBean(busUserBean,BusUser.class);
                  BusUser busUser=transferObjectIgnoreCase(busUserBean,BusUser.class);
-//                BusUser busUser=new BusUser();
-//                copyProperties(busUser,busUserBean);
                 LOGGER.info("BusUserServiceImpl  saveUser ={}", JSONObject.toJSON(busUser));
                 busUserMapper.insert(busUser);
         }

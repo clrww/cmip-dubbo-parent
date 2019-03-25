@@ -2,8 +2,10 @@ package com.wwclr.consumer.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSONObject;
+import com.wwclr.api.bean.BusDrugDetailBean;
 import com.wwclr.api.bean.BusUserBean;
 import com.wwclr.api.bean.DrugPostRecordBean;
+import com.wwclr.api.service.BusDrugDetailInterface;
 import com.wwclr.api.service.BusUserInterface;
 import com.wwclr.api.service.DrugPostRecordInterface;
 import com.wwclr.consumer.entity.Student;
@@ -32,6 +34,8 @@ public class ThymeleafController {
         BusUserInterface busUserInterface;
         @Reference
         DrugPostRecordInterface drugPostRecordInterface;
+        @Reference
+        BusDrugDetailInterface busDrugDetailInterface;
 
         @RequestMapping("/student")
         public String student(ModelMap modelMap){
@@ -59,8 +63,10 @@ public class ThymeleafController {
                         busUserBean.setUserId("1234561");
                         BusUserBean bean=busUserInterface.findUser(busUserBean);
                         List<DrugPostRecordBean> drugPostRecordBeanList=drugPostRecordInterface.findTopThreeRecord();
+                        List<BusDrugDetailBean> busDrugDetailBeanList=busDrugDetailInterface.findAllBusDrug();
                         modelAndView.addObject("user",bean);
                         modelAndView.addObject("drugPostRecordBeanList",drugPostRecordBeanList);
+                        modelAndView.addObject("busDrugDetailBeanList",busDrugDetailBeanList);
                         modelAndView.setViewName("thymeleaf/index");
                         LOGGER.info("ThymeleafController  index  bean={}", JSONObject.toJSON(bean));
                 }catch (Exception e){
