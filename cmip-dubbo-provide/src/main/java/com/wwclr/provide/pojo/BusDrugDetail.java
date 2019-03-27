@@ -270,10 +270,10 @@ public class BusDrugDetail {
     /**
      * 设置创建时间
      *
-     * @param crateTime 创建时间
+     * @param createTime 创建时间
      */
-    public void setCreateTime(Date crateTime) {
-        this.createTime = crateTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     /**

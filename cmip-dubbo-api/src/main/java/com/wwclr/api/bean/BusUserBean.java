@@ -18,6 +18,15 @@ public class BusUserBean implements Serializable{
     public Date lastModify;
     public Boolean logicalDeleted;
     public String passWord;
+    public String mail;
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
 
     public String getPassWord() {
         return passWord;
@@ -91,12 +100,12 @@ public class BusUserBean implements Serializable{
         this.role = role;
     }
 
-    public Date getCrateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCrateTime(Date crateTime) {
-        this.createTime = crateTime;
+    public void setCreateTime(Date crateTime) {
+        this.createTime = createTime;
     }
 
     public Date getLastModify() {

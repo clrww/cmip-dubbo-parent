@@ -27,7 +27,7 @@ public class UserController {
 
         @RequestMapping("/saveUser")
         public void saveUser(BusUserBean busUserBean){
-                busUserBean.setCrateTime(new Date());
+                busUserBean.setCreateTime(new Date());
                 busUserBean.setUserId("123456");
                 busUserBean.setAge(26);
                 busUserBean.setUserName("wwclr");

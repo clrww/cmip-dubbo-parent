@@ -77,33 +77,44 @@
       <div class="row headder-contact">
         <div class="col-lg-6 col-md-7 col-sm-9 info-contact-agile">
           <ul>
+
             <li th:if="${user}">
-                <p>您好，</p><p th:text="${user.userName}"></p>
+              <span class="fas fa-user-circle" style="font-size: 20px"></span>
+                <p style="font-size: 20px">您好，</p><p th:text="${user.userName}" style="font-size: 20px"></p>
             </li>
+
             <li  th:unless="${user}">
-                <p><a href="#" data-toggle="modal" data-target="#loginModalLive">请登录</a></p>
+              <!--<span class="fas fa-mars-stroke-v"></span>-->
+              <!--<span class="fas fa-thumbs-up"></span>-->
+                <p><a href="#" data-toggle="modal" data-target="#loginModalLive" style="font-size: 20px">请登录</a></p>
             </li>
-            <li>
-              <span class="fas fa-phone-volume" ></span>
-              <p>15868859893</p>
+
+            <li th:if="${user}">
+              <span class="fas fa-phone-volume" style="font-size: 20px"></span>
+              <p th:text="${user.phone}" style="font-size: 20px"></p>
             </li>
-            <li>
-              <span class="fas fa-envelope"></span>
-              <p><a href="mailto:15868859893@163.com">15868859893@163.com</a></p>
+
+            <li th:if="${user}">
+              <span class="fas fa-envelope" style="font-size: 20px"></span>
+              <!--<p><a href="mailto:15868859893@163.com">15868859893@163.com</a></p>-->
+              <p><a href="mailto:888888@163.com" th:text="${user.mail}" style="font-size: 20px"></a></p>
             </li>
+
             <li>
             </li>
           </ul>
         </div>
-        <div class="col-lg-6 col-md-5 col-sm-3 icons px-0">
-          <ul>
-            <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-            <li><a href="#"><span class="fas fa-envelope"></span></a></li>
-            <li><a href="#"><span class="fas fa-rss"></span></a></li>
-            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
-          </ul>
-        </div>
+
+        <!--<div class="col-lg-6 col-md-5 col-sm-3 icons px-0">-->
+          <!--<ul>-->
+            <!--<li><a href="#"><span class="fab fa-facebook-f"></span></a></li>-->
+            <!--<li><a href="#"><span class="fas fa-envelope"></span></a></li>-->
+            <!--<li><a href="#"><span class="fas fa-rss"></span></a></li>-->
+            <!--<li><a href="#"><span class="fab fa-twitter"></span></a></li>-->
+            <!--<li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>-->
+          <!--</ul>-->
+        <!--</div>-->
+
       </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -341,79 +352,81 @@
 </section>
 <!--//about-->
 <!--service-->
-<section class="service py-lg-4 py-md-3 py-sm-3 py-3" id="service">
-  <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
-    <h3 class="title clr text-center mb-lg-5 mb-md-4  mb-sm-4 mb-3">services</h3>
-    <div class="row">
-      <div class="col-lg-4 col-md-6 col-sm-6 w3layouts-service-list text-center">
-        <div class="white-shadow">
-          <div class="text-wls-ser-bake">
-            <span class="fas fa-book banner-icon" data-blast="color"></span>
-          </div>
-          <div class="ser-inner-info">
-            <h4 class="my-3">Lorem ipsum</h4>
-            <p>delectus reiciendis maiores alias consequatur aut.maiores alias</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 w3layouts-service-list text-center">
-        <div class="white-shadow">
-          <div class="text-wls-ser-bake">
-            <span class="fas fa-pencil-alt banner-icon" data-blast="color"></span>
-          </div>
-          <div class="ser-inner-info">
-            <h4 class="my-3">Lorem ipsum</h4>
-            <p>delectus reiciendis maiores alias consequatur aut.maiores alias</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 w3layouts-service-list text-center">
-        <div class="white-shadow">
-          <div class="text-wls-ser-bake">
-            <span class="fas fa-bookmark banner-icon" data-blast="color"></span>
-          </div>
-          <div class="ser-inner-info">
-            <h4 class="my-3">Lorem ipsum</h4>
-            <p>delectus reiciendis maiores alias consequatur aut.maiores alias</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 w3layouts-service-list text-center mt-md-4 mt-sm-3 mt-3">
-        <div class="white-shadow">
-          <div class="text-wls-ser-bake">
-            <span class="fas fa-address-book banner-icon" data-blast="color"></span>
-          </div>
-          <div class="ser-inner-info">
-            <h4 class="my-3">Lorem ipsum</h4>
-            <p>delectus reiciendis maiores alias consequatur aut.maiores alias</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 w3layouts-service-list text-center mt-md-4 mt-sm-3 mt-3">
-        <div class="white-shadow">
-          <div class="text-wls-ser-bake">
-            <span class="fas fa-graduation-cap banner-icon" data-blast="color"></span>
-          </div>
-          <div class="ser-inner-info">
-            <h4 class="my-3">Lorem ipsum</h4>
-            <p>delectus reiciendis maiores alias consequatur aut.maiores alias</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 w3layouts-service-list text-center mt-md-4 mt-sm-3 mt-3">
-        <div class="white-shadow">
-          <div class="text-wls-ser-bake">
-            <span class="fab fa-cloudscale banner-icon" data-blast="color"></span>
-          </div>
-          <div class="ser-inner-info">
-            <h4 class="my-3">Lorem ipsum</h4>
-            <p>delectus reiciendis maiores alias consequatur aut.maiores alias</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+<!--<section class="service py-lg-4 py-md-3 py-sm-3 py-3" id="service">-->
+  <!--<div class="container py-lg-5 py-md-5 py-sm-4 py-3">-->
+    <!--<h3 class="title clr text-center mb-lg-5 mb-md-4  mb-sm-4 mb-3">services</h3>-->
+    <!--<div class="row">-->
+      <!--<div class="col-lg-4 col-md-6 col-sm-6 w3layouts-service-list text-center">-->
+        <!--<div class="white-shadow">-->
+          <!--<div class="text-wls-ser-bake">-->
+            <!--<span class="fas fa-book banner-icon" data-blast="color"></span>-->
+          <!--</div>-->
+          <!--<div class="ser-inner-info">-->
+            <!--<h4 class="my-3">Lorem ipsum</h4>-->
+            <!--<p>delectus reiciendis maiores alias consequatur aut.maiores alias</p>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-lg-4 col-md-6 col-sm-6 w3layouts-service-list text-center">-->
+        <!--<div class="white-shadow">-->
+          <!--<div class="text-wls-ser-bake">-->
+            <!--<span class="fas fa-pencil-alt banner-icon" data-blast="color"></span>-->
+          <!--</div>-->
+          <!--<div class="ser-inner-info">-->
+            <!--<h4 class="my-3">Lorem ipsum</h4>-->
+            <!--<p>delectus reiciendis maiores alias consequatur aut.maiores alias</p>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-lg-4 col-md-6 col-sm-6 w3layouts-service-list text-center">-->
+        <!--<div class="white-shadow">-->
+          <!--<div class="text-wls-ser-bake">-->
+            <!--<span class="fas fa-bookmark banner-icon" data-blast="color"></span>-->
+          <!--</div>-->
+          <!--<div class="ser-inner-info">-->
+            <!--<h4 class="my-3">Lorem ipsum</h4>-->
+            <!--<p>delectus reiciendis maiores alias consequatur aut.maiores alias</p>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-lg-4 col-md-6 col-sm-6 w3layouts-service-list text-center mt-md-4 mt-sm-3 mt-3">-->
+        <!--<div class="white-shadow">-->
+          <!--<div class="text-wls-ser-bake">-->
+            <!--<span class="fas fa-address-book banner-icon" data-blast="color"></span>-->
+          <!--</div>-->
+          <!--<div class="ser-inner-info">-->
+            <!--<h4 class="my-3">Lorem ipsum</h4>-->
+            <!--<p>delectus reiciendis maiores alias consequatur aut.maiores alias</p>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-lg-4 col-md-6 col-sm-6 w3layouts-service-list text-center mt-md-4 mt-sm-3 mt-3">-->
+        <!--<div class="white-shadow">-->
+          <!--<div class="text-wls-ser-bake">-->
+            <!--<span class="fas fa-graduation-cap banner-icon" data-blast="color"></span>-->
+          <!--</div>-->
+          <!--<div class="ser-inner-info">-->
+            <!--<h4 class="my-3">Lorem ipsum</h4>-->
+            <!--<p>delectus reiciendis maiores alias consequatur aut.maiores alias</p>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-lg-4 col-md-6 col-sm-6 w3layouts-service-list text-center mt-md-4 mt-sm-3 mt-3">-->
+        <!--<div class="white-shadow">-->
+          <!--<div class="text-wls-ser-bake">-->
+            <!--<span class="fab fa-cloudscale banner-icon" data-blast="color"></span>-->
+          <!--</div>-->
+          <!--<div class="ser-inner-info">-->
+            <!--<h4 class="my-3">Lorem ipsum</h4>-->
+            <!--<p>delectus reiciendis maiores alias consequatur aut.maiores alias</p>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</section>-->
+
 <!--//service-->
 <!--blog -->
 <section class="blog py-lg-4 py-md-3 py-sm-3 py-3" id="blog">
@@ -428,8 +441,10 @@
             <h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color" th:text="${record.title}"></a></h4>
             <div class="news-date my-3">
               <ul>
+                <li><a  th:text="${record.userName}"></a></li>
                 <li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive" th:text="${#dates.format(record.createTime,'yyyy-MM-dd')}"></a></li>
-                <li><span class="far fa-comments"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive" th:text="${record.getBrowseNumber}"></a></li>
+                <li> <span class="fas fa-thumbs-up"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive" th:text="${record.getBrowseNumber}"></a></li>
+                <!--<span class="far fa-comments"></span>-->
               </ul>
             </div>
             <!--<p>复阿胶浆药物组:阿胶、桂圆、枸杞、枣、甘草、红糖、葡萄糖酸亚铁、参、熟黄、党参、山楂等临床治疗复阿胶浆具四功效:(1)骨髓造血系统保护作用升高白细胞白细胞减少症肿瘤细胞侵入骨髓、细胞类毒药物、放射线等能直接作用于骨髓抑制骨髓粒细胞引起复阿胶浆能预防、抗、减低细胞毒素骨髓造血系统损伤、保护造血干细胞裂与增白细胞明显增加放疗、化疗、药物、职业素及其原引起白细胞减少症显著疗效(2)促进造血系统功能显著补血作用复阿胶浆促进造血功能显著补血作用(3)增强免疫功能免疫功能低血虚症病见症状并易发呼吸消化道染、易冒、便血、尿血、牙龈血、流鼻血等复阿胶浆使机体内巨噬细胞吞噬功能提高倍增加体内免疫球蛋白数量使机体自身清除外侵病毒、细胞能力增强提高免疫力减少述疾病发(4)增强体力迅速消除疲劳复阿胶浆骨髓造血机能促进作用随着血色素提高全身各细胞供氧量增加疲劳耐受性增强 复阿胶浆具四功效服用复阿胶浆治疗气血两虚晕目眩悸失眠食欲振及白细胞减少症贫血</p>-->
@@ -995,7 +1010,7 @@
           <!--<input name="*{passWord}" th:field="*{passWord}"/>-->
           <input name="userName"/>
           <h2>密码：</h2>
-          <input name="passWord"/>
+          <input name="passWord" type="password"/>
           <a id="errorText" style="display: none;color: red">账号或密码不正确</a>
         </div>
 

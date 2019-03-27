@@ -60,7 +60,7 @@ public class ThymeleafController {
         public Object index(BusUserBean busUserBean){
                 ModelAndView modelAndView=new ModelAndView();
                 try {
-                        busUserBean.setUserId("1234561");
+//                        busUserBean.setUserId("1234561");
                         BusUserBean bean=busUserInterface.findUser(busUserBean);
                         List<DrugPostRecordBean> drugPostRecordBeanList=drugPostRecordInterface.findTopThreeRecord();
                         List<BusDrugDetailBean> busDrugDetailBeanList=busDrugDetailInterface.findAllBusDrug();
@@ -109,8 +109,10 @@ public class ThymeleafController {
                 try{
                         BusUserBean bean=busUserInterface.findUser(busUserBean);
                         List<DrugPostRecordBean> drugPostRecordBeanList=drugPostRecordInterface.findTopThreeRecord();
+                        List<BusDrugDetailBean> busDrugDetailBeanList=busDrugDetailInterface.findAllBusDrug();
                         modelAndView.addObject("user",bean);
                         modelAndView.addObject("drugPostRecordBeanList",drugPostRecordBeanList);
+                        modelAndView.addObject("busDrugDetailBeanList",busDrugDetailBeanList);
                         modelAndView.setViewName("thymeleaf/index");
                         LOGGER.info("ThymeleafController  loginForIndex  bean={}", JSONObject.toJSON(bean));
                 }catch (Exception e){

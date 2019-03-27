@@ -46,7 +46,7 @@ public class BusUserServiceImpl  extends BaseService implements BusUserInterface
         @Override
         public BusUserBean findUser(BusUserBean busUserBean) {
                 BusUser busUser=transferObjectIgnoreCase(busUserBean, BusUser.class);
-                BusUserBean bean=transferObjectIgnoreCase( busUserMapper.selectOne(busUser),BusUserBean.class);
+                BusUserBean bean=transferObjectIgnoreCase( busUserMapper.select(busUser),BusUserBean.class);
                 return bean;
         }
 }

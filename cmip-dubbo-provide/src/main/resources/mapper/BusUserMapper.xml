@@ -23,19 +23,21 @@
     <result column="job" jdbcType="INTEGER" property="job" />
     <result column="memberCode" jdbcType="INTEGER" property="memberCode" />
     <result column="role" jdbcType="INTEGER" property="role" />
-    <result column="crateTime" jdbcType="TIMESTAMP" property="crateTime" />
+    <result column="mail" jdbcType="VARCHAR" property="mail" />
+    <result column="passWord" jdbcType="VARCHAR" property="passWord" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
     <result column="lastModify" jdbcType="TIMESTAMP" property="lastModify" />
     <result column="logicalDeleted" jdbcType="BIT" property="logicalDeleted" />
   </resultMap>
 
   <!--<insert id="saveUser" parameterType="com.wwclr.provide.pojo.BusUser">-->
     <!--<![CDATA[-->
-<!--INSERT INTO bus_user  (userId,userName,phone,age,job,memberCode,role,crateTime,lastModify,logicalDeleted ) VALUES( #{userId},#{userName},#{phone},#{age},#{job},#{memberCode},#{role},#{crateTime},#{lastModify},#{logicalDeleted} )-->
+<!--INSERT INTO bus_user  (userId,userName,phone,age,job,memberCode,role,createTime,lastModify,logicalDeleted ) VALUES( #{userId},#{userName},#{phone},#{age},#{job},#{memberCode},#{role},#{crateTime},#{lastModify},#{logicalDeleted} )-->
 <!--]]>-->
 <!--</insert>-->
   <!--<select id="findAllUser" resultType="com.wwclr.provide.pojo.BusUser">-->
     <!--<![CDATA[-->
-     <!--SELECT userId,userName,phone,age,job,memberCode,role,crateTime,lastModify,logicalDeleted FROM  bus_user-->
+     <!--SELECT userId,userName,phone,age,job,memberCode,role,createTime,lastModify,logicalDeleted FROM  bus_user-->
      <!--]]>-->
   <!--</select>-->
 </mapper>
