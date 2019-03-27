@@ -40,4 +40,9 @@
      <!--SELECT userId,userName,phone,age,job,memberCode,role,createTime,lastModify,logicalDeleted FROM  bus_user-->
      <!--]]>-->
   <!--</select>-->
+  <select id="findUserByUserNameAndPassWord" resultType="com.wwclr.provide.pojo.BusUser" parameterType="com.wwclr.provide.pojo.BusUser">
+  <![CDATA[
+  SELECT * FROM  bus_user WHERE  userName=#{busUser.userName} AND  passWord=#{busUser.passWord}
+  ]]>
+  </select>
 </mapper>

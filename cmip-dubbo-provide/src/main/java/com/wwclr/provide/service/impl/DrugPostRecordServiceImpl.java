@@ -16,7 +16,6 @@ import java.util.List;
  * Created by wangwu on 2019/3/25.
  */
 @Service
-
 public class DrugPostRecordServiceImpl  extends BaseService implements DrugPostRecordInterface{
         private static final Logger LOGGER = LoggerFactory.getLogger(DrugPostRecordServiceImpl.class);
 

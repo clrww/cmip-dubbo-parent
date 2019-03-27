@@ -61,7 +61,7 @@ public class ThymeleafController {
                 ModelAndView modelAndView=new ModelAndView();
                 try {
 //                        busUserBean.setUserId("1234561");
-                        BusUserBean bean=busUserInterface.findUser(busUserBean);
+                        BusUserBean bean=busUserInterface.findUserByUserNameAndPassWord(busUserBean);
                         List<DrugPostRecordBean> drugPostRecordBeanList=drugPostRecordInterface.findTopThreeRecord();
                         List<BusDrugDetailBean> busDrugDetailBeanList=busDrugDetailInterface.findAllBusDrug();
                         modelAndView.addObject("user",bean);
@@ -84,7 +84,7 @@ public class ThymeleafController {
         public Object login(BusUserBean busUserBean){
                 try{
                         ModelAndView modelAndView=new ModelAndView();
-                        BusUserBean bean=busUserInterface.findUser(busUserBean);
+                        BusUserBean bean=busUserInterface.findUserByUserNameAndPassWord(busUserBean);
                         if(StringUtils.isEmpty(bean)){
                                 modelAndView.addObject("user",false);
 //                        modelAndView.setViewName("thymeleaf/index");
@@ -107,7 +107,7 @@ public class ThymeleafController {
         public Object loginForIndex(BusUserBean busUserBean){
                 ModelAndView modelAndView=new ModelAndView();
                 try{
-                        BusUserBean bean=busUserInterface.findUser(busUserBean);
+                        BusUserBean bean=busUserInterface.findUserByUserNameAndPassWord(busUserBean);
                         List<DrugPostRecordBean> drugPostRecordBeanList=drugPostRecordInterface.findTopThreeRecord();
                         List<BusDrugDetailBean> busDrugDetailBeanList=busDrugDetailInterface.findAllBusDrug();
                         modelAndView.addObject("user",bean);

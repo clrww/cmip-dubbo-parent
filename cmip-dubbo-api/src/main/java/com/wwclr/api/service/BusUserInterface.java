@@ -12,4 +12,5 @@ public interface BusUserInterface {
         public List<BusUserBean> findAllUser();
         public void deleteUser(BusUserBean busUserBean) ;
         public BusUserBean findUser(BusUserBean busUserBean);
+        public BusUserBean findUserByUserNameAndPassWord(BusUserBean busUserBean);
 }
