@@ -3,9 +3,11 @@ package com.wwclr.consumer.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSONObject;
 import com.wwclr.api.bean.BusDrugDetailBean;
+import com.wwclr.api.bean.BusMemberBean;
 import com.wwclr.api.bean.BusUserBean;
 import com.wwclr.api.bean.DrugPostRecordBean;
 import com.wwclr.api.service.BusDrugDetailInterface;
+import com.wwclr.api.service.BusMembersInterface;
 import com.wwclr.api.service.BusUserInterface;
 import com.wwclr.api.service.DrugPostRecordInterface;
 import com.wwclr.consumer.entity.Student;
@@ -36,6 +38,8 @@ public class ThymeleafController {
         DrugPostRecordInterface drugPostRecordInterface;
         @Reference
         BusDrugDetailInterface busDrugDetailInterface;
+        @Reference
+        BusMembersInterface busMembersInterface;
 
         @RequestMapping("/student")
         public String student(ModelMap modelMap){
@@ -60,15 +64,14 @@ public class ThymeleafController {
         public Object index(BusUserBean busUserBean){
                 ModelAndView modelAndView=new ModelAndView();
                 try {
-//                        busUserBean.setUserId("1234561");
-                        BusUserBean bean=busUserInterface.findUserByUserNameAndPassWord(busUserBean);
+//                        BusUserBean bean=busUserInterface.findUserByUserNameAndPassWord(busUserBean);
                         List<DrugPostRecordBean> drugPostRecordBeanList=drugPostRecordInterface.findTopThreeRecord();
                         List<BusDrugDetailBean> busDrugDetailBeanList=busDrugDetailInterface.findAllBusDrug();
-                        modelAndView.addObject("user",bean);
+//                        modelAndView.addObject("user",bean);
                         modelAndView.addObject("drugPostRecordBeanList",drugPostRecordBeanList);
                         modelAndView.addObject("busDrugDetailBeanList",busDrugDetailBeanList);
                         modelAndView.setViewName("thymeleaf/index");
-                        LOGGER.info("ThymeleafController  index  bean={}", JSONObject.toJSON(bean));
+//                        LOGGER.info("ThymeleafController  index  bean={}", JSONObject.toJSON(bean));
                 }catch (Exception e){
                         e.printStackTrace();
                 }
@@ -108,9 +111,13 @@ public class ThymeleafController {
                 ModelAndView modelAndView=new ModelAndView();
                 try{
                         BusUserBean bean=busUserInterface.findUserByUserNameAndPassWord(busUserBean);
+                        BusMemberBean busMemberBean=new BusMemberBean();
+                        busMemberBean.setUserId(bean.getUserId());
+                        busMemberBean=busMembersInterface.findMemberByUserId(busMemberBean);
                         List<DrugPostRecordBean> drugPostRecordBeanList=drugPostRecordInterface.findTopThreeRecord();
                         List<BusDrugDetailBean> busDrugDetailBeanList=busDrugDetailInterface.findAllBusDrug();
                         modelAndView.addObject("user",bean);
+                        modelAndView.addObject("busMemberBean",busMemberBean);
                         modelAndView.addObject("drugPostRecordBeanList",drugPostRecordBeanList);
                         modelAndView.addObject("busDrugDetailBeanList",busDrugDetailBeanList);
                         modelAndView.setViewName("thymeleaf/index");

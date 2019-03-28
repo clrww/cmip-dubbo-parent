@@ -75,7 +75,8 @@
   <div class="header-w3layouts">
     <div class="container">
       <div class="row headder-contact">
-        <div class="col-lg-6 col-md-7 col-sm-9 info-contact-agile">
+        <!--<div class="col-lg-6 col-md-7 col-sm-9 info-contact-agile">-->
+          <div class="col-lg-10 col-md-10 col-sm-10 info-contact-agile">
           <ul>
 
             <li th:if="${user}">
@@ -84,9 +85,17 @@
             </li>
 
             <li  th:unless="${user}">
-              <!--<span class="fas fa-mars-stroke-v"></span>-->
-              <!--<span class="fas fa-thumbs-up"></span>-->
                 <p><a href="#" data-toggle="modal" data-target="#loginModalLive" style="font-size: 20px">请登录</a></p>
+            </li>
+
+
+            <li th:if="${busMemberBean}">
+              <a th:switch="${busMemberBean.memberType}">
+                <p th:case="1" style="font-size: 20px">普通会员</p>
+                <p th:case="2" style="font-size: 20px">黄金会员</p>
+                <p th:case="3" style="font-size: 20px">钻石会员</p>
+                <p th:case="*">其他用户</p>
+              </a>
             </li>
 
             <li th:if="${user}">
@@ -647,88 +656,140 @@
 <!--Team-->
 <section class="team py-lg-4 py-md-3 py-sm-3 py-3" id="team">
   <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
-    <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Our Staff </h3>
+    <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">中药鼻祖</h3>
     <div class="row ">
+
+
+      <!--<div class="col-lg-3 col-md-6 col-sm-6 profile">-->
+        <!--<div class="team-shadow">-->
+          <!--<div class="img-box">-->
+            <!--<img src="../../static/images/t1.jpg" alt="">-->
+            <!--<div class="list-social-icons">-->
+              <!--<ul>-->
+                <!--<li><a href="#"><span class="fab fa-facebook-f"></span></a></li>-->
+                <!--<li><a href="#"><span class="fas fa-envelope"></span></a></li>-->
+                <!--<li><a href="#"><span class="fas fa-rss"></span></a></li>-->
+                <!--<li><a href="#"><span class="fab fa-vk"></span></a></li>-->
+              <!--</ul>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="team-w3layouts-info py-lg-4 py-3 text-center" data-blast="bgColor">-->
+            <!--<h4 class="text-white mb-2">黄帝</h4>-->
+            <!--<span class="wls-client-title text-black">针灸之祖</span>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
       <div class="col-lg-3 col-md-6 col-sm-6 profile">
         <div class="team-shadow">
           <div class="img-box">
-            <img src="../../static/images/t1.jpg" alt="">
+            <img src="../../static/images/bianque.jpg" alt="">
             <div class="list-social-icons">
-              <ul>
-                <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                <li><a href="#"><span class="fas fa-envelope"></span></a></li>
-                <li><a href="#"><span class="fas fa-rss"></span></a></li>
-                <li><a href="#"><span class="fab fa-vk"></span></a></li>
-              </ul>
+              <!--<ul>-->
+                <!--<li><a href="#"><span class="fab fa-facebook-f"></span></a></li>-->
+                <!--<li><a href="#"><span class="fas fa-envelope"></span></a></li>-->
+                <!--<li><a href="#"><span class="fas fa-rss"></span></a></li>-->
+                <!--<li><a href="#"><span class="fab fa-vk"></span></a></li>-->
+              <!--</ul>-->
             </div>
           </div>
           <div class="team-w3layouts-info py-lg-4 py-3 text-center" data-blast="bgColor">
-            <h4 class="text-white mb-2">Rox Will</h4>
-            <span class="wls-client-title text-black">Professor</span>
+            <h4 class="text-white mb-2">扁鹊</h4>
+            <span class="wls-client-title text-black">脉学之祖</span>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 profile">
-        <div class="team-shadow">
-          <div class="img-box">
-            <img src="../../static/images/t2.jpg" alt="">
-            <div class="list-social-icons">
-              <ul>
-                <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                <li><a href="#"><span class="fas fa-envelope"></span></a></li>
-                <li><a href="#"><span class="fas fa-rss"></span></a></li>
-                <li><a href="#"><span class="fab fa-vk"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="team-w3layouts-info py-lg-4 py-3 text-center" data-blast="bgColor">
-            <h4 class="text-white mb-2">Sam Doi</h4>
-            <span class="wls-client-title text-black">Professor</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 profile">
-        <div class="team-shadow">
-          <div class="img-box">
-            <div class="team-list-img">
-              <img src="../../static/images/t3.jpg" alt="">
-            </div>
-            <div class="list-social-icons">
-              <ul>
-                <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                <li><a href="#"><span class="fas fa-envelope"></span></a></li>
-                <li><a href="#"><span class="fas fa-rss"></span></a></li>
-                <li><a href="#"><span class="fab fa-vk"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="team-w3layouts-info py-lg-4 py-3 text-center" data-blast="bgColor">
-            <h4 class="text-white mb-2">Kent Kelly</h4>
-            <span class="wls-client-title text-black">Professor</span>
-          </div>
-        </div>
-      </div>
+
+
       <div class="col-lg-3 col-md-6 col-sm-6 profile">
         <div class="team-shadow">
           <div class="img-box">
             <div class="team-list-img">
-              <img src="../../static/images/t4.jpg" alt="">
+              <img src="../../static/images/huatuo.jpg" alt="">
             </div>
             <div class="list-social-icons">
-              <ul>
-                <li><a href="#"><span class="fab fa-facebook-f" ></span></a></li>
-                <li><a href="#"><span class="fas fa-envelope"></span></a></li>
-                <li><a href="#"><span class="fas fa-rss"></span></a></li>
-                <li><a href="#"><span class="fab fa-vk"></span></a></li>
-              </ul>
+              <!--<ul>-->
+                <!--<li><a href="#"><span class="fab fa-facebook-f"></span></a></li>-->
+                <!--<li><a href="#"><span class="fas fa-envelope"></span></a></li>-->
+                <!--<li><a href="#"><span class="fas fa-rss"></span></a></li>-->
+                <!--<li><a href="#"><span class="fab fa-vk"></span></a></li>-->
+              <!--</ul>-->
             </div>
           </div>
           <div class="team-w3layouts-info py-lg-4 py-3 text-center" data-blast="bgColor">
-            <h4 class="text-white mb-2">Kent Kelly</h4>
-            <span class="wls-client-title text-black">Professor</span>
+            <h4 class="text-white mb-2">华佗</h4>
+            <span class="wls-client-title text-black">外科之祖</span>
           </div>
         </div>
       </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6 profile">
+        <div class="team-shadow">
+          <div class="img-box">
+            <div class="team-list-img">
+              <img src="../../static/images/zhangzhongjing.jpg" alt="">
+            </div>
+            <div class="list-social-icons">
+              <!--<ul>-->
+                <!--<li><a href="#"><span class="fab fa-facebook-f" ></span></a></li>-->
+                <!--<li><a href="#"><span class="fas fa-envelope"></span></a></li>-->
+                <!--<li><a href="#"><span class="fas fa-rss"></span></a></li>-->
+                <!--<li><a href="#"><span class="fab fa-vk"></span></a></li>-->
+              <!--</ul>-->
+            </div>
+          </div>
+          <div class="team-w3layouts-info py-lg-4 py-3 text-center" data-blast="bgColor">
+            <h4 class="text-white mb-2">张仲景</h4>
+            <span class="wls-client-title text-black">医圣</span>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-3 col-md-6 col-sm-6 profile">
+        <div class="team-shadow">
+          <div class="img-box">
+            <div class="team-list-img">
+              <img src="../../static/images/sunsimiao.jpg" alt="">
+            </div>
+            <div class="list-social-icons">
+              <!--<ul>-->
+                <!--<li><a href="#"><span class="fab fa-facebook-f" ></span></a></li>-->
+                <!--<li><a href="#"><span class="fas fa-envelope"></span></a></li>-->
+                <!--<li><a href="#"><span class="fas fa-rss"></span></a></li>-->
+                <!--<li><a href="#"><span class="fab fa-vk"></span></a></li>-->
+              <!--</ul>-->
+            </div>
+          </div>
+          <div class="team-w3layouts-info py-lg-4 py-3 text-center" data-blast="bgColor">
+            <h4 class="text-white mb-2">孙思邈</h4>
+            <span class="wls-client-title text-black">药王</span>
+          </div>
+        </div>
+      </div>
+
+      <!--<div class="col-lg-3 col-md-6 col-sm-6 profile">-->
+        <!--<div class="team-shadow">-->
+          <!--<div class="img-box">-->
+            <!--<div class="team-list-img">-->
+              <!--<img src="../../static/images/t4.jpg" alt="">-->
+            <!--</div>-->
+            <!--<div class="list-social-icons">-->
+              <!--<ul>-->
+                <!--<li><a href="#"><span class="fab fa-facebook-f" ></span></a></li>-->
+                <!--<li><a href="#"><span class="fas fa-envelope"></span></a></li>-->
+                <!--<li><a href="#"><span class="fas fa-rss"></span></a></li>-->
+                <!--<li><a href="#"><span class="fab fa-vk"></span></a></li>-->
+              <!--</ul>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="team-w3layouts-info py-lg-4 py-3 text-center" data-blast="bgColor">-->
+            <!--<h4 class="text-white mb-2">李时珍</h4>-->
+            <!--<span class="wls-client-title text-black">药圣</span>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
     </div>
   </div>
 </section>

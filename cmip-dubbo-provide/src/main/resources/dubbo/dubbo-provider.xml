@@ -10,15 +10,25 @@
     <dubbo:application name="${dubbo.application.name}"/>
     <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}"/>
     <dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}"/>
+
+
     <dubbo:service interface="com.wwclr.api.service.DubboService" ref="dubboService"/>
     <bean id="dubboService" class="com.wwclr.provide.service.impl.DubboServiceImpl"/>
 
+    <!--用户信息-->
     <dubbo:service interface="com.wwclr.api.service.BusUserInterface" ref="busUserInterface"/>
     <bean id="busUserInterface" class="com.wwclr.provide.service.impl.BusUserServiceImpl"/>
 
+    <!--帖子博客信息-->
     <dubbo:service interface="com.wwclr.api.service.DrugPostRecordInterface" ref="drugPostRecordInterface"/>
     <bean id="drugPostRecordInterface" class="com.wwclr.provide.service.impl.DrugPostRecordServiceImpl"/>
 
+    <!--药品详细信息-->
     <dubbo:service interface="com.wwclr.api.service.BusDrugDetailInterface" ref="busDrugDetailInterface"/>
     <bean id="busDrugDetailInterface" class="com.wwclr.provide.service.impl.DrugPostRecordServiceImpl"/>
+
+    <!--会员信息-->
+    <dubbo:service interface="com.wwclr.api.service.BusMembersInterface" ref="busMembersImpl"/>
+    <bean id="busMembersImpl" class="com.wwclr.provide.service.impl.BusMembersImpl"/>
+
 </beans>

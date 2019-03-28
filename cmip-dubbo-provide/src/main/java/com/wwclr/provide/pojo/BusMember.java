@@ -1,59 +1,69 @@
 package com.wwclr.provide.pojo;
 
+import javax.persistence.Column;
 import javax.persistence.Table;
 import java.util.Date;
 
 @Table(name = "bus_members")
-public class BusMembers {
+public class BusMember {
     /**
      * 自增主键
      */
-    private Integer id;
+    public Integer id;
 
     /**
      * 会员卡号
      */
-    private String memberCode;
+    @Column(name = "memberCode")
+    public String memberCode;
 
     /**
      * 会员userId
      */
-    private String userId;
+    @Column(name = "userId")
+    public String userId;
 
     /**
      * 会员名称
      */
-    private String userName;
+    @Column(name = "userName")
+    public String userName;
 
     /**
      * (1： 普通会员,2： 黄金会员,3： 钻石会员)
      */
-    private Integer memberType;
+    @Column(name = "memberType")
+    public Integer memberType;
 
     /**
      * 会员生效时间
      */
-    private Date effectTime;
+    @Column(name = "effectTime")
+    public Date effectTime;
 
     /**
      * 会员失效时间
      */
-    private Date failureTime;
+    @Column(name = "failureTime")
+    public Date failureTime;
 
     /**
      * 创建时间
      */
-    private Date crateTime;
+    @Column(name = "createTime")
+    public Date createTime;
 
     /**
      * 最后修改时间
      */
-    private Date lastModify;
+    @Column(name = "lastModify")
+    public Date lastModify;
 
     /**
      * 数据状态 (0： 逻辑删除， 1： 正常)
      */
-    private Boolean logicalDeleted;
+    @Column(name = "logicalDeleted")
+    public Boolean logicalDeleted;
 
     /**
      * 获取自增主键
@@ -184,19 +194,19 @@ public class BusMembers {
     /**
      * 获取创建时间
      *
-     * @return crateTime - 创建时间
+     * @return createTime - 创建时间
      */
-    public Date getCrateTime() {
-        return crateTime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
     /**
      * 设置创建时间
      *
-     * @param crateTime 创建时间
+     * @param createTime 创建时间
      */
-    public void setCrateTime(Date crateTime) {
-        this.crateTime = crateTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     /**
