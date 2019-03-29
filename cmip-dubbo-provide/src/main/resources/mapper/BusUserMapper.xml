@@ -45,4 +45,10 @@
   SELECT * FROM  bus_user WHERE  userName=#{busUser.userName} AND  passWord=#{busUser.passWord}
   ]]>
   </select>
+
+  <select id="findUserByUserName" resultType="com.wwclr.provide.pojo.BusUser" parameterType="com.wwclr.provide.pojo.BusUser">
+    <![CDATA[
+  SELECT * FROM  bus_user WHERE  userName=#{busUser.userName}
+  ]]>
+  </select>
 </mapper>

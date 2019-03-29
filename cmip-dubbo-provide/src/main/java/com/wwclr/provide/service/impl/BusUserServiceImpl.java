@@ -24,10 +24,10 @@ public class BusUserServiceImpl  extends BaseService implements BusUserInterface
         @Autowired
        private BusUserMapper busUserMapper;
         @Override
-        public void saveUser(BusUserBean busUserBean) {
+        public Integer saveUser(BusUserBean busUserBean) {
                  BusUser busUser=transferObjectIgnoreCase(busUserBean,BusUser.class);
                 LOGGER.info("BusUserServiceImpl  saveUser ={}", JSONObject.toJSON(busUser));
-                busUserMapper.insert(busUser);
+                return busUserMapper.insert(busUser);
         }
 
         @Override
@@ -55,6 +55,14 @@ public class BusUserServiceImpl  extends BaseService implements BusUserInterface
     public BusUserBean findUserByUserNameAndPassWord(BusUserBean busUserBean) {
         BusUser busUser=transferObjectIgnoreCase(busUserBean, BusUser.class);
         BusUser busUser1= (BusUser)busUserMapper.findUserByUserNameAndPassWord(busUser);
+        BusUserBean bean=transferObjectIgnoreCase(busUser1,BusUserBean.class);
+        return bean;
+    }
+
+    @Override
+    public BusUserBean findUserByUserName(BusUserBean busUserBean) {
+        BusUser busUser=transferObjectIgnoreCase(busUserBean, BusUser.class);
+        BusUser busUser1= (BusUser)busUserMapper.findUserByUserName(busUser);
         BusUserBean bean=transferObjectIgnoreCase(busUser1,BusUserBean.class);
         return bean;
     }
