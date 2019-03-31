@@ -8,7 +8,7 @@ import java.util.List;
  * Created by wangwu on 2019/3/18.
  */
 public interface BusUserInterface {
-        public Integer saveUser(BusUserBean busUserBean);
+        public void saveUser(BusUserBean busUserBean);
         public List<BusUserBean> findAllUser();
         public void deleteUser(BusUserBean busUserBean) ;
         public BusUserBean findUser(BusUserBean busUserBean);

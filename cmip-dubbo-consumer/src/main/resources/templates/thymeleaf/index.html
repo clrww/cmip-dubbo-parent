@@ -33,30 +33,6 @@
 <body>
 <!--<h1 th:text="${name}"></h1>-->
 
-<!--<div class="mytest">-->
-  <!--<input th:id="${student.name}"  th:name="${student.name}" th:value="${student.name}"/>-->
-  <!--<input th:value="${student.userId}"/>-->
-  <!--<input th:value="${student.age}"/>-->
-  <!--<input th:value="${#dates.format(student.birthday,'yyyy-MM-dd')}"/>-->
-<!--</div>-->
-<!--<div th:object="${student}">-->
-<!--<input th:id="*{name}"  th:name="*{name}" th:value="*{name}"/>-->
-<!--<input th:value="*{userId}"/>-->
-<!--<input th:value="*{age}"/>-->
-<!--<input th:value="*{#dates.format(birthday,'yyyy-MM-dd')}"/>-->
-<!--</div>-->
-<!--<table>-->
-  <!--<tr>-->
-    <!--<th>姓名</th>-->
-    <!--<th>年龄</th>-->
-    <!--<th>生日</th>-->
-  <!--</tr>-->
-  <!--<tr th:each="person:${userList}">-->
-    <!--<td th:text="${person.userName}"></td>-->
-    <!--<td th:text="${person.age}"></td>-->
-    <!--<td th:text="${#dates.format(person.crateTime,'yyyy-MM-dd')}"/>-->
-  <!--</tr>-->
-<!--</table>-->
 <div class="blast-box">
   <div class="blast-icon"><span class="fas fa-tint"></span></div>
   <div class="blast-frame">
@@ -76,7 +52,7 @@
     <div class="container">
       <div class="row headder-contact">
         <!--<div class="col-lg-6 col-md-7 col-sm-9 info-contact-agile">-->
-          <div class="col-lg-10 col-md-10 col-sm-10 info-contact-agile">
+          <div class="col-lg-12 col-md-12 col-sm-12 info-contact-agile">
           <ul>
 
             <li th:if="${user}">
@@ -91,12 +67,17 @@
 
             <li th:if="${busMemberBean}">
               <a th:switch="${busMemberBean.memberType}">
-                <p th:case="1" style="font-size: 20px">普通会员</p>
+                <p th:case="0" style="font-size: 20px">普通用户</p>
+                <p th:case="1" style="font-size: 20px">白银会员</p>
                 <p th:case="2" style="font-size: 20px">黄金会员</p>
                 <p th:case="3" style="font-size: 20px">钻石会员</p>
-                <p th:case="*">其他用户</p>
               </a>
             </li>
+
+
+
+
+
 
             <li th:if="${user}">
               <span class="fas fa-phone-volume" style="font-size: 20px"></span>
@@ -105,22 +86,22 @@
 
             <li th:if="${user}">
               <span class="fas fa-envelope" style="font-size: 20px"></span>
-              <!--<p><a href="mailto:15868859893@163.com">15868859893@163.com</a></p>-->
               <p><a href="mailto:888888@163.com" th:text="${user.mail}" style="font-size: 20px"></a></p>
             </li>
 
-            <li>
+            <li th:if="${user}" style="float: right">
+              <p><a th:href="@{/th/index}"   style="font-size: 20px;">退出</a></p>
             </li>
           </ul>
         </div>
 
         <!--<div class="col-lg-6 col-md-5 col-sm-3 icons px-0">-->
           <!--<ul>-->
-            <!--<li><a href="#"><span class="fab fa-facebook-f"></span></a></li>-->
-            <!--<li><a href="#"><span class="fas fa-envelope"></span></a></li>-->
-            <!--<li><a href="#"><span class="fas fa-rss"></span></a></li>-->
-            <!--<li><a href="#"><span class="fab fa-twitter"></span></a></li>-->
-            <!--<li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>-->
+            <!--&lt;!&ndash;<li><a href="#"><span class="fab fa-facebook-f"></span></a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="#"><span class="fas fa-envelope"></span></a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="#"><span class="fas fa-rss"></span></a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="#"><span class="fab fa-twitter"></span></a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>&ndash;&gt;-->
           <!--</ul>-->
         <!--</div>-->
 
@@ -137,22 +118,22 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul class="navbar-nav ">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.html">主页<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a href="#about" class="nav-link scroll" >About</a>
+              <a href="#about" class="nav-link scroll" >关于</a>
             </li>
             <li class="nav-item">
-              <a href="#blog" class="nav-link scroll">Blog</a>
+              <a href="#blog" class="nav-link scroll">博客</a>
             </li>
             <li class="nav-item">
-              <a href="#team" class="nav-link scroll">Team</a>
+              <a href="#team" class="nav-link scroll">名人</a>
             </li>
             <li class="nav-item">
-              <a href="#stats" class="nav-link scroll">Stats</a>
+              <a href="#statistic" class="nav-link scroll">统计</a>
             </li>
             <li class="nav-item">
-              <a href="#contact" class="nav-link scroll">Contact</a>
+              <a href="#contact" class="nav-link scroll">注册</a>
             </li>
           </ul>
         </div>
@@ -175,7 +156,7 @@
                 <p>适合中老年人，益气补血
                 </p>
                 <div class="outs_more-buttn" >
-                  <a href="#" data-toggle="modal" data-target="#loginModalLive" data-blast="bgColor">More1</a>
+                  <a href="#" data-toggle="modal" data-target="#more1ModalLive" data-blast="bgColor">更多</a>
                 </div>
               </div>
             </div>
@@ -190,7 +171,7 @@
                 <p>多味中草药，调出好身体
                 </p>
                 <div class="outs_more-buttn">
-                  <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More2</a>
+                  <a href="#" data-toggle="modal" data-target="#more2ModalLive" data-blast="bgColor">更多</a>
                 </div>
               </div>
             </div>
@@ -205,7 +186,7 @@
                 <p>好药材，制好药
                 </p>
                 <div class="outs_more-buttn">
-                  <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More3</a>
+                  <a href="#" data-toggle="modal" data-target="#more3ModalLive" data-blast="bgColor">更多</a>
                 </div>
               </div>
             </div>
@@ -590,23 +571,31 @@
 </section>
 <!--//blog -->
 <!--Subscribe-->
-<section class="py-md-5 py-sm-4 py-3">
+<section class="py-md-5 py-sm-4 py-3" id="statistic">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 col-md-6 subscrib-w3layouts text-center">
-        <h2 data-blast="color">联系我们</h2>
+
+      <div class="col-lg-12 col-md-12 subscrib-w3layouts text-center">
+        <!--<h2 data-blast="color">统计数据</h2>-->
+        <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">统计数据</h3>
       </div>
-      <div class="col-lg-6 col-md-6">
-        <div class="newsletter">
-          <form action="#" method="post" class="d-flex">
-            <input type="email" class="form-control" placeholder="Your Email" required="">
-            <button class="btn1">
-              <span class="far fa-envelope"></span>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
+
+      <!--<div class="col-lg-6 col-md-6 subscrib-w3layouts text-center">-->
+        <!--<h2 data-blast="color">统计数据</h2>-->
+      <!--</div>-->
+      <!--<div class="col-lg-6 col-md-6">-->
+        <!--<div class="newsletter">-->
+          <!--<form action="#" method="post" class="d-flex">-->
+            <!--<input type="email" class="form-control" placeholder="Your Email" required="">-->
+            <!--<button class="btn1">-->
+              <!--<span class="far fa-envelope"></span>-->
+            <!--</button>-->
+          <!--</form>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+  </div>
   </div>
 </section>
 <!--//Subscribe-->
@@ -803,24 +792,24 @@
         <div class="addres-office-hour text-center" >
           <ul>
             <li class="mb-2">
-              <h6 data-blast="color">Address</h6>
+              <h6 data-blast="color">地址</h6>
             </li>
             <li>
-              <p>Melbourne,south Brisbane,<br>QLD 4101,Aurstralia.</p>
+              <p>浙江省杭州市浙江中医药大学</p>
             </li>
           </ul>
           <ul>
             <li class="mt-lg-4 mt-3">
-              <h6 data-blast="color">Phone</h6>
+              <h6 data-blast="color">电话</h6>
             </li>
             <li class="mt-2">
-              <p>+ 1 (234) 567 8901</p>
+              <p>15868859893</p>
             </li>
             <li class="mt-lg-4 mt-3">
-              <h6 data-blast="color">Email</h6>
+              <h6 data-blast="color">邮箱</h6>
             </li>
             <li class="mt-2">
-              <p><a href="mailto:info@example.com">info@example.com</a></p>
+              <p><a href="mailto:info@example.com">15868859893@163.com</a></p>
             </li>
           </ul>
         </div>
@@ -829,13 +818,29 @@
       <div class="col-md-7 contact-form">
         <form th:action="@{/th/registerPage}"  id="registerform"  th:method="post">
           <div class="row text-center contact-wls-detail">
-            <div class="col-md-6 form-group contact-forms">
-              <input type="text" class="form-control" name="userName" placeholder="用户名" required="">
-            </div>
-            <div class="col-md-6 form-group contact-forms">
-              <input type="email" class="form-control" name="mail" placeholder="邮箱" required="">
-            </div>
+          <div class="col-md-6 form-group contact-forms">
+            <input type="text" class="form-control" name="userName" placeholder="用户名" required="">
           </div>
+          <div class="col-md-6 form-group contact-forms">
+            <input type="email" class="form-control" name="mail" placeholder="邮箱" required="">
+          </div>
+        </div>
+
+          <div class="row text-center contact-wls-detail">
+            <div class="col-md-6 form-group contact-forms">
+              <input type="text"  name="phone" placeholder="手机号" >
+            </div>
+            <div class="col-md-6 form-group contact-forms">
+              <select name="job">
+                <option value="0">职业</option>
+                <option value="1">程序猿</option>
+                <option value="2">攻城狮</option>
+                <option value="3">其它</option>
+              </select>
+            </div>
+
+          </div>
+
           <div class="form-group contact-forms">
             <input type="password" class="form-control" name="passWord" placeholder="密码" required="">
           </div>
@@ -858,130 +863,190 @@
   <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
     <div class="row ">
       <div class="dance-agile-info col-lg-3 col-md-6 col-sm-6">
-        <h4 class="pb-lg-3 pb-3" data-blast="color">Blog</h4>
-        <div class="footer-grid row mb-3">
+        <h4 class="pb-lg-3 pb-3" data-blast="color">热门博客</h4>
+
+
+        <!--<div class="col-lg-4 col-md-6 col-sm-6 blog-grid-flex" th:each="record:${drugPostRecordBeanList}">-->
+          <!--<div class="clients-color">-->
+            <!--<img th:src="${record.imageUrl}" class="img-fluid" alt="">-->
+            <!--<div class="blog-txt-info">-->
+              <!--<h4 class="mt-2"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color" th:text="${record.title}"></a></h4>-->
+              <!--<div class="news-date my-3">-->
+                <!--<ul>-->
+                  <!--<li><a  th:text="${record.userName}"></a></li>-->
+                  <!--<li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive" th:text="${#dates.format(record.createTime,'yyyy-MM-dd')}"></a></li>-->
+                  <!--<li> <span class="fas fa-thumbs-up"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive" th:text="${record.getBrowseNumber}"></a></li>-->
+                  <!--&lt;!&ndash;<span class="far fa-comments"></span>&ndash;&gt;-->
+                <!--</ul>-->
+              <!--</div>-->
+              <!--&lt;!&ndash;<p>复阿胶浆药物组:阿胶、桂圆、枸杞、枣、甘草、红糖、葡萄糖酸亚铁、参、熟黄、党参、山楂等临床治疗复阿胶浆具四功效:(1)骨髓造血系统保护作用升高白细胞白细胞减少症肿瘤细胞侵入骨髓、细胞类毒药物、放射线等能直接作用于骨髓抑制骨髓粒细胞引起复阿胶浆能预防、抗、减低细胞毒素骨髓造血系统损伤、保护造血干细胞裂与增白细胞明显增加放疗、化疗、药物、职业素及其原引起白细胞减少症显著疗效(2)促进造血系统功能显著补血作用复阿胶浆促进造血功能显著补血作用(3)增强免疫功能免疫功能低血虚症病见症状并易发呼吸消化道染、易冒、便血、尿血、牙龈血、流鼻血等复阿胶浆使机体内巨噬细胞吞噬功能提高倍增加体内免疫球蛋白数量使机体自身清除外侵病毒、细胞能力增强提高免疫力减少述疾病发(4)增强体力迅速消除疲劳复阿胶浆骨髓造血机能促进作用随着血色素提高全身各细胞供氧量增加疲劳耐受性增强 复阿胶浆具四功效服用复阿胶浆治疗气血两虚晕目眩悸失眠食欲振及白细胞减少症贫血</p>&ndash;&gt;-->
+              <!--<p th:text="${record.shortDescribe}"></p>-->
+
+              <!--<div class="outs_more-buttn" >-->
+                <!--<a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+
+        <div class="footer-grid row mb-3" th:each="record:${drugPostRecordBeanList}">
           <div class="col-lg-5 col-md-6 col-sm-6 col-5">
-            <img src="../../static/images/bb1.jpg" alt=" " class="img-fluid">
+            <img th:src="${record.imageUrl}" alt=" " class="img-fluid">
           </div>
           <div class="col-lg-7 col-md-6 col-sm-6 col-7 bottom-para px-0">
-            <h6><a href="#" data-toggle="modal" data-target="#exampleModalLive">ultricies nec,pellen eu,pretium quis,</a></h6>
+            <h6><a href="#" data-toggle="modal" data-target="#exampleModalLivexxxxx" th:text="${record.title}"></a></h6>
             <div class="news-bloger">
               <ul>
-                <li class="mr-1"><a href="#about" class="scroll" data-blast="color">12/4/2019</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">3 Tags</a></li>
+                <li><a  th:text="${record.userName}"></a></li>
+                <br>
+                <li class="mr-1"><a href="#about" class="scroll" data-blast="color" th:text="${#dates.format(record.createTime,'yyyy-MM-dd')}"></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color" th:text="${record.getBrowseNumber}"></a></li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="footer-grid row mb-3">
-          <div class="col-lg-5 col-md-6 col-sm-6 col-5">
-            <img src="../../static/images/bb2.jpg" alt=" " class="img-fluid">
-          </div>
-          <div class="col-lg-7 col-md-6 col-sm-6 col-7 bottom-para px-0">
-            <h6><a href="#" data-toggle="modal" data-target="#exampleModalLive">ultricies nec,pellen eu,pretium quis,</a></h6>
-            <div class="news-bloger">
-              <ul>
-                <li class="mr-1"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">12/4/2019</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">3 Tags</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="footer-grid row">
-          <div class="col-lg-5 col-md-6 col-sm-6 col-5">
-            <img src="../../static/images/bb3.jpg" alt=" " class="img-fluid">
-          </div>
-          <div class="col-lg-7 col-md-6 col-sm-6 col-7 bottom-para px-0">
-            <h6><a href="#" data-toggle="modal" data-target="#exampleModalLive">ultricies nec,pellen eu,pretium quis,</a></h6>
-            <div class="news-bloger">
-              <ul>
-                <li class="mr-1"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">12/4/2019</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">3 Tags</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+
+
+        <!--<div class="footer-grid row mb-3">-->
+          <!--<div class="col-lg-5 col-md-6 col-sm-6 col-5">-->
+            <!--<img src="../../static/images/bb1.jpg" alt=" " class="img-fluid">-->
+          <!--</div>-->
+          <!--<div class="col-lg-7 col-md-6 col-sm-6 col-7 bottom-para px-0">-->
+            <!--<h6><a href="#" data-toggle="modal" data-target="#exampleModalLive">ultricies nec,pellen eu,pretium quis,</a></h6>-->
+            <!--<div class="news-bloger">-->
+              <!--<ul>-->
+                <!--<li class="mr-1"><a href="#about" class="scroll" data-blast="color">12/4/2019</a></li>-->
+                <!--<li><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">3 Tags</a></li>-->
+              <!--</ul>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!---->
+        <!--<div class="footer-grid row mb-3">-->
+          <!--<div class="col-lg-5 col-md-6 col-sm-6 col-5">-->
+            <!--<img src="../../static/images/bb2.jpg" alt=" " class="img-fluid">-->
+          <!--</div>-->
+          <!--<div class="col-lg-7 col-md-6 col-sm-6 col-7 bottom-para px-0">-->
+            <!--<h6><a href="#" data-toggle="modal" data-target="#exampleModalLive">ultricies nec,pellen eu,pretium quis,</a></h6>-->
+            <!--<div class="news-bloger">-->
+              <!--<ul>-->
+                <!--<li class="mr-1"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">12/4/2019</a></li>-->
+                <!--<li><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">3 Tags</a></li>-->
+              <!--</ul>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!---->
+        <!---->
+        <!--<div class="footer-grid row">-->
+          <!--<div class="col-lg-5 col-md-6 col-sm-6 col-5">-->
+            <!--<img src="../../static/images/bb3.jpg" alt=" " class="img-fluid">-->
+          <!--</div>-->
+          <!--<div class="col-lg-7 col-md-6 col-sm-6 col-7 bottom-para px-0">-->
+            <!--<h6><a href="#" data-toggle="modal" data-target="#exampleModalLive">ultricies nec,pellen eu,pretium quis,</a></h6>-->
+            <!--<div class="news-bloger">-->
+              <!--<ul>-->
+                <!--<li class="mr-1"><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">12/4/2019</a></li>-->
+                <!--<li><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color">3 Tags</a></li>-->
+              <!--</ul>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
       </div>
+
+
       <div class="dance-agile-info col-lg-3 col-md-6 col-sm-6">
-        <h4 class="pb-lg-4 pb-md-3 pb-3 text-uppercase" data-blast="color">Contact Us</h4>
-        <div class="address_mail_footer_grids">
-          <iframe src=""></iframe>
-        </div>
-      </div>
-      <div class="dance-agile-info col-lg-3 col-md-6 col-sm-6">
-        <h4 class="pb-lg-4 pb-md-3 pb-3 text-uppercase" data-blast="color">Twitter Us</h4>
+        <h4 class="pb-lg-4 pb-md-3 pb-3 text-uppercase" data-blast="color">关于我们</h4>
         <div class="footer-office-hour">
           <ul>
             <li>
-              <p>sit amet consectetur adipiscing</p>
+              <p>我们只是中医药的爱好者，如果你也是，可以加入我们哦</p>
             </li>
-            <li class="my-1">
-              <p><a href="mailto:info@example.com" data-blast="color">http://example.com</a> sit amet</p>
-            </li>
-            <li class="mb-lg-4 mb-md-3 mb-3"><span>Posted 3 days ago.</span></li>
-            <li>
-              <p>sit amet consectetur adipiscing</p>
-            </li>
-            <li class="my-1">
-              <p><a href="mailto:info@example.com" data-blast="color">http://mail.com</a> sit amet</p>
-            </li>
-            <li><span>Posted 3 days ago.</span></li>
           </ul>
         </div>
       </div>
+
+
       <div class="dance-agile-info col-lg-3 col-md-6 col-sm-6">
-        <h4 class="pb-lg-3 pb-3" data-blast="color">Our Posts</h4>
+        <h4 class="pb-lg-4 pb-md-3 pb-3 text-uppercase" data-blast="color">联系我们</h4>
+        <div class="footer-office-hour">
+          <ul>
+            <li>
+              <p>如果您对我们网站有任何好的建议</p>
+            </li>
+            <li class="my-1">
+              <p><a href="mailto:info@example.com" data-blast="color">电话:</a>15868859893</p>
+            </li>
+            <li class="mb-lg-4 mb-md-3 mb-3"><span>24小时在线</span></li>
+            <li>
+              <p>如果您有好的素材需要投稿</p>
+            </li>
+            <li class="my-1">
+              <p><a href="mailto:info@example.com" data-blast="color">邮箱:</a>15868859893@163.com</p>
+            </li>
+            <li><span>三天内回复</span></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="dance-agile-info col-lg-3 col-md-6 col-sm-6">
+        <h4 class="pb-lg-3 pb-3" data-blast="color">照片墙</h4>
         <div class="footer-post d-flex mb-2">
           <div class="agileinfo_footer_grid1 mr-2">
             <a href="#blog" class=" scroll">
-              <img src="../../static/images/f1.jpg" alt=" " class="img-fluid">
+              <img src="../../static/images/lianzi.jpg" alt=" " class="img-fluid">
             </a>
           </div>
           <div class="agileinfo_footer_grid1 mr-2">
             <a href="#blog" class="scroll">
-              <img src="../../static/images/f2.jpg" alt=" " class="img-fluid">
+              <img src="../../static/images/jiake.jpg" alt=" " class="img-fluid">
             </a>
           </div>
           <div class="agileinfo_footer_grid1">
             <a href="#blog" class="scroll">
-              <img src="../../static/images/f3.jpg" alt=" " class="img-fluid">
+              <img src="../../static/images/liuhuang.jpg" alt=" " class="img-fluid">
             </a>
           </div>
         </div>
         <div class="footer-post d-flex mb-2">
           <div class="agileinfo_footer_grid1 mr-2">
             <a href="#blog" class="scroll">
-              <img src="../../static/images/f3.jpg" alt=" " class="img-fluid">
+              <img src="../../static/images/ajiao.jpg" alt=" " class="img-fluid">
             </a>
           </div>
           <div class="agileinfo_footer_grid1 mr-2">
             <a href="#blog" class=" scroll">
-              <img src="../../static/images/f2.jpg" alt=" " class="img-fluid">
+              <img src="../../static/images/zhongandxi.jpg" alt=" " class="img-fluid">
             </a>
           </div>
           <div class="agileinfo_footer_grid1">
             <a href="#blog" class=" scroll">
-              <img src="../../static/images/f1.jpg" alt=" " class="img-fluid">
+              <img src="../../static/images/100zhong2.jpg" alt=" " class="img-fluid">
             </a>
           </div>
         </div>
-        <div class="footer-post d-flex">
-          <div class="agileinfo_footer_grid1 mr-2">
-            <a href="#blog" class="scroll">
-              <img src="../../static/images/f2.jpg" alt=" " class="img-fluid">
-            </a>
-          </div>
-          <div class="agileinfo_footer_grid1 mr-2">
-            <a href="#blog" class=" scroll">
-              <img src="../../static/images/f3.jpg" alt=" " class="img-fluid">
-            </a>
-          </div>
-          <div class="agileinfo_footer_grid1">
-            <a href="#blog" class=" scroll">
-              <img src="../../static/images/f1.jpg" alt=" " class="img-fluid">
-            </a>
-          </div>
-        </div>
+
+        <!--<div class="footer-post d-flex">-->
+          <!--<div class="agileinfo_footer_grid1 mr-2">-->
+            <!--<a href="#blog" class="scroll">-->
+              <!--<img src="../../static/images/f2.jpg" alt=" " class="img-fluid">-->
+            <!--</a>-->
+          <!--</div>-->
+          <!--<div class="agileinfo_footer_grid1 mr-2">-->
+            <!--<a href="#blog" class=" scroll">-->
+              <!--<img src="../../static/images/f3.jpg" alt=" " class="img-fluid">-->
+            <!--</a>-->
+          <!--</div>-->
+          <!--<div class="agileinfo_footer_grid1">-->
+            <!--<a href="#blog" class=" scroll">-->
+              <!--<img src="../../static/images/f1.jpg" alt=" " class="img-fluid">-->
+            <!--</a>-->
+          <!--</div>-->
+        <!--</div>-->
+
+
       </div>
     </div>
   </div>
@@ -992,19 +1057,19 @@
       <nav class="border-line py-2">
         <ul class="nav justify-content-center">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index.html">首页<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a href="#about" class="nav-link scroll">About</a>
+            <a href="#about" class="nav-link scroll">关于</a>
+          </li>
+          <!--<li class="nav-item">-->
+            <!--<a href="#service" class="nav-link scroll">Services</a>-->
+          <!--</li>-->
+          <li class="nav-item">
+            <a href="#blog" class="nav-link scroll">博客</a>
           </li>
           <li class="nav-item">
-            <a href="#service" class="nav-link scroll">Services</a>
-          </li>
-          <li class="nav-item">
-            <a href="#blog" class="nav-link scroll">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a href="#contact" class="nav-link scroll">Contact</a>
+            <a href="#contact" class="nav-link scroll">注册</a>
           </li>
         </ul>
       </nav>
@@ -1016,19 +1081,21 @@
     <div class="copy-agile-right text-center">
       <div class="list-social-icons text-center py-lg-4 py-md-3 py-3">
         <ul>
-          <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-          <li><a href="#"><span class="fas fa-envelope"></span></a></li>
-          <li><a href="#"><span class="fas fa-rss"></span></a></li>
-          <li><a href="#"><span class="fab fa-vk"></span></a></li>
+          <!--<li><a href="#"><span class="fab fa-facebook-f"></span></a></li>-->
+          <!--<li><a href="#"><span class="fas fa-envelope"></span></a></li>-->
+          <!--<li><a href="#"><span class="fas fa-rss"></span></a></li>-->
+          <!--<li><a href="#"><span class="fab fa-vk"></span></a></li>-->
         </ul>
       </div>
       <p>
-        Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
+        <!--Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>-->
+        Copyright &copy; 2019.Design By ChengXiaoJuan
       </p>
     </div>
   </div>
 </footer>
 <!--//footer-->
+
 <!--model-->
 <div id="exampleModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -1052,7 +1119,83 @@
     </div>
   </div>
 </div>
-  <!--登陆模态框-->
+
+<!--人参model-->
+<div id="more1ModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="more1ModalLiveLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="more1ModalLiveLabel" data-blast="color">人参</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="../../static/images/b4444.jpg" alt="" class="img-fluid">
+        <p>人参为多年生草本植物，喜阴凉，叶片无气孔和栅栏组织，无法保留水分，温度高于32度叶片会灼伤，郁闭度0.7-0.8。通常3年开花，5-6年结果，花期5-6月，果期6-9月。生长于北纬33度-48度之间的海拔数百米的以红松为主的针阔混交林或落叶阔叶林下，产于中国东北、朝鲜、韩国、日本、俄罗斯东部。人参的别称为黄参、地精、神草、百草之王，是闻名遐迩的"东北三宝"之一。
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--当归枸杞龙葵model-->
+<div id="more2ModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="more2ModalLiveLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="more2ModalLiveLabel" data-blast="color">当归枸杞龙葵</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="../../static/images/b22.jpg" alt="" class="img-fluid">
+        <p>
+          当归：其根可入药，是最常用的中药之一。具有补血和血，调经止痛，润燥滑肠、抗癌、抗老防老、免疫之功效
+          枸杞：枸杞子:养肝，滋肾，润肺。枸杞叶:补虚益精，清热明目。
+          龙葵：浆果和叶子均可食用，但叶子含有大量生物碱，须经煮熟后方可解毒。全株入药，可散瘀消肿，清热解毒。
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--儿茶八角丁香model-->
+<div id="more3ModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="more3ModalLiveLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="more3ModalLiveLabel" data-blast="color">儿茶八角丁香</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="../../static/images/b333.jpg" alt="" class="img-fluid">
+        <p>
+          儿茶：收湿生肌敛疮。用于溃疡不敛，湿疹，口疮，跌扑伤痛，外伤出血。
+          八角：果皮、种子、叶都含芳香油，是制造化妆品、甜香酒、啤酒和食品工业的重要原料。
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--登陆模态框-->
 <div id="loginModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="loginModalLiveLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

@@ -104,7 +104,7 @@ public class BusUserBean implements Serializable{
         return createTime;
     }
 
-    public void setCreateTime(Date crateTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 

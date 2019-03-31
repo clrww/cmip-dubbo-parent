@@ -43,21 +43,21 @@ public class ThymeleafController {
         @Reference
         BusMembersInterface busMembersInterface;
 
-        @RequestMapping("/student")
-        public String student(ModelMap modelMap){
-                modelMap.addAttribute("name","wangwu");
-                Student student=new Student("123","supermanager",18,new Date());
-                Student student1=new Student("456","wang6",28,new Date());
-                Student student2=new Student("789","wang7",38,new Date());
-                student.setDes("<h1 style='color: green'>hello everyone</h1>");
-                List<Student>  list = new ArrayList<Student>();
-                list.add(student);
-                list.add(student1);
-                list.add(student2);
-                modelMap.addAttribute("studentList",list);
-                modelMap.addAttribute("student",student);
-                return "thymeleaf/student";
-        }
+//        @RequestMapping("/student")
+//        public String student(ModelMap modelMap){
+//                modelMap.addAttribute("name","wangwu");
+//                Student student=new Student("123","supermanager",18,new Date());
+//                Student student1=new Student("456","wang6",28,new Date());
+//                Student student2=new Student("789","wang7",38,new Date());
+//                student.setDes("<h1 style='color: green'>hello everyone</h1>");
+//                List<Student>  list = new ArrayList<Student>();
+//                list.add(student);
+//                list.add(student1);
+//                list.add(student2);
+//                modelMap.addAttribute("studentList",list);
+//                modelMap.addAttribute("student",student);
+//                return "thymeleaf/student";
+//        }
 
         /**
          * 进入主页
@@ -82,25 +82,25 @@ public class ThymeleafController {
 
 
 
-        /**
-         * 注册
-         */
-        @RequestMapping("/register")
-        @ResponseBody
-        public Object register(BusUserBean busUserBean){
-                try{
-                        ModelAndView modelAndView=new ModelAndView();
-                        Integer successSave=busUserInterface.saveUser(busUserBean);
-                        LOGGER.info("ThymeleafController  register  {}", JSONObject.toJSON(successSave));
-                        return new Integer(1).equals(successSave)?true:false;
-//                        modelAndView.addObject("user",bean);
-//                        modelAndView.setViewName("thymeleaf/index");
-//                        return bean;
-                }catch (Exception e){
-                        e.printStackTrace();
-                }
-                return null;
-        }
+//        /**
+//         * 注册
+//         */
+//        @RequestMapping("/register")
+//        @ResponseBody
+//        public Object register(BusUserBean busUserBean){
+//                try{
+//                        ModelAndView modelAndView=new ModelAndView();
+//                        Integer successSave=busUserInterface.saveUser(busUserBean);
+//                        LOGGER.info("ThymeleafController  register  {}", JSONObject.toJSON(successSave));
+//                        return new Integer(1).equals(successSave)?true:false;
+////                        modelAndView.addObject("user",bean);
+////                        modelAndView.setViewName("thymeleaf/index");
+////                        return bean;
+//                }catch (Exception e){
+//                        e.printStackTrace();
+//                }
+//                return null;
+//        }
 
         /**
          * 注册成功跳转到提醒页
@@ -118,11 +118,11 @@ public class ThymeleafController {
                                 busUserBean.setRole(0);//非会员角色
                                 busUserBean.setCreateTime(new Date());
                                 busUserBean.setLogicalDeleted(true);
-                                Integer successSave=busUserInterface.saveUser(busUserBean);
+                                busUserInterface.saveUser(busUserBean);
                                 modelAndView.addObject("registerStatus",1);
                                 modelAndView.addObject("message","注册成功");
                         }
-//                        LOGGER.info("ThymeleafController  registerPage  {}", JSONObject.toJSON(registerStatus));
+//                        LOGGER.info("ThymeleafController  registerPage  {}", JSONObject.toJSON(successSave));
                         modelAndView.setViewName("thymeleaf/registerPage");
                         return modelAndView;
                 }catch (Exception e){
@@ -191,5 +191,6 @@ public class ThymeleafController {
                 // 生成文件名
                 return  sdf.format(nowDate) + HttpUtil.getRandomStringByLength(4);
         }
+
 
 }

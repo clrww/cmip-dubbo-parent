@@ -23,11 +23,12 @@ public class BusUserServiceImpl  extends BaseService implements BusUserInterface
 
         @Autowired
        private BusUserMapper busUserMapper;
+
         @Override
-        public Integer saveUser(BusUserBean busUserBean) {
+        public void saveUser(BusUserBean busUserBean) {
                  BusUser busUser=transferObjectIgnoreCase(busUserBean,BusUser.class);
                 LOGGER.info("BusUserServiceImpl  saveUser ={}", JSONObject.toJSON(busUser));
-                return busUserMapper.insert(busUser);
+                busUserMapper.saveUser(busUser);
         }
 
         @Override
