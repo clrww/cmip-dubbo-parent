@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface DrugPostRecordInterface {
         public List<DrugPostRecordBean> findTopThreeRecord();
+        public DrugPostRecordBean findRecordById(int id);
 }

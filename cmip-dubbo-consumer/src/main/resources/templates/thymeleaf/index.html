@@ -441,7 +441,7 @@
             <p th:text="${record.shortDescribe}"></p>
 
             <div class="outs_more-buttn" >
-              <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
+              <a th:href="@{/record/postRecordDetail(id=${record.id})}"  data-blast="bgColor">More</a>
             </div>
           </div>
         </div>

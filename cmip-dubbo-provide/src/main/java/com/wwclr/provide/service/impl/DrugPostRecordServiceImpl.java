@@ -24,12 +24,23 @@ public class DrugPostRecordServiceImpl  extends BaseService implements DrugPostR
 
         /**
          * Created by wangwu on 2019/3/25.
-         *查找所有中医药帖子或博客信息
+         *查找前三个置顶的中医药帖子或博客信息
          */
         @Override
         public List<DrugPostRecordBean> findTopThreeRecord() {
                 List<DrugPostRecord> drugPostRecordList=drugPostRecordMapper.findTopThreeRecord();
                 List<DrugPostRecordBean> busUserBeanList=transferObjectIgnoreCaseList(drugPostRecordList,DrugPostRecordBean.class);
                 return busUserBeanList;
+        }
+
+        /**
+         * Created by wangwu on 2019/3/25.
+         *根据主键id查找中医药博客
+         */
+        @Override
+        public DrugPostRecordBean findRecordById(int id) {
+                DrugPostRecord drugPostRecord=drugPostRecordMapper.findRecordById(id);
+                DrugPostRecordBean drugPostRecordBean=transferObjectIgnoreCase(drugPostRecord,DrugPostRecordBean.class);
+                return drugPostRecordBean;
         }
 }

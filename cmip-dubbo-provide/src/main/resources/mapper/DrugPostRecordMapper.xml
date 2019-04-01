@@ -6,25 +6,31 @@
       WARNING - @mbg.generated
     -->
     <result column="id" property="id" jdbcType="INTEGER" />
-    <result column="postCode" property="postcode" jdbcType="VARCHAR" />
-    <result column="userName" property="username" jdbcType="VARCHAR" />
-    <result column="userId" property="userid" jdbcType="VARCHAR" />
-    <result column="ifTop" property="iftop" jdbcType="BIT" />
-    <result column="ifEssence" property="ifessence" jdbcType="BIT" />
+    <result column="postCode" property="postCode" jdbcType="VARCHAR" />
+    <result column="userName" property="userName" jdbcType="VARCHAR" />
+    <result column="userId" property="userId" jdbcType="VARCHAR" />
+    <result column="ifTop" property="ifTop" jdbcType="BIT" />
+    <result column="ifEssence" property="ifEssence" jdbcType="BIT" />
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="describe" property="describe" jdbcType="VARCHAR" />
     <result column="shortDescribe" property="shortDescribe" jdbcType="VARCHAR" />
-    <result column="getStarNumber" property="getstarnumber" jdbcType="INTEGER" />
-    <result column="getBrowseNumber" property="getbrowsenumber" jdbcType="INTEGER" />
+    <result column="getStarNumber" property="getStarNumber" jdbcType="INTEGER" />
+    <result column="getBrowseNumber" property="getBrowseNumber" jdbcType="INTEGER" />
     <result column="imageUrl" property="imageUrl" jdbcType="VARCHAR" />
     <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="lastModify" property="lastmodify" jdbcType="TIMESTAMP" />
-    <result column="logicalDeleted" property="logicaldeleted" jdbcType="BIT" />
+    <result column="lastModify" property="lastModify" jdbcType="TIMESTAMP" />
+    <result column="logicalDeleted" property="logicalDeleted" jdbcType="BIT" />
   </resultMap>
 
   <select id="findTopThreeRecord" resultType="com.wwclr.provide.pojo.DrugPostRecord">
   <![CDATA[
- SELECT * FROM drug_post_record ORDER BY case when  ifTop =1  THEN 1 ELSE 2 END and logicalDeleted =1
+ SELECT * FROM drug_post_record ORDER BY case when  ifTop =1  THEN 1 ELSE 2 END and logicalDeleted =1 LIMIT 3
+  ]]>
+  </select>
+
+  <select id="findRecordById" resultType="com.wwclr.provide.pojo.DrugPostRecord">
+    <![CDATA[
+ SELECT * FROM drug_post_record WHERE id=#{id} and logicalDeleted =1
   ]]>
   </select>
 
