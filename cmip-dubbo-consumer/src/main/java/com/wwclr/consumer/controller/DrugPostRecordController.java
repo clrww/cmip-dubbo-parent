@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 /**
  * Created by wangwu on 2019/3/25.
  */
@@ -26,6 +28,15 @@ public class DrugPostRecordController {
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.addObject("drugPostRecordBean",drugPostRecordBean);
         modelAndView.setViewName("thymeleaf/postRecordDetail");
+        return modelAndView;
+    }
+
+    @RequestMapping("/allPostRecord")
+    public Object findAllRecord(){
+        List<DrugPostRecordBean> drugPostRecordBeanList=drugPostRecordInterface.findAllRecord();
+        ModelAndView modelAndView=new ModelAndView();
+        modelAndView.addObject("drugPostRecordBeanList",drugPostRecordBeanList);
+        modelAndView.setViewName("thymeleaf/blog");
         return modelAndView;
     }
 

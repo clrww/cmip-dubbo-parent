@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface DrugPostRecordMapper extends MyMapper<DrugPostRecord> {
+        public List<DrugPostRecord> findAllRecord();
         public List<DrugPostRecord> findTopThreeRecord();
         public DrugPostRecord findRecordById(@Param("id") int id);
 }

@@ -43,4 +43,11 @@ public class DrugPostRecordServiceImpl  extends BaseService implements DrugPostR
                 DrugPostRecordBean drugPostRecordBean=transferObjectIgnoreCase(drugPostRecord,DrugPostRecordBean.class);
                 return drugPostRecordBean;
         }
+
+        @Override
+        public List<DrugPostRecordBean> findAllRecord() {
+                List<DrugPostRecord> drugPostRecordList=drugPostRecordMapper.findAllRecord();
+                List<DrugPostRecordBean> busUserBeanList=transferObjectIgnoreCaseList(drugPostRecordList,DrugPostRecordBean.class);
+                return busUserBeanList;
+        }
 }
