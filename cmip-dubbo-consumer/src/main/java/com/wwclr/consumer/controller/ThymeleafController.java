@@ -11,9 +11,12 @@ import com.wwclr.api.service.BusMembersInterface;
 import com.wwclr.api.service.BusUserInterface;
 import com.wwclr.api.service.DrugPostRecordInterface;
 import com.wwclr.consumer.entity.Student;
+import com.wwclr.consumer.utils.BaseService;
 import com.wwclr.consumer.utils.HttpUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
@@ -31,7 +34,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/th")
-public class ThymeleafController {
+public class ThymeleafController extends BaseService{
         private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
         @Reference
@@ -42,6 +45,9 @@ public class ThymeleafController {
         BusDrugDetailInterface busDrugDetailInterface;
         @Reference
         BusMembersInterface busMembersInterface;
+
+        @Autowired
+        private StringRedisTemplate redisTemplate;
 
 //        @RequestMapping("/student")
 //        public String student(ModelMap modelMap){
@@ -66,10 +72,13 @@ public class ThymeleafController {
         public Object index(BusUserBean busUserBean){
                 ModelAndView modelAndView=new ModelAndView();
                 try {
-//                        BusUserBean bean=busUserInterface.findUserByUserNameAndPassWord(busUserBean);
+                        if(!StringUtils.isEmpty(busUserBean.getUserName())){
+                                        if(redisTemplate.hasKey(busUserBean.getUserName())){
+                                                redisTemplate.delete(busUserBean.getUserName());
+                                        }
+                        }
                         List<DrugPostRecordBean> drugPostRecordBeanList=drugPostRecordInterface.findTopThreeRecord();
                         List<BusDrugDetailBean> busDrugDetailBeanList=busDrugDetailInterface.findAllBusDrug();
-//                        modelAndView.addObject("user",bean);
                         modelAndView.addObject("drugPostRecordBeanList",drugPostRecordBeanList);
                         modelAndView.addObject("busDrugDetailBeanList",busDrugDetailBeanList);
                         modelAndView.setViewName("thymeleaf/index");
@@ -165,6 +174,9 @@ public class ThymeleafController {
                 ModelAndView modelAndView=new ModelAndView();
                 try{
                         BusUserBean bean=busUserInterface.findUserByUserNameAndPassWord(busUserBean);
+                        if(!StringUtils.isEmpty(bean)){
+                                redisTemplate.opsForValue().set(bean.getUserName(), JSONObject.toJSONString(bean));
+                        }
                         BusMemberBean busMemberBean=new BusMemberBean();
                         busMemberBean.setUserId(bean.getUserId());
                         busMemberBean=busMembersInterface.findMemberByUserId(busMemberBean);

@@ -9,5 +9,5 @@ import java.util.List;
 public interface DrugPostRecordMapper extends MyMapper<DrugPostRecord> {
         public List<DrugPostRecord> findAllRecord();
         public List<DrugPostRecord> findTopThreeRecord();
-        public DrugPostRecord findRecordById(@Param("id") int id);
+        public DrugPostRecord findRecordByPostCode(@Param("postCode") String postCode);
 }

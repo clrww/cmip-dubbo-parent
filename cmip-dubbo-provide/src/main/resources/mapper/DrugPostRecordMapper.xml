@@ -35,9 +35,9 @@
   ]]>
   </select>
 
-  <select id="findRecordById" resultType="com.wwclr.provide.pojo.DrugPostRecord">
+  <select id="findRecordByPostCode" resultType="com.wwclr.provide.pojo.DrugPostRecord">
     <![CDATA[
- SELECT * FROM drug_post_record WHERE id=#{id} and logicalDeleted =1
+ SELECT * FROM drug_post_record WHERE postCode=#{postCode} and logicalDeleted =1
   ]]>
   </select>
 

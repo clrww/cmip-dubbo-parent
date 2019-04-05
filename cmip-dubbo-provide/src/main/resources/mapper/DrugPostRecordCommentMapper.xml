@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wwclr.provide.mapper.DrugPostRecordCommentMapper" >
+  <resultMap id="BaseResultMap" type="com.wwclr.provide.pojo.DrugPostRecordComment" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="postCode" property="postCode" jdbcType="VARCHAR" />
+    <result column="postOwnerId" property="postOwnerId" jdbcType="VARCHAR" />
+    <result column="postOwnerName" property="postOwnerName" jdbcType="VARCHAR" />
+    <result column="userName" property="userName" jdbcType="VARCHAR" />
+    <result column="userId" property="userId" jdbcType="VARCHAR" />
+    <result column="commentContent" property="commentContent" jdbcType="VARCHAR" />
+    <result column="ifTop" property="ifTop" jdbcType="BIT" />
+    <result column="getStarNumber" property="getStarNumber" jdbcType="INTEGER" />
+    <result column="imageUrl" property="imageUrl" jdbcType="VARCHAR" />
+    <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="lastModify" property="lastModify" jdbcType="TIMESTAMP" />
+    <result column="logicalDeleted" property="logicalDeleted" jdbcType="BIT" />
+  </resultMap>
+
+  <select id="findByPostCode" resultType="com.wwclr.provide.pojo.DrugPostRecordComment">
+    <![CDATA[
+  SELECT * FROM  drug_post_record_comment WHERE  postCode=#{postCode} and logicalDeleted =1
+  ]]>
+  </select>
+</mapper>

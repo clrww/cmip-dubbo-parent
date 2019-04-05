@@ -31,4 +31,8 @@
     <dubbo:service interface="com.wwclr.api.service.BusMembersInterface" ref="busMembersImpl"/>
     <bean id="busMembersImpl" class="com.wwclr.provide.service.impl.BusMembersImpl"/>
 
+    <!--帖子博客评论信息-->
+    <dubbo:service interface="com.wwclr.api.service.DrugPostRecordCommentInterface" ref="drugPostRecordCommentImpl"/>
+    <bean id="drugPostRecordCommentImpl" class="com.wwclr.provide.service.impl.DrugPostRecordCommentImpl"/>
+
 </beans>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>sc.chinaz.com</title>
+    <title>博客详情</title>
 	<meta name="author" content="ZERGE" />
 	<meta name="keywords" content="responsive html template, portfolio, creative, design, clean, minimal, light, dark, twitter, bootstrap" />
 	<meta name="description" content="Responsive HTML Template - Blog Post Page" />
@@ -10,16 +10,16 @@
 
     <!-- Styles -->
     
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/bootstrap-responsive.css" rel="stylesheet" />
-    <link href="css/prettyPhoto.css" rel="stylesheet" />    
-    <link href="css/flexslider.css" rel="stylesheet" />
+    <link href="../../static/blogcss/bootstrap.css" rel="stylesheet" />
+    <link href="../../static/blogcss/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="../../static/blogcss/prettyPhoto.css" rel="stylesheet" />
+    <link href="../../static/blogcss/flexslider.css" rel="stylesheet" />
 
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="../../static/blogcss/style.css" rel="stylesheet" />
     
     <!-- For IE6-8 -->
     <!--[if lte IE 8]>
-      <link href="css/ie.css" rel="stylesheet">
+      <link href="../../static/blogcss/ie.css" rel="stylesheet">
     <![endif]-->
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,11 +28,11 @@
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="img/ico/favicon.ico" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/apple-touch-icon-144-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/apple-touch-icon-114-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/apple-touch-icon-72-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" href="img/ico/apple-touch-icon-57-precomposed.png" />
+    <link rel="shortcut icon" href="../../static/blogimg/ico/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../static/blogimg/ico/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../static/blogimg/ico/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../static/blogimg/ico/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="../../static/blogimg/ico/apple-touch-icon-57-precomposed.png" />
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 
@@ -44,130 +44,189 @@
   <!-- Masthead
   ================================================== -->
   <header>
-    
-    <!-- Top Panel
-    ================================================== -->
-    <div id="top-panel">
-      <div class="login-box">
-        <form />
-		  <div class="input-prepend">
-            <span class="add-on"><i class="icon-user"></i></span><input class="span2" id="username" type="text" name="username" placeholder="User Name" />
-          </div>
-		  <div class="input-prepend">
-            <span class="add-on"><i class="icon-lock"></i></span><input class="span2" id="userpassword" type="password" name="userpassword" placeholder="Password" />
-          </div>
-          <label class="checkbox">
-    		<input type="checkbox" /> Remember me
-  		  </label>
-          <button type="submit" class="btn">Sign in</button>
-        </form>
-      </div><!-- login-box -->
-      <div class="login-button toggle">
-        <a href="#">Sign in</a>
-      </div><!-- login-button -->
-    </div><!-- top-panel -->
 
-    <!-- Navbar
-    ================================================== -->
-    <div class="row">
-      <div class="span3 logo">
-        <a href="index.html"><img src="img/logo.png" alt="" /></a>
-      </div><!-- logo -->
-      <div class="span9 navigation">
-        <div id="menu" class="fix-fish-menu clearfix">
-          <ul id="nav" class="sf-menu">
-            <li><a href="index.html">Home</a>
-              <ul>
-                <li><a href="index-flex.html">Home + Flex Slider</a></li>
-              </ul>
-            </li>
-            <li class="active"><a href="blog.html">Blog</a>
-              <ul>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="blog-post.html">Blog Post + Image</a></li>
-                <li><a href="blog-post-video.html">Blog Post + Video</a></li>                
-              </ul>
-            </li>
-			<li> <a href="#">Portfolio</a>
+	  <!-- Top Panel
+      ================================================== -->
+	  <div id="top-panel">
+
+		  <!--<div class="login-box">-->
+		  <!--<form />-->
+		  <!--<div class="input-prepend">-->
+		  <!--<span class="add-on"><i class="icon-user"></i></span><input class="span2" id="username" type="text" name="username" placeholder="User Name" />-->
+		  <!--</div>-->
+		  <!--<div class="input-prepend">-->
+		  <!--<span class="add-on"><i class="icon-lock"></i></span><input class="span2" id="userpassword" type="password" name="userpassword" placeholder="Password" />-->
+		  <!--</div>-->
+		  <!--<label class="checkbox">-->
+		  <!--<input type="checkbox" /> Remember me-->
+		  <!--</label>-->
+		  <!--<button type="submit" class="btn">Sign in</button>-->
+		  <!--</form>-->
+		  <!--</div>&lt;!&ndash; login-box &ndash;&gt;-->
+		  <!---->
+		  <!--<div class="login-button toggle">-->
+		  <!--<a href="#">Sign in</a>-->
+		  <!--</div>&lt;!&ndash; login-button &ndash;&gt;-->
+
+
+		  <div class="col-lg-12 col-md-12 col-sm-12 info-contact-agile">
 			  <ul>
-				<li><a href="#">3 Columns <span class="sf-sub-indicator"></span></a>
-				  <ul>
-				    <li><a href="portfolio-3.html">3 Columns + Horizontal</a></li>
-				    <li><a href="portfolio-vertical-3.html">3 Columns + Vertical</a></li>
-				    <li><a href="portfolio-description-3.html">3 Columns + Description</a></li>
-				    <li><a href="portfolio-big-3.html">3 Big Columns</a></li>
-				  </ul>
-				</li>
-				<li><a href="#">4 Columns <span class="sf-sub-indicator"></span></a>
-				  <ul>
-					<li><a href="portfolio-4.html">4 Columns + Horizontal</a></li>
-				    <li><a href="portfolio-description-4.html">4 Columns + Description</a></li>
-					<li><a href="portfolio-vertical-4.html">4 Columns + Vertical</a></li>
-				  </ul>
-				</li>
-				<li><a href="#">Portfolio Item <span class="sf-sub-indicator"></span></a>
-				  <ul>
-				  	<li><a href="item.html">Standard</a></li>
-					<li><a href="item-slideshow.html">Slideshow</a></li>
-					<li><a href="item-video.html">Video</a></li>
-				  </ul>
-				</li>
-				<li><a href="gallery.html">Gallery</a></li>
+
+				  <li th:if="${user}">
+					  <span class="fas fa-user-circle" style="font-size: 20px"></span>
+					  <p style="font-size: 20px">您好，</p><p th:text="${user.userName}" style="font-size: 20px"></p>
+				  </li>
+
+				  <li  th:unless="${user}">
+					  <p><a href="#" data-toggle="modal" data-target="#loginModalLive" style="font-size: 20px">请登录</a></p>
+				  </li>
+
+
+				  <li th:if="${busMemberBean}">
+					  <a th:switch="${busMemberBean.memberType}">
+						  <p th:case="0" style="font-size: 20px">普通用户</p>
+						  <p th:case="1" style="font-size: 20px">白银会员</p>
+						  <p th:case="2" style="font-size: 20px">黄金会员</p>
+						  <p th:case="3" style="font-size: 20px">钻石会员</p>
+					  </a>
+				  </li>
+
+
+				  <li th:if="${user}">
+					  <span class="fas fa-phone-volume" style="font-size: 20px"></span>
+					  <p th:text="${user.phone}" style="font-size: 20px"></p>
+				  </li>
+
+				  <li th:if="${user}">
+					  <span class="fas fa-envelope" style="font-size: 20px"></span>
+					  <p><a href="mailto:888888@163.com" th:text="${user.mail}" style="font-size: 20px"></a></p>
+				  </li>
+
+				  <li th:if="${user}" style="float: right">
+					  <p><a th:href="@{/th/index}"   style="font-size: 20px;">退出</a></p>
+				  </li>
 			  </ul>
-			</li>
-			<li> <a href="typography.html">Typography</a></li>
-			<li> <a href="shortcodes.html">Shortcodes</a></li>
-			<li> <a href="#">Pages</a>
-			  <ul>
-			    <li><a href="left-content.html">Left + Content</a></li>
-				<li><a href="content-right.html">Content + Right</a></li>
-				<li><a href="full-width.html">Full Width Page</a></li>
-				<li><a href="#">Submenu <span class="sf-sub-indicator"></span></a>
-			      <ul>
-					<li><a href="#">Item #1</a></li>
-					<li><a href="#">Item #2</a></li>
-				  </ul>
-				</li>
-			  </ul>
-			</li>
-		 	<li><a href="contacts.html">Contacts</a></li>
-            <li><a href="http://themeforest.net/item/claystone-responsive-html-template/2746744?ref=zerge"><i class="icon-shopping-cart icon-white"></i>Purchase</a></li>
-          </ul><!-- end #nav  -->
-        </div><!-- end #menu  -->
-      </div><!-- navigation -->
-    </div><!-- row -->
-    
-    <div class="row">
-      <div class="span3"><div class="border-5-1"></div></div>
-      <div class="span9"><div class="border-5-1 hide-border"></div></div>
-    </div><!-- row -->
-
-    <div class="row">
-      <div class="span3 clearfix">
-        <ul class="social-icons">
-	      <li class="pinterest"><a href="http://pinterest.com/zergev/"></a></li>      
-          <li class="twitter"><a href="http://twitter.com"></a></li>
-	      <li class="dribbble"><a href="http://dribbble.com"></a></li>
-	      <li class="facebook"><a href="http://facebook.com"></a></li>
-	      <li class="google"><a href="http://plus.google.com"></a></li>
-	      <li class="linkedin"><a href="http://linkedin.com"></a></li>
-	      <li class="behance"><a href="http://behance.net"></a></li>
-	      <li class="rss"><a href="#"></a></li>
-	    </ul>
-      </div><!-- span3 -->
-      <div class="span9">
-        <div class="separator">
- 		  <h3>The Battle of Copyright</h3>
-        </div><!-- separator -->
-        <span></span>
-      </div><!-- span9 -->
-    </div><!-- row -->
+		  </div>
 
 
-    <div class="row">
-      <div class="span3"><div class="border-1-5"></div></div>
-      <div class="span9"><div class="border-1-5 hide-border"></div></div>
-    </div><!-- row -->
+
+
+	  </div><!-- top-panel -->
+
+	  <!-- Navbar
+      ================================================== -->
+	  <!--<div class="row">-->
+	  <!--<div class="span3 logo">-->
+	  <!--<a href="index.html"><img src="../../static/blogimg/logo.png" alt="" /></a>-->
+	  <!--</div>&lt;!&ndash; logo &ndash;&gt;-->
+	  <!--<div class="span9 navigation">-->
+	  <!--<div id="menu" class="fix-fish-menu clearfix">-->
+	  <!--<ul id="nav" class="sf-menu">-->
+	  <!--<li><a href="index.html">Home</a>-->
+	  <!--<ul>-->
+	  <!--<li><a href="index-flex.html">Home + Flex Slider</a></li>-->
+	  <!--</ul>-->
+	  <!--</li>-->
+	  <!--<li class="active"><a href="blog.html">Blog</a>-->
+	  <!--<ul>-->
+	  <!--<li><a href="blog.html">Blog</a></li>-->
+	  <!--<li><a href="blog-post.html">Blog Post + Image</a></li>-->
+	  <!--<li><a href="blog-post-video.html">Blog Post + Video</a></li>                -->
+	  <!--</ul>-->
+	  <!--</li>-->
+	  <!--<li> <a href="#">Portfolio</a>-->
+	  <!--<ul>-->
+	  <!--<li><a href="portfolio-3.html">3 Columns <span class="sf-sub-indicator"></span></a>-->
+	  <!--<ul>-->
+	  <!--<li><a href="portfolio-3.html">3 Columns + Horizontal</a></li>-->
+	  <!--<li><a href="portfolio-vertical-3.html">3 Columns + Vertical</a></li>-->
+	  <!--<li><a href="portfolio-description-3.html">3 Columns + Description</a></li>-->
+	  <!--<li><a href="portfolio-big-3.html">3 Big Columns</a></li>-->
+	  <!--</ul>-->
+	  <!--</li>-->
+	  <!--<li><a href="">4 Columns <span class="sf-sub-indicator"></span></a>-->
+	  <!--<ul>-->
+	  <!--<li><a href="portfolio-4.html">4 Columns + Horizontal</a></li>-->
+	  <!--<li><a href="portfolio-description-4.html">4 Columns + Description</a></li>-->
+	  <!--<li><a href="portfolio-vertical-4.html">4 Columns + Vertical</a></li>-->
+	  <!--</ul>-->
+	  <!--</li>-->
+	  <!--<li><a href="#">Portfolio Item <span class="sf-sub-indicator"></span></a>-->
+	  <!--<ul>-->
+	  <!--<li><a href="item.html">Standard</a></li>-->
+	  <!--<li><a href="item-slideshow.html">Slideshow</a></li>-->
+	  <!--<li><a href="item-video.html">Video</a></li>-->
+	  <!--</ul>-->
+	  <!--</li>-->
+	  <!--<li><a href="gallery.html">Gallery</a></li>-->
+	  <!--</ul>-->
+	  <!--</li>-->
+	  <!--<li> <a href="typography.html">Typography</a></li>-->
+	  <!--<li> <a href="shortcodes.html">Shortcodes</a></li>-->
+	  <!--<li> <a href="#">Pages</a>-->
+	  <!--<ul>-->
+	  <!--<li><a href="left-content.html">Left + Content</a></li>-->
+	  <!--<li><a href="content-right.html">Content + Right</a></li>-->
+	  <!--<li><a href="full-width.html">Full Width Page</a></li>-->
+	  <!--<li><a href="#">Submenu <span class="sf-sub-indicator"></span></a>-->
+	  <!--<ul>-->
+	  <!--<li><a href="#">Item #1</a></li>-->
+	  <!--<li><a href="#">Item #2</a></li>-->
+	  <!--</ul>-->
+	  <!--</li>-->
+	  <!--</ul>-->
+	  <!--</li>-->
+	  <!--<li><a href="contacts.html">Contacts</a></li>-->
+	  <!--<li><a href="http://themeforest.net/item/claystone-responsive-html-template/2746744?ref=zerge"><i class="icon-shopping-cart icon-white"></i>Purchase</a></li>-->
+	  <!--</ul>&lt;!&ndash; end #nav  &ndash;&gt;-->
+	  <!--</div>&lt;!&ndash; end #menu  &ndash;&gt;-->
+	  <!--</div>&lt;!&ndash; navigation &ndash;&gt;-->
+	  <!--</div>&lt;!&ndash; row &ndash;&gt;-->
+
+	  <div class="row">
+		  <div class="span3"><div class="border-5-1"></div></div>
+		  <div class="span9"><div class="border-5-1 hide-border"></div></div>
+	  </div><!-- row -->
+
+	  <div class="row">
+		  <div class="span3 clearfix">
+
+			  <!--<ul class="social-icons">-->
+			  <!--<li class="pinterest"><a href="http://pinterest.com/zergev/"></a></li>-->
+			  <!--<li class="twitter"><a href="http://twitter.com"></a></li>-->
+			  <!--<li class="dribbble"><a href="http://dribbble.com"></a></li>-->
+			  <!--<li class="facebook"><a href="http://facebook.com"></a></li>-->
+			  <!--<li class="google"><a href="http://plus.google.com"></a></li>-->
+			  <!--<li class="linkedin"><a href="http://linkedin.com"></a></li>-->
+			  <!--<li class="behance"><a href="http://behance.net"></a></li>-->
+			  <!--<li class="rss"><a href="#"></a></li>-->
+			  <!--</ul>-->
+
+			  <div class="separator">
+				  <h1>中医药信息化</h1>
+			  </div><!-- separator -->
+
+		  </div><!-- span3 -->
+		  <div class="span9">
+			  <div class="separator">
+				  <h3>详情</h3>
+			  </div><!-- separator -->
+			  <span></span>
+		  </div><!-- span9 -->
+	  </div><!-- row -->
+
+
+
+
+
+
+
+
+
+	  <div class="row">
+		  <div class="span3"><div class="border-1-5"></div></div>
+		  <div class="span9"><div class="border-1-5 hide-border"></div></div>
+	  </div><!-- row -->
 
   </header>    
 
@@ -179,23 +238,26 @@
 	  <div class="span9">
 	  
     	<!-- START POST #1 -->
-	    <div class="row entry-post">
+	    <div class="row entry-post" th:if="${drugPostRecordBean}">
   	      <div class="span3">
 	        <div class="entry-meta clearfix">
-	          <span><strong><i class="icon-user icon-white"></i> Author:</strong> <a href="#">Harold</a></span>
-	          <span><strong><i class="icon-comment icon-white"></i> Comments:</strong> <a href="#">7</a></span>
-	          <span><strong><i class="icon-list-alt icon-white"></i> Category:</strong> <a href="#">Design</a>, <a href="#">Graphic</a></span>	      
-	          <span><strong><i class="icon-tags icon-white"></i> Tags:</strong></span>
+				<!--<input type="hidden" id="zuozheUserName" th:value="${drugPostRecordBean.userName}">-->
+				<!--<input type="hidden" id="zuozheId" th:value="${drugPostRecordBean.userId}">-->
+				<span><strong><i class="icon-user"></i> 作者:</strong> <a  th:text="${drugPostRecordBean.userName}"></a></span>
+				<span><strong><i class="icon-comment"></i> 点赞:</strong> <a th:text="${drugPostRecordBean.getStarNumber}"></a></span>
+				<span><strong><i class="icon-list-alt"></i> 浏览:</strong> <a th:text="${drugPostRecordBean.getBrowseNumber}"></a></span>
+				<span><strong><i class="icon-list-alt"></i> 发布时间:</strong>  <a th:text="${#dates.format(drugPostRecordBean.createTime,'yyyy-MM-dd')}"></a></span>
+				<span><strong><i class="icon-tags"></i> 标签:</strong></span>
 	          <ul class="tags clearfix">
-      	        <li><a href="#">tag</a></li>
-	            <li><a href="#">tag name</a></li>
-	            <li><a href="#">copyright</a></li>
-			    <li><a href="#">design</a></li>
-	            <li><a href="#">battle</a></li>			
+				  <li><a href="#">中药</a></li>
+				  <li><a href="#">滋补</a></li>
+	            <!--<li><a href="#">copyright</a></li>-->
+			    <!--<li><a href="#">design</a></li>-->
+	            <!--<li><a href="#">battle</a></li>			-->
 		      </ul>
 
 		      <div class="entry-share">
-	            <span><strong><i class="icon-share icon-white"></i> Share:</strong></span>
+	            <span><strong><i class="icon-share icon-white"></i> 分享:</strong></span>
 	            <!-- AddThis Button BEGIN -->
 				<div class="addthis_toolbox addthis_default_style ">
 				  <a class="addthis_button_facebook_like"></a>
@@ -214,14 +276,15 @@
 	        <div class="row">
 	          <div class="span6 format-image">
 	            <div class="view thumb-post">
-	              <img src="img/blog/img01.jpg" alt="" />
+	              <!--<img src="../../static/blogimg/blog/img01.jpg" alt="" />-->
+					<img th:src="${drugPostRecordBean.imageUrl}" alt=""/>
 	              <div class="mask">
 			        <div class="mask-icon">
 			    	  <div class="quartercircletopleft-mask"><a href="#"></a></div>
 			    	  <div class="quartercircletopright-mask"><a href="#"></a></div>
 			    	  <div class="quartercirclebottomright-mask"><a href="#"></a></div>
 			    	  <div class="quartercirclebottomleft-mask"><a href="#"></a></div>
-			    	  <a href="img/blog/img01.jpg" class="zoom-icon"></a>
+			    	  <a href="../../static/blogimg/blog/img01.jpg" class="zoom-icon"></a>
 				    </div><!-- mask-icon -->
 				  </div><!-- mask -->
 	              <div class="post-date-meta">
@@ -229,46 +292,56 @@
               		<span class="date">05</span>
             	  </div><!-- post-date-meta -->
 	        	</div><!-- thumb-post -->
+
+
 	        	<div class="entry-text">
-				  <h3>The Battle of Copyright</h3>
-				  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. </p>
-				  <div class="alert alert-info"><a class="close" data-dismiss="alert">×</a> <strong>Heads up!</strong> This alert needs your attention, but it’s not super important.</div>
-	        	  <p><strong>Nulla tristique, sem ut mollis pulvinar, nisi massa varius mi, in sollicitudin nisi tellus et augue. Nunc posuere libero ac nisl elementum at gravida purus porttitor. In bibendum lacinia nulla ac vestibulum. Fusce at risus tortor. Aenean eu dapibus justo. Quisque non dictum tellus. Curabitur tortor neque, sollicitudin a tincidunt ac, tristique vel urna.</strong></p>
-	        	  <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr> is the best thing since sliced bread. An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
-				  <div class="row">
-					<div class="span6">
-				      <p>With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.</p>
-				      <ul class="thumbnails">
-				        <li class="span3">
-				          <div class="thumbnail">
-				            <div class="view">
-				            	<a data-rel="prettyPhoto" href="img/projects/img01.jpg"><img src="img/projects/img01.jpg" alt="" /></a>
-				            </div>
-				            <div class="caption">
-				              <h4>Thumbnail label</h4>
-				              <p class="last">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-				            </div>
-				          </div>
-				        </li>
-				        <li class="span3">
-				          <div class="thumbnail">
-				            <div class="view">
-				            	<a data-rel="prettyPhoto" href="img/projects/img03.jpg"><img src="img/projects/img03.jpg" alt="" /></a>
-				            </div>
-				            <div class="caption">
-				              <h4>Thumbnail label</h4>
-				              <p class="last">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-				            </div>
-				          </div>
-				        </li>
-				      </ul>
-				    </div><!-- span6 -->
-				  </div><!-- row -->
-	        	  <div class="tooltip-demo well last">
-            		<p class="muted" style="margin-bottom: 0;">Tight pants next level keffiyeh  haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" data-rel="tooltip" data-original-title="Another tooltip">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan <a href="#" data-rel="tooltip" data-original-title="Another one here too">whatever keytar</a>, scenester farm-to-table banksy Austin <a href="#" data-rel="tooltip" data-original-title="The last tip!">twitter</a> handle freegan cred raw denim single-origin coffee viral.</p>
-				  </div><!-- tooltip-demo -->
+					<h3><a href="" th:text="${drugPostRecordBean.title}"></a></h3>
+					<p th:text="${drugPostRecordBean.describe}"></p>
+					<!--<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. </p>-->
+				  <!--<div class="alert alert-info"><a class="close" data-dismiss="alert">×</a> <strong>Heads up!</strong> This alert needs your attention, but it’s not super important.</div>-->
+	        	  <!--<p><strong>Nulla tristique, sem ut mollis pulvinar, nisi massa varius mi, in sollicitudin nisi tellus et augue. Nunc posuere libero ac nisl elementum at gravida purus porttitor. In bibendum lacinia nulla ac vestibulum. Fusce at risus tortor. Aenean eu dapibus justo. Quisque non dictum tellus. Curabitur tortor neque, sollicitudin a tincidunt ac, tristique vel urna.</strong></p>-->
+	        	  <!--<p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr> is the best thing since sliced bread. An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>-->
+
+					<!--<div class="row">-->
+					<!--<div class="span6">-->
+				      <!--<p>With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.</p>-->
+				      <!--<ul class="thumbnails">-->
+				        <!--<li class="span3">-->
+				          <!--<div class="thumbnail">-->
+				            <!--<div class="view">-->
+				            	<!--<a data-rel="prettyPhoto" href="../../static/blogimg/projects/img01.jpg"><img src="../../static/blogimg/projects/img01.jpg" alt="" /></a>-->
+				            <!--</div>-->
+				            <!--<div class="caption">-->
+				              <!--<h4>Thumbnail label</h4>-->
+				              <!--<p class="last">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
+				            <!--</div>-->
+				          <!--</div>-->
+				        <!--</li>-->
+				        <!--<li class="span3">-->
+				          <!--<div class="thumbnail">-->
+				            <!--<div class="view">-->
+				            	<!--<a data-rel="prettyPhoto" href="../../static/blogimg/projects/img03.jpg"><img src="../../static/blogimg/projects/img03.jpg" alt="" /></a>-->
+				            <!--</div>-->
+				            <!--<div class="caption">-->
+				              <!--<h4>Thumbnail label</h4>-->
+				              <!--<p class="last">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
+				            <!--</div>-->
+				          <!--</div>-->
+				        <!--</li>-->
+				      <!--</ul>-->
+				    <!--</div>&lt;!&ndash; span6 &ndash;&gt;-->
+				  <!--</div>&lt;!&ndash; row &ndash;&gt;-->
+
+
+	        	  <!--<div class="tooltip-demo well last">-->
+            		<!--<p class="muted" style="margin-bottom: 0;">Tight pants next level keffiyeh  haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" data-rel="tooltip" data-original-title="Another tooltip">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan <a href="#" data-rel="tooltip" data-original-title="Another one here too">whatever keytar</a>, scenester farm-to-table banksy Austin <a href="#" data-rel="tooltip" data-original-title="The last tip!">twitter</a> handle freegan cred raw denim single-origin coffee viral.</p>-->
+				  <!--</div>&lt;!&ndash; tooltip-demo &ndash;&gt;-->
+
+
 	        	</div><!-- entry-text -->
-	          </div><!-- span6 -->
+
+
+			  </div><!-- span6 -->
 	        </div><!-- row -->
 	      </div><!-- span6 -->
 	    </div><!-- row -->
@@ -296,80 +369,104 @@
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
             })();
           </script>
-          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>		
+          <!--<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+          <!--<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>		-->
 		<!-- END DISQUS COMMENTS  -->
 
 
 	    <!-- COMMENTS  -->
        	<div class="row">
       	  <div class="span3">
-      	      <h3>5 Comments:</h3>
+      	      <h3 th:text="${commentSize}"></h3>
       	  </div><!-- span3 -->
       	  <div class="span6">
-      	  	<h3 class="text-buffer">Comment Text:</h3>
+      	  	<h3 class="text-buffer">所有评论</h3>
       	  </div><!-- span6 -->
       	</div><!-- row -->
+
+
+		  <div class="row comment" th:each="comment:${drugPostRecordCommentBeanList}">
+			  <div class="span3">
+				  <div class="well clearfix">
+					  <div class="user-thumb">
+						  <!--<a href="#"><img src="../../static/blogimg/blog/avatar01.jpg" alt="" /></a>-->
+						  <img th:src="${comment.imageUrl}" class="img-fluid" alt="">
+					  </div><!-- user-thumb -->
+					  <div class="user-info">
+						  <span class="author">用户:<a href="" th:text="${comment.userName}"></a></span>
+						  <span class="author">赞同:<a href="" th:text="${comment.getStarNumber}"></a></span>
+						  <span class="date">时间:<a th:text="${#dates.format(comment.createTime,'yyyy-MM-dd')}"></a></span>
+					  </div><!-- user-info -->
+				  </div><!-- well -->
+			  </div><!-- span3 -->
+			  <div class="span6">
+				  <div class="comment-text well">
+					  <p th:text="${comment.commentContent}"></p>
+					  <!--<p class="last">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
+				  </div><!-- comment-text -->
+			  </div><!-- span6 -->
+		  </div><!-- row -->
+
 
       	<!-- First Comment -->
-       	<div class="row comment">
-      	  <div class="span3">
-      	      <div class="well clearfix">
-      	        <div class="user-thumb">
-      	          <a href="#"><img src="img/blog/avatar01.jpg" alt="" /></a>
-      	        </div><!-- user-thumb -->
-      	        <div class="user-info">
-			      <span class="author"><a href="#">Kriesi</a></span>
-			      <span class="date"><small>12 hours ago</small></span>
-      	        </div><!-- user-info -->
-      	      </div><!-- well -->
-      	  </div><!-- span3 -->
-      	  <div class="span6">
-      	    <div class="comment-text well">
-      	      <p class="last">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      	    </div><!-- comment-text -->
-      	  </div><!-- span6 -->
-      	</div><!-- row -->
+       	<!--<div class="row comment">-->
+      	  <!--<div class="span3">-->
+      	      <!--<div class="well clearfix">-->
+      	        <!--<div class="user-thumb">-->
+      	          <!--<a href="#"><img src="../../static/blogimg/blog/avatar01.jpg" alt="" /></a>-->
+      	        <!--</div>&lt;!&ndash; user-thumb &ndash;&gt;-->
+      	        <!--<div class="user-info">-->
+			      <!--<span class="author"><a href="#">Kriesi</a></span>-->
+			      <!--<span class="date"><small>12 hours ago</small></span>-->
+      	        <!--</div>&lt;!&ndash; user-info &ndash;&gt;-->
+      	      <!--</div>&lt;!&ndash; well &ndash;&gt;-->
+      	  <!--</div>&lt;!&ndash; span3 &ndash;&gt;-->
+      	  <!--<div class="span6">-->
+      	    <!--<div class="comment-text well">-->
+      	      <!--<p class="last">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
+      	    <!--</div>&lt;!&ndash; comment-text &ndash;&gt;-->
+      	  <!--</div>&lt;!&ndash; span6 &ndash;&gt;-->
+      	<!--</div>&lt;!&ndash; row &ndash;&gt;-->
       	  
       	<!-- Next Comment -->
-        <div class="row comment">
-      	  <div class="span3">
-      	    <div class="well clearfix">
-      	      <div class="user-thumb">
-      	        <a href="#"><img src="img/blog/avatar02.jpg" alt="" /></a>
-      	      </div><!-- user-thumb -->
-      	      <div class="user-info">
-		     <span class="author"><a href="#">internq7</a></span>
-		     <span class="date"><small>10 hours ago</small></span>
-      	      </div><!-- user-info -->
-      	    </div><!-- well -->
-      	  </div><!-- span3 -->
-      	  <div class="span6">
-      	    <div class="comment-text well">
-      	      <p class="last">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-      	    </div><!-- comment-text -->
-      	  </div><!-- span6 -->      	  
-    	</div><!-- row -->
+        <!--<div class="row comment">-->
+      	  <!--<div class="span3">-->
+      	    <!--<div class="well clearfix">-->
+      	      <!--<div class="user-thumb">-->
+      	        <!--<a href="#"><img src="../../static/blogimg/blog/avatar02.jpg" alt="" /></a>-->
+      	      <!--</div>&lt;!&ndash; user-thumb &ndash;&gt;-->
+      	      <!--<div class="user-info">-->
+		     <!--<span class="author"><a href="#">internq7</a></span>-->
+		     <!--<span class="date"><small>10 hours ago</small></span>-->
+      	      <!--</div>&lt;!&ndash; user-info &ndash;&gt;-->
+      	    <!--</div>&lt;!&ndash; well &ndash;&gt;-->
+      	  <!--</div>&lt;!&ndash; span3 &ndash;&gt;-->
+      	  <!--<div class="span6">-->
+      	    <!--<div class="comment-text well">-->
+      	      <!--<p class="last">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>-->
+      	    <!--</div>&lt;!&ndash; comment-text &ndash;&gt;-->
+      	  <!--</div>&lt;!&ndash; span6 &ndash;&gt;      	  -->
+    	<!--</div>&lt;!&ndash; row &ndash;&gt;-->
 
       	<!-- Next Comment -->
-        <div class="row comment">
-      	  <div class="span3">
-      	    <div class="well clearfix">
-      	      <div class="user-thumb">
-      	        <a href="#"><img src="img/blog/avatar03.jpg" alt="" /></a>
-      	      </div><!-- user-thumb -->
-      	      <div class="user-info">
-		     <span class="author"><a href="#">kaptinlin</a></span>
-		     <span class="date"><small>1 hour ago</small></span>
-      	      </div><!-- user-info -->
-      	    </div><!-- well -->
-      	  </div><!-- span3 -->
-      	  <div class="span6">
-      	    <div class="comment-text well">
-      	      <p class="last">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-      	    </div><!-- comment-text -->
-      	  </div><!-- span6 -->      	  
-    	</div><!-- row -->
+        <!--<div class="row comment">-->
+      	  <!--<div class="span3">-->
+      	    <!--<div class="well clearfix">-->
+      	      <!--<div class="user-thumb">-->
+      	        <!--<a href="#"><img src="../../static/blogimg/blog/avatar03.jpg" alt="" /></a>-->
+      	      <!--</div>&lt;!&ndash; user-thumb &ndash;&gt;-->
+      	      <!--<div class="user-info">-->
+		     <!--<span class="author"><a href="#">kaptinlin</a></span>-->
+		     <!--<span class="date"><small>1 hour ago</small></span>-->
+      	      <!--</div>&lt;!&ndash; user-info &ndash;&gt;-->
+      	    <!--</div>&lt;!&ndash; well &ndash;&gt;-->
+      	  <!--</div>&lt;!&ndash; span3 &ndash;&gt;-->
+      	  <!--<div class="span6">-->
+      	    <!--<div class="comment-text well">-->
+      	      <!--<p class="last">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>-->
+      	    <!--</div>&lt;!&ndash; comment-text &ndash;&gt;-->
+      	  <!--</div>&lt;!&ndash; span6 &ndash;&gt;      	  -->
+    	<!--</div>&lt;!&ndash; row &ndash;&gt;-->
 
 	    <!-- DIVIDER -->
       	<div class="row margin10-40">
@@ -389,7 +486,7 @@
 
       	<!-- Replay Form -->
         <div class="row margin0-40">
-          <form id="comment-form" class="clearfix" action="javascript:alert('It Works!');" />
+          <form id="comment-form" class="clearfix" th:action="@{/comment/saveDrugPostRecordComment}" method="post">
       	    <div class="span3">
 		      <div class="input-prepend">
                 <span class="add-on"><i class="icon-user"></i></span><input class="span3" id="comment-username" type="text" name="comment-username" placeholder="Name" />
@@ -398,10 +495,32 @@
                 <span class="add-on"><i class="icon-envelope"></i></span><input class="span3" id="comment-email" type="email" name="comment-email" placeholder="E-mail" />
           	  </div>
       	  	</div><!-- span3 -->
-      	  	<div class="span6">
-			  <textarea id="textarea" rows="5" class="span6"></textarea>
-              <button type="submit" class="btn">Submit Comment</button>
-		    </div><!-- span6 -->      	  
+
+			<div th:if="${user}">
+=				<input type="hidden" name="userName" th:value="${user.userName}">
+				<input type="hidden" name="userId" th:value="${user.userId}">
+			</div>
+
+			<!--<div th:unless="${user}">-->
+				<!--<a th:href="@{/record/postRecordDetail(id=${drugPostRecordBean.id},userName='null')}"  data-blast="bgColor" class="btn">More</a>-->
+			<!--</div>-->
+
+
+			  <div th:if="${drugPostRecordBean}">
+				 <input type="hidden" name="postOwnerName" th:value="${drugPostRecordBean.userName}">
+				  <input type="hidden" name="postOwnerId" th:value="${drugPostRecordBean.userId}">
+				  <input type="hidden" name="postCode" th:value="${drugPostRecordBean.postCode}">
+
+
+			  </div>
+
+
+			<div class="span6">
+			  <textarea id="textarea" rows="5" name="commentContent" class="span6"></textarea>
+              <button type="submit" class="btn">提交评论</button>
+				<!--<button type="button" th:onclick="|javascript:submitComment()|" class="btn btn-primary">提交评论</button>-->
+
+			</div><!-- span6 -->
 	      </form>
     	</div><!-- row -->
     	
@@ -443,17 +562,17 @@
 	      <h5>Popular Posts</h5>
 		  <ul class="popular-posts">
 		    <li>
-		      <a href="#"><img src="img/blog/widgets/img01-40x40.jpg" alt="" /></a>
+		      <a href="#"><img src="../../static/blogimg/blog/widgets/img01-40x40.jpg" alt="" /></a>
 		      <a href="#">Domino Theory</a>
 		      <span class="date">June 24, 2012</span>
 		    </li>
 		    <li>
-		      <a href="#"><img src="img/blog/widgets/img02-40x40.jpg" alt="" /></a>
+		      <a href="#"><img src="../../static/blogimg/blog/widgets/img02-40x40.jpg" alt="" /></a>
 		      <a href="#">Crossing Paths</a>
 		      <span class="date">June 22, 2012</span>
 		    </li>
 		    <li>
-		      <a href="#"><img src="img/blog/widgets/img03-40x40.jpg" alt="" /></a>
+		      <a href="#"><img src="../../static/blogimg/blog/widgets/img03-40x40.jpg" alt="" /></a>
 		      <a href="#">Corporate Equality Index</a>
 		      <span class="date">May 09, 2012</span>
 		    </li>
@@ -563,9 +682,9 @@
         <div class="widget well">
           <h5>Advertising</h5>
           <ul class="ads clearfix">
-            <li class="ads-std"><a href="http://themeforest.net?ref=zerge"><img src="img/ads/tf_225x104_v2.jpg" alt="" title="Ads" /></a></li>
-            <li class="ads-125"><a href="http://themeforest.net?ref=zerge" class="first"><img src="img/ads/3docean-125x125-03-stock-3d-models.jpg" alt="" title="Ads" /></a> <a href="http://themeforest.net?ref=zerge"><img src="img/ads/3docean-125x125-06-stock-3d-models.jpg" alt="" title="Ads" /></a></li>
-            <li class="ads-std"><a href="http://themeforest.net?ref=zerge"><img src="img/ads/3docean-300x250-09-stock-3d-models.jpg" alt="" title="Ads" /></a></li>                        
+            <li class="ads-std"><a href="http://themeforest.net?ref=zerge"><img src="../../static/blogimg/ads/tf_225x104_v2.jpg" alt="" title="Ads" /></a></li>
+            <li class="ads-125"><a href="http://themeforest.net?ref=zerge" class="first"><img src="../../static/blogimg/ads/3docean-125x125-03-stock-3d-models.jpg" alt="" title="Ads" /></a> <a href="http://themeforest.net?ref=zerge"><img src="../../static/blogimg/ads/3docean-125x125-06-stock-3d-models.jpg" alt="" title="Ads" /></a></li>
+            <li class="ads-std"><a href="http://themeforest.net?ref=zerge"><img src="../../static/blogimg/ads/3docean-300x250-09-stock-3d-models.jpg" alt="" title="Ads" /></a></li>
   		  </ul>
         </div><!-- widget -->
       </div><!-- span3 -->
@@ -592,17 +711,17 @@
 	    <h5>Popular Posts</h5>
 		<ul class="popular-posts">
 		  <li>
-		    <a href="#"><img src="img/blog/widgets/img01-40x40.jpg" alt="" /></a>
+		    <a href="#"><img src="../../static/blogimg/blog/widgets/img01-40x40.jpg" alt="" /></a>
 		    <a href="#">Domino Theory</a>
 		    <span class="date">June 24, 2012</span>
 		  </li>
 		  <li>
-		    <a href="#"><img src="img/blog/widgets/img02-40x40.jpg" alt="" /></a>
+		    <a href="#"><img src="../../static/blogimg/blog/widgets/img02-40x40.jpg" alt="" /></a>
 		    <a href="#">Crossing Paths</a>
 		    <span class="date">June 22, 2012</span>
 		  </li>
 		  <li>
-		    <a href="#"><img src="img/blog/widgets/img03-40x40.jpg" alt="" /></a>
+		    <a href="#"><img src="../../static/blogimg/blog/widgets/img03-40x40.jpg" alt="" /></a>
 		    <a href="#">Corporate Equality Index</a>
 		    <span class="date">May 09, 2012</span>
 		  </li>
@@ -613,17 +732,17 @@
 	    <h5>Latest Posts</h5>
 		<ul class="latest-posts">
 		  <li>
-		    <a href="#"><img src="img/blog/widgets/img04-40x40.jpg" alt="" /></a>
+		    <a href="#"><img src="../../static/blogimg/blog/widgets/img04-40x40.jpg" alt="" /></a>
 		    <a href="#">The Peace Corps</a>
 		    <span class="date">Jule 02, 2012</span>		  
 		  </li>
 		  <li>
-		    <a href="#"><img src="img/blog/widgets/img01-40x40.jpg" alt="" /></a>
+		    <a href="#"><img src="../../static/blogimg/blog/widgets/img01-40x40.jpg" alt="" /></a>
 		    <a href="#">Domino Theory</a>
 		    <span class="date">June 24, 2012</span>
 		  </li>
 		  <li>
-		    <a href="#"><img src="img/blog/widgets/img05-40x40.jpg" alt="" /></a>
+		    <a href="#"><img src="../../static/blogimg/blog/widgets/img05-40x40.jpg" alt="" /></a>
 		    <a href="#">Flickr Eggs</a>
 		    <span class="date">May 14, 2012</span>
 		  </li>
@@ -644,24 +763,27 @@
 
 
 
+
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/superfish.js"></script>    
-    <script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.tweet.js"></script>
-	<script src="js/jflickrfeed.min.js"></script>
-	<script src="js/jquery.flexslider-min.js"></script>
-	<script src="js/jquery.fitvid.js"></script>
-	<script src="js/jquery.prettyPhoto.js"></script>
-	<script src="js/jquery.preloader.js"></script>
+	<script src="../../static/blogjs/jquery.easing.1.3.js"></script>
+	<script src="../../static/blogjs/superfish.js"></script>
+    <script src="../../static/blogjs/bootstrap.min.js"></script>
+	<script src="../../static/blogjs/jquery.tweet.js"></script>
+	<script src="../../static/blogjs/jflickrfeed.min.js"></script>
+	<script src="../../static/blogjs/jquery.flexslider-min.js"></script>
+	<script src="../../static/blogjs/jquery.fitvid.js"></script>
+	<script src="../../static/blogjs/jquery.prettyPhoto.js"></script>
+	<script src="../../static/blogjs/jquery.preloader.js"></script>
 
-    <!-- Support CSS3 Media Queries for IE 6-8 -->
-	<script src="js/respond.min.js"></script>
 
-	<script src="js/custom.js"></script>	
+
+  <!-- Support CSS3 Media Queries for IE 6-8 -->
+	<script src="../../static/blogjs/respond.min.js"></script>
+
+	<script src="../../static/blogjs/custom.js"></script>
 
 	<!-- For Facebook Social Plugins -->
 	<div id="fb-root"></div>
@@ -673,6 +795,9 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	  }(document, 'script', 'facebook-jssdk'));
 	</script>
+
+
+
 
 
 	<!-- For Images Preloading -->
@@ -691,6 +816,42 @@
           });
         };
 	</script>
+
+
+  <script  type="text/javascript">
+	  //	function submitComment() {
+	  //		if(window.confirm('您还未登录，')){
+	  //			//alert("确定");
+	  //			return true;
+	  //		}else{
+	  //			//alert("取消");
+	  //			return false;
+	  //		}
+	  //	}
+
+
+	  function submitComment() {
+//		  var zuozheUserName=$('#zuozheUserName').val();
+//		  alert(zuozheUserName)
+		  $.ajax({
+			  type: "POST",
+			  dataType: "json",
+			  url: "/record/saveDrugPostRecordComment?postOwnerName="+$('#zuozheUserName').val() ,
+			  data: $('#comment-form').serialize(),
+			  success: function (data) {
+				  alert("成功"+data);
+				  var jsonText = JSON.stringify(data);
+				  alert(jsonText);
+//				  $("#comment-form").submit();
+			  },
+			  error : function() {
+				  alert("失败"+data);
+			  }
+		  });
+	  }
+  </script>
+
+
 <div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 </body>
 </html>

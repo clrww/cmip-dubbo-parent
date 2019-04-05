@@ -11,6 +11,8 @@ import com.wwclr.provide.utils.BaseService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -23,6 +25,9 @@ public class BusUserServiceImpl  extends BaseService implements BusUserInterface
 
         @Autowired
        private BusUserMapper busUserMapper;
+
+       @Autowired
+       private StringRedisTemplate redisTemplate;
 
         @Override
         public void saveUser(BusUserBean busUserBean) {
@@ -54,17 +59,32 @@ public class BusUserServiceImpl  extends BaseService implements BusUserInterface
 
     @Override
     public BusUserBean findUserByUserNameAndPassWord(BusUserBean busUserBean) {
-        BusUser busUser=transferObjectIgnoreCase(busUserBean, BusUser.class);
-        BusUser busUser1= (BusUser)busUserMapper.findUserByUserNameAndPassWord(busUser);
-        BusUserBean bean=transferObjectIgnoreCase(busUser1,BusUserBean.class);
+        BusUserBean busUserBean1=JSONObject.parseObject(redisTemplate.opsForValue().get(busUserBean.getUserName()),BusUserBean.class);
+        BusUserBean bean=new BusUserBean();
+        if(StringUtils.isEmpty(busUserBean1)){
+            BusUser busUser=transferObjectIgnoreCase(busUserBean, BusUser.class);
+            BusUser busUser1= (BusUser)busUserMapper.findUserByUserNameAndPassWord(busUser);
+            bean=transferObjectIgnoreCase(busUser1,BusUserBean.class);
+        }else {
+            bean=busUserBean1;
+        }
+//        BusUser busUser=transferObjectIgnoreCase(busUserBean, BusUser.class);
+//        BusUser busUser1= (BusUser)busUserMapper.findUserByUserNameAndPassWord(busUser);
+//        BusUserBean bean=transferObjectIgnoreCase(busUser1,BusUserBean.class);
         return bean;
     }
 
     @Override
     public BusUserBean findUserByUserName(BusUserBean busUserBean) {
-        BusUser busUser=transferObjectIgnoreCase(busUserBean, BusUser.class);
-        BusUser busUser1= (BusUser)busUserMapper.findUserByUserName(busUser);
-        BusUserBean bean=transferObjectIgnoreCase(busUser1,BusUserBean.class);
+        BusUserBean busUserBean1=JSONObject.parseObject(redisTemplate.opsForValue().get(busUserBean.getUserName()),BusUserBean.class);
+        BusUserBean bean=new BusUserBean();
+        if(StringUtils.isEmpty(busUserBean1)){
+            BusUser busUser=transferObjectIgnoreCase(busUserBean, BusUser.class);
+            BusUser busUser1= (BusUser)busUserMapper.findUserByUserName(busUser);
+             bean=transferObjectIgnoreCase(busUser1,BusUserBean.class);
+        }else {
+            bean=busUserBean1;
+        }
         return bean;
     }
 }

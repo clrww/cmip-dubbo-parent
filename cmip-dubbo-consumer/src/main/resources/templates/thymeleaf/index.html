@@ -58,7 +58,9 @@
             <li th:if="${user}">
               <span class="fas fa-user-circle" style="font-size: 20px"></span>
                 <p style="font-size: 20px">您好，</p><p th:text="${user.userName}" style="font-size: 20px"></p>
+              <input type="hidden" th:value="${user.userName}" id="nameInput">
             </li>
+
 
             <li  th:unless="${user}">
                 <p><a href="#" data-toggle="modal" data-target="#loginModalLive" style="font-size: 20px">请登录</a></p>
@@ -75,10 +77,6 @@
             </li>
 
 
-
-
-
-
             <li th:if="${user}">
               <span class="fas fa-phone-volume" style="font-size: 20px"></span>
               <p th:text="${user.phone}" style="font-size: 20px"></p>
@@ -90,7 +88,7 @@
             </li>
 
             <li th:if="${user}" style="float: right">
-              <p><a th:href="@{/th/index}"   style="font-size: 20px;">退出</a></p>
+              <p><a th:href="@{/th/index(userName=${user.userName})}"   style="font-size: 20px;">退出</a></p>
             </li>
           </ul>
         </div>
@@ -200,6 +198,7 @@
       </ul>-->
     <div class="clearfix"></div>
   </div>
+
 </div>
 <!-- //banner -->
 <!--about-->
@@ -441,8 +440,19 @@
             <p th:text="${record.shortDescribe}"></p>
 
             <div class="outs_more-buttn" >
+
+              <!--<a th:onclick="|javascript:findAllPostRecord()|"  data-blast="bgColor">More</a>-->
               <!--<a th:href="@{/record/postRecordDetail(id=${record.id})}"  data-blast="bgColor">More</a>-->
-              <a th:href="@{/record/allPostRecord}"  data-blast="bgColor">More</a>
+              <!--<a th:href="@{/record/allPostRecord}"  data-blast="bgColor">More</a>-->
+
+              <div th:if="${user}">
+              <a th:href="@{/record/allPostRecord(userName=${user.userName})}">More</a>
+            </div>
+
+              <div th:unless="${user}">
+                <a th:href="@{/record/allPostRecord(userName='null')}">More</a>
+              </div>
+
             </div>
           </div>
         </div>
@@ -1276,6 +1286,23 @@
         var jsonText = JSON.stringify(data);
         alert(jsonText);
         $("#loginform").submit();
+      },
+      error : function() {
+        alert("失败"+data);
+      }
+    });
+  }
+</script>
+
+<script  type="text/javascript">
+  function findAllPostRecord() {
+    $.ajax({
+      type: "POST",
+      dataType: "json",
+      url: "/record/allPostRecord" ,
+      data: $('#nameInput').serialize(),
+      success: function (data) {
+        alert("成功"+data);
       },
       error : function() {
         alert("失败"+data);
