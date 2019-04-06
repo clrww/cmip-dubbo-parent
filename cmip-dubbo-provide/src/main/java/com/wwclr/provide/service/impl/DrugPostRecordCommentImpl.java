@@ -31,8 +31,21 @@ public class DrugPostRecordCommentImpl extends BaseService implements DrugPostRe
     }
 
     @Override
+    public DrugPostRecordCommentBean findById(int id) {
+        DrugPostRecordComment drugPostRecordComment= drugPostRecordCommentMapper.findById(id);
+        DrugPostRecordCommentBean drugPostRecordCommentBean=transferObjectIgnoreCase(drugPostRecordComment,DrugPostRecordCommentBean.class);
+        return drugPostRecordCommentBean;
+    }
+
+    @Override
     public void saveDrugPostRecordComment(DrugPostRecordCommentBean drugPostRecordCommentBean) {
         DrugPostRecordComment drugPostRecordComment=transferObjectIgnoreCase(drugPostRecordCommentBean,DrugPostRecordComment.class);
         drugPostRecordCommentMapper.insert(drugPostRecordComment);
+    }
+
+    @Override
+    public void updateDrugPostRecord(DrugPostRecordCommentBean drugPostRecordCommentBean,String event) {
+        DrugPostRecordComment drugPostRecordComment=transferObjectIgnoreCase(drugPostRecordCommentBean,DrugPostRecordComment.class);
+         drugPostRecordCommentMapper.updateDrugPostRecord(drugPostRecordComment,event);
     }
 }

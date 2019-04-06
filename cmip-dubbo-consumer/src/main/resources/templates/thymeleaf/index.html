@@ -431,8 +431,8 @@
             <div class="news-date my-3">
               <ul>
                 <li><a  th:text="${record.userName}"></a></li>
-                <li class="mr-3"><span class="far fa-calendar-check"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive" th:text="${#dates.format(record.createTime,'yyyy-MM-dd')}"></a></li>
-                <li> <span class="fas fa-thumbs-up"></span><a href="#" data-toggle="modal" data-target="#exampleModalLive" th:text="${record.getBrowseNumber}"></a></li>
+                <li class="mr-3"><span class="far fa-calendar-check"></span><a  th:text="${#dates.format(record.createTime,'yyyy-MM-dd')}"></a></li>
+                <li> <span class="fas fa-thumbs-up"></span><a  th:text="${record.getBrowseNumber}"></a></li>
                 <!--<span class="far fa-comments"></span>-->
               </ul>
             </div>

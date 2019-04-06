@@ -62,6 +62,12 @@ public class DrugPostRecordComment {
     public Integer getStarNumber;
 
     /**
+     * 评论获取点赞数
+     */
+    @Column(name = "getCaiStarNumber")
+    public Integer getCaiStarNumber;
+
+    /**
      * 评论者头像
      */
     @Column(name = "imageUrl")
@@ -84,6 +90,14 @@ public class DrugPostRecordComment {
      */
     @Column(name = "logicalDeleted")
     public Boolean logicalDeleted;
+
+    public Integer getGetCaiStarNumber() {
+        return getCaiStarNumber;
+    }
+
+    public void setGetCaiStarNumber(Integer getCaiStarNumber) {
+        this.getCaiStarNumber = getCaiStarNumber;
+    }
 
     public String getPostOwnerId() {
         return postOwnerId;

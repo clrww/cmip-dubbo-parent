@@ -14,6 +14,7 @@
     <result column="commentContent" property="commentContent" jdbcType="VARCHAR" />
     <result column="ifTop" property="ifTop" jdbcType="BIT" />
     <result column="getStarNumber" property="getStarNumber" jdbcType="INTEGER" />
+    <result column="getCaiStarNumber" property="getCaiStarNumber" jdbcType="INTEGER" />
     <result column="imageUrl" property="imageUrl" jdbcType="VARCHAR" />
     <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
     <result column="lastModify" property="lastModify" jdbcType="TIMESTAMP" />
@@ -23,6 +24,30 @@
   <select id="findByPostCode" resultType="com.wwclr.provide.pojo.DrugPostRecordComment">
     <![CDATA[
   SELECT * FROM  drug_post_record_comment WHERE  postCode=#{postCode} and logicalDeleted =1
+  ]]>
+  </select>
+
+  <select id="findById" resultType="com.wwclr.provide.pojo.DrugPostRecordComment">
+    <![CDATA[
+  SELECT * FROM  drug_post_record_comment WHERE  id=#{id} and logicalDeleted =1
+  ]]>
+  </select>
+
+
+
+  <select id="updateDrugPostRecord" parameterType="com.wwclr.provide.pojo.DrugPostRecordComment">
+    <![CDATA[
+UPDATE drug_post_record_comment ]]>
+
+ <if test="event=='zan'.toString()">
+	SET getStarNumber = #{drugPostRecordComment.getStarNumber}
+</if>
+    <if test="event=='cai'.toString()">
+      SET getCaiStarNumber = #{drugPostRecordComment.getCaiStarNumber}
+    </if>
+
+    <![CDATA[
+    WHERE  id=#{drugPostRecordComment.id} and logicalDeleted =1
   ]]>
   </select>
 </mapper>

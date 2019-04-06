@@ -18,11 +18,20 @@ public class DrugPostRecordCommentBean implements Serializable{
     public String commentContent;
     public Boolean ifTop;
     public Integer getStarNumber;
+    public Integer getCaiStarNumber;
     public String imageUrl;
     public Date createTime;
     public Date lastModify;
     public Boolean logicalDeleted;
     public Boolean ifNiMing;
+
+    public Integer getGetCaiStarNumber() {
+        return getCaiStarNumber;
+    }
+
+    public void setGetCaiStarNumber(Integer getCaiStarNumber) {
+        this.getCaiStarNumber = getCaiStarNumber;
+    }
 
     public Boolean getIfNiMing() {
         return ifNiMing;

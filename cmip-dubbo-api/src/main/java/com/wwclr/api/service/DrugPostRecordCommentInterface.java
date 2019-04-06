@@ -9,6 +9,8 @@ import java.util.List;
  */
 public interface DrugPostRecordCommentInterface {
     public List<DrugPostRecordCommentBean> findByPostCode(String postCode);
+    public DrugPostRecordCommentBean findById(int id);
     public void saveDrugPostRecordComment(DrugPostRecordCommentBean drugPostRecordCommentBean);
+    public void updateDrugPostRecord(DrugPostRecordCommentBean drugPostRecordCommentBean,String event);
 
 }

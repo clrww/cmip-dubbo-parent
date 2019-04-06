@@ -9,8 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Styles -->
-    
-    <link href="../../static/blogcss/bootstrap.css" rel="stylesheet" />
+
+	  <link href="../../static/css/fontawesome-all.min.css" rel="stylesheet" type="text/css" media="all">
+
+
+
+	  <link href="../../static/blogcss/bootstrap.css" rel="stylesheet" />
     <link href="../../static/blogcss/bootstrap-responsive.css" rel="stylesheet" />
     <link href="../../static/blogcss/prettyPhoto.css" rel="stylesheet" />
     <link href="../../static/blogcss/flexslider.css" rel="stylesheet" />
@@ -28,13 +32,62 @@
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="../../static/blogimg/ico/favicon.ico" />
+    <!--<link rel="shortcut icon" href="../../static/blogimg/ico/favicon1.ico" />-->
     <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../static/blogimg/ico/apple-touch-icon-144-precomposed.png" />-->
     <!--<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../static/blogimg/ico/apple-touch-icon-114-precomposed.png" />-->
     <!--<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../static/blogimg/ico/apple-touch-icon-72-precomposed.png" />-->
     <!--<link rel="apple-touch-icon-precomposed" href="../../static/blogimg/ico/apple-touch-icon-57-precomposed.png" />-->
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	  <script src="../../static/js/bootstrap/jquery-2.2.3.min.js"></script>
+
+	  <script>
+		  function dianzan(id) {
+			  $.ajax({
+				  type: "POST",
+				  dataType: "text",
+				  url: "/comment/dianzanComment?id="+id+"&event=zan",
+				  data: id,
+				  success: function (data) {
+					  var jsonObj = JSON.parse( data );
+//					  alert("成功"+jsonObj.zan);
+
+					  $("#dianzanA"+id).text(jsonObj.zan)
+					  $("#dianzanSpan"+id).css("font-weight","900")
+
+//					  $("#dianzanA").text(jsonObj.zan)
+//					  $("#dianzanSpan").css("font-weight","900")
+				  },
+				  error : function(data) {
+//					  alert("失败"+data);
+				  }
+			  });
+		  }
+	  </script>
+
+	  <script>
+		  function cai(id) {
+			  $.ajax({
+				  type: "POST",
+				  dataType: "text",
+				  url: "/comment/dianzanComment?id="+id+"&event=cai",
+				  data: id,
+				  success: function (data) {
+					  var jsonObj = JSON.parse( data );
+//					  alert("成功"+jsonObj.cai);
+					  $("#caiA"+id).text(jsonObj.cai)
+					  $("#caiSpan"+id).css("font-weight","900")
+				  },
+				  error : function(data) {
+					  alert("失败"+data);
+				  }
+			  });
+		  }
+	  </script>
+
+  </head>
 
   <body>
 
@@ -387,26 +440,39 @@
       	</div><!-- row -->
 
 
+
+
+
 		  <div class="row comment" th:each="comment:${drugPostRecordCommentBeanList}">
 			  <div class="span3">
 				  <div class="well clearfix">
 					  <div class="user-thumb">
 						  <!--<a href="#"><img src="../../static/blogimg/blog/avatar01.jpg" alt="" /></a>-->
-						  <img th:src="${comment.imageUrl}" class="img-fluid" alt="">
-					  </div><!-- user-thumb -->
+						  <img th:src="${comment.imageUrl}" class="img-fluid" alt="" style="width: 80px;height: 60px">
+					  </div>
 					  <div class="user-info">
 						  <span class="author">用户:<a  th:text="${comment.userName}"></a></span>
-						  <span class="author">赞:<a  th:text="${comment.getStarNumber}"></a></span>
+						  <span class="author">ID:<a  th:text="${comment.userId}"></a></span>
 						  <span class="author">时间:<a th:text="${#dates.format(comment.createTime,'yyyy-MM-dd')}"></a></span>
 					  </div><!-- user-info -->
 				  </div><!-- well -->
 			  </div><!-- span3 -->
+
+
 			  <div class="span6">
 				  <div class="comment-text well">
 					  <p th:text="${comment.commentContent}"></p>
 					  <!--<p class="last">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
-				  </div><!-- comment-text -->
-			  </div><!-- span6 -->
+				  </div>
+				  <div style="float: right;margin-top: -20px">
+					  <span class="fas fa-thumbs-up" th:id="dianzanSpan+${comment.id}" style="font-weight: normal" th:onclick="|javascript:dianzan(${comment.id})|"></span>:<a th:id="dianzanA+${comment.id}" th:text="${comment.getStarNumber}"></a>
+					  <span class="fas fa-thumbs-down" th:id="caiSpan+${comment.id}" style="font-weight: normal" th:onclick="|javascript:cai(${comment.id})|"></span>:<a th:id="caiA+${comment.id}" th:text="${comment.getCaiStarNumber}"></a>
+					  <span class="author">回复</a></span>
+
+				  </div>
+			  </div>
+
+
 		  </div><!-- row -->
 
 
@@ -868,6 +934,7 @@
           });
         };
 	</script>
+
 
 
   <script  type="text/javascript">

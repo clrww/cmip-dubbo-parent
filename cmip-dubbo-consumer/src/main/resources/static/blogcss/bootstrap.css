@@ -523,7 +523,7 @@ h6 {
 
 ul,
 ol {
-  padding: 0;
+  padding-top: 10px;
   margin: 0 0 9px 25px;
 }
 

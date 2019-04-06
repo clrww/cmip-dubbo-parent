@@ -8,4 +8,8 @@ import java.util.List;
 
 public interface DrugPostRecordCommentMapper extends MyMapper<DrugPostRecordComment> {
     public List<DrugPostRecordComment> findByPostCode(@Param("postCode") String postCode);
+    public DrugPostRecordComment findById(@Param("id") int id);
+    public void updateDrugPostRecord(@Param("drugPostRecordComment") DrugPostRecordComment drugPostRecordComment,@Param("event") String event);
+
+
 }

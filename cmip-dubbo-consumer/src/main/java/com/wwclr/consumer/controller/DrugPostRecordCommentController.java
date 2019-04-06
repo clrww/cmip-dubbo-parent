@@ -6,6 +6,8 @@ import com.wwclr.api.bean.DrugPostRecordCommentBean;
 import com.wwclr.api.service.BusUserInterface;
 import com.wwclr.api.service.DrugPostRecordCommentInterface;
 import com.wwclr.consumer.utils.HttpUtil;
+import org.apache.commons.collections.map.HashedMap;
+import org.assertj.core.util.Maps;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -17,7 +19,9 @@ import org.springframework.web.servlet.ModelAndView;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by wwclr on 2019/4/3.
@@ -54,11 +58,13 @@ public class DrugPostRecordCommentController {
             drugPostRecordCommentBean.setUserName("匿名用户");
             drugPostRecordCommentBean.setUserId(this.getUserId());
             drugPostRecordCommentBean.setGetStarNumber(0);
+            drugPostRecordCommentBean.setGetCaiStarNumber(0);
             drugPostRecordCommentBean.setImageUrl("../../static/blogimg/blog/avatar01.jpg");
         }else {
             drugPostRecordCommentBean.setUserName(busUserBean1.getUserName());
             drugPostRecordCommentBean.setUserId(busUserBean1.getUserId());
             drugPostRecordCommentBean.setGetStarNumber(0);
+            drugPostRecordCommentBean.setGetCaiStarNumber(0);
             drugPostRecordCommentBean.setImageUrl(busUserBean1.getImageUrl());
         }
         drugPostRecordCommentBean.setCreateTime(new Date());
@@ -66,6 +72,27 @@ public class DrugPostRecordCommentController {
         drugPostRecordCommentInterface.saveDrugPostRecordComment(drugPostRecordCommentBean);
 
         return "redirect:/record/postRecordDetail?postCode="+drugPostRecordCommentBean.getPostCode()+"&userName="+URLEncoder.encode(userName,"UTF-8");
+    }
+
+
+    @RequestMapping("/dianzanComment")
+    @ResponseBody
+    public Map<String,Object> dianzanComment(Integer id, String event){
+        Map<String,Object> map= new HashMap<String,Object>(16);
+        DrugPostRecordCommentBean drugPostRecordCommentBean=drugPostRecordCommentInterface.findById(id.intValue());
+        if(!StringUtils.isEmpty(drugPostRecordCommentBean)){
+            if("zan".equals(event)){
+                drugPostRecordCommentBean.setGetStarNumber(drugPostRecordCommentBean.getStarNumber+1);
+                map.put("zan",drugPostRecordCommentBean.getStarNumber);
+            }else if("cai".equals(event)){
+                drugPostRecordCommentBean.setGetCaiStarNumber(drugPostRecordCommentBean.getCaiStarNumber+1);
+                map.put("cai",drugPostRecordCommentBean.getCaiStarNumber);
+            }
+            drugPostRecordCommentInterface.updateDrugPostRecord(drugPostRecordCommentBean,event);
+            return map;
+        }else {
+            return null;
+        }
     }
 
 
