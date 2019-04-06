@@ -1090,7 +1090,7 @@ transition: all 0.5s ease;
 #comment-form { margin-bottom:0; }
 #comment-form .input-prepend, #comment-form textarea { margin-bottom:15px; }
 #comment-form button { float:right; }
-#comment-form input { width: 234px; }
+/*#comment-form input { width: 234px; }*/
 
 .widget iframe { width:100%; display: block; }
 

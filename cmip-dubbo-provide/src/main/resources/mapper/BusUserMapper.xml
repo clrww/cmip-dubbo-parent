@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wwclr.provide.mapper.BusUserMapper">
-  <!--<resultMap id="BaseResultMap" type="com.wwclr.provide.pojo.BusUser">-->
-    <!--<result column="id" jdbcType="INTEGER" property="id" />-->
-    <!--<result column="userid" jdbcType="VARCHAR" property="userid" />-->
-    <!--<result column="username" jdbcType="VARCHAR" property="username" />-->
-    <!--<result column="phone" jdbcType="INTEGER" property="phone" />-->
-    <!--<result column="age" jdbcType="INTEGER" property="age" />-->
-    <!--<result column="job" jdbcType="INTEGER" property="job" />-->
-    <!--<result column="membercode" jdbcType="INTEGER" property="membercode" />-->
-    <!--<result column="role" jdbcType="INTEGER" property="role" />-->
-    <!--<result column="cratetime" jdbcType="TIMESTAMP" property="cratetime" />-->
-    <!--<result column="lastmodify" jdbcType="TIMESTAMP" property="lastmodify" />-->
-    <!--<result column="logicaldeleted" jdbcType="BIT" property="logicaldeleted" />-->
-  <!--</resultMap>-->
   <resultMap id="BaseResultMap" type="com.wwclr.provide.pojo.BusUser">
     <result column="id" jdbcType="INTEGER" property="id" />
     <result column="userId" jdbcType="VARCHAR" property="userId" />
@@ -24,6 +11,7 @@
     <result column="memberCode" jdbcType="INTEGER" property="memberCode" />
     <result column="role" jdbcType="INTEGER" property="role" />
     <result column="mail" jdbcType="VARCHAR" property="mail" />
+    <result column="imageUrl" jdbcType="VARCHAR" property="imageUrl" />
     <result column="passWord" jdbcType="VARCHAR" property="passWord" />
     <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
     <result column="lastModify" jdbcType="TIMESTAMP" property="lastModify" />
@@ -33,8 +21,8 @@
   <insert id="saveUser" parameterType="com.wwclr.provide.pojo.BusUser">
     <![CDATA[
 INSERT INTO bus_user
-(userId,userName,passWord,phone,age,job,memberCode,role,createTime,mail,lastModify,logicalDeleted ) VALUES
-( #{busUser.userId},#{busUser.userName},#{busUser.passWord},#{busUser.phone},#{busUser.age},#{busUser.job},#{busUser.memberCode},#{busUser.role},#{busUser.createTime},#{busUser.mail},#{busUser.lastModify},#{busUser.logicalDeleted} )
+(userId,userName,passWord,phone,age,job,memberCode,role,createTime,mail,lastModify,logicalDeleted,imageUrl ) VALUES
+( #{busUser.userId},#{busUser.userName},#{busUser.passWord},#{busUser.phone},#{busUser.age},#{busUser.job},#{busUser.memberCode},#{busUser.role},#{busUser.createTime},#{busUser.mail},#{busUser.lastModify},#{busUser.logicalDeleted},#{busUser.imageUrl} )
 ]]>
 </insert>
   <!--<select id="findAllUser" resultType="com.wwclr.provide.pojo.BusUser">-->

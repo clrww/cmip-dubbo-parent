@@ -22,6 +22,15 @@ public class DrugPostRecordCommentBean implements Serializable{
     public Date createTime;
     public Date lastModify;
     public Boolean logicalDeleted;
+    public Boolean ifNiMing;
+
+    public Boolean getIfNiMing() {
+        return ifNiMing;
+    }
+
+    public void setIfNiMing(Boolean ifNiMing) {
+        this.ifNiMing = ifNiMing;
+    }
 
     public String getPostOwnerName() {
         return postOwnerName;

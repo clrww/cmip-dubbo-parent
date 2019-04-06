@@ -174,9 +174,6 @@ public class ThymeleafController extends BaseService{
                 ModelAndView modelAndView=new ModelAndView();
                 try{
                         BusUserBean bean=busUserInterface.findUserByUserNameAndPassWord(busUserBean);
-                        if(!StringUtils.isEmpty(bean)){
-                                redisTemplate.opsForValue().set(bean.getUserName(), JSONObject.toJSONString(bean));
-                        }
                         BusMemberBean busMemberBean=new BusMemberBean();
                         busMemberBean.setUserId(bean.getUserId());
                         busMemberBean=busMembersInterface.findMemberByUserId(busMemberBean);

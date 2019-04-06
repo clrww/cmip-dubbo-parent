@@ -394,7 +394,7 @@
 					  </div><!-- user-thumb -->
 					  <div class="user-info">
 						  <span class="author">用户:<a href="" th:text="${comment.userName}"></a></span>
-						  <span class="author">赞同:<a href="" th:text="${comment.getStarNumber}"></a></span>
+						  <span class="author">赞:<a href="" th:text="${comment.getStarNumber}"></a></span>
 						  <span class="date">时间:<a th:text="${#dates.format(comment.createTime,'yyyy-MM-dd')}"></a></span>
 					  </div><!-- user-info -->
 				  </div><!-- well -->
@@ -475,48 +475,53 @@
     	</div><!-- row -->
   	 	<!-- END COMMENTS -->
 
-       	<div class="row">
-      	  <div class="span3">
-      	      <h3>Leave a Replay:</h3>
-      	  </div><!-- span3 -->
-      	  <div class="span6">
-      	  	<h3 class="text-buffer">Comment Text:</h3>
-      	  </div><!-- span6 -->
-      	</div><!-- row -->
+       	<!--<div class="row">-->
+      	  <!--<div class="span3">-->
+      	      <!--<h3>Leave a Replay:</h3>-->
+      	  <!--</div>&lt;!&ndash; span3 &ndash;&gt;-->
+      	  <!--<div class="span6">-->
+      	  	<!--<h3 class="text-buffer">Comment Text:</h3>-->
+      	  <!--</div>&lt;!&ndash; span6 &ndash;&gt;-->
+      	<!--</div>&lt;!&ndash; row &ndash;&gt;-->
 
       	<!-- Replay Form -->
         <div class="row margin0-40">
           <form id="comment-form" class="clearfix" th:action="@{/comment/saveDrugPostRecordComment}" method="post">
       	    <div class="span3">
 		      <div class="input-prepend">
-                <span class="add-on"><i class="icon-user"></i></span><input class="span3" id="comment-username" type="text" name="comment-username" placeholder="Name" />
+                <!--<span class="add-on"><i class="icon-user"></i></span><input class="span3" id="comment-username" type="text" name="comment-username" placeholder="Name" />-->
               </div>
 		  	  <div class="input-prepend">
-                <span class="add-on"><i class="icon-envelope"></i></span><input class="span3" id="comment-email" type="email" name="comment-email" placeholder="E-mail" />
+                <!--<span class="add-on"><i class="icon-envelope"></i></span><input class="span3" id="comment-email" type="email" name="comment-email" placeholder="E-mail" />-->
           	  </div>
-      	  	</div><!-- span3 -->
+      	  	</div>
 
 			<div th:if="${user}">
-=				<input type="hidden" name="userName" th:value="${user.userName}">
+				<input type="hidden" name="userName" th:value="${user.userName}">
 				<input type="hidden" name="userId" th:value="${user.userId}">
 			</div>
 
-			<!--<div th:unless="${user}">-->
-				<!--<a th:href="@{/record/postRecordDetail(id=${drugPostRecordBean.id},userName='null')}"  data-blast="bgColor" class="btn">More</a>-->
-			<!--</div>-->
+			<div th:unless="${user}">
+				<input type="hidden" name="userName" th:value="null">
+			</div>
 
 
 			  <div th:if="${drugPostRecordBean}">
 				 <input type="hidden" name="postOwnerName" th:value="${drugPostRecordBean.userName}">
 				  <input type="hidden" name="postOwnerId" th:value="${drugPostRecordBean.userId}">
 				  <input type="hidden" name="postCode" th:value="${drugPostRecordBean.postCode}">
-
-
 			  </div>
 
 
 			<div class="span6">
 			  <textarea id="textarea" rows="5" name="commentContent" class="span6"></textarea>
+				<a style="float: right">是否匿名</a>
+				<!--<input type="checkbox" name="ifNiMing"   style="width: 30px;float: right">-->
+
+				<!--因为checkbox不点击则不会赋值给后台，后台得到null无法判断，所以用js来控制是否选中，是true，否false-->
+				<input name="ifNiMing" type="checkbox" onclick="javascript:document.getElementById('public').value=this.checked;" style="width: 30px;float: right">
+				<input name="ifNiMing" type="hidden" value="false" id="public" style="width: 30px;float: right">
+
               <button type="submit" class="btn">提交评论</button>
 				<!--<button type="button" th:onclick="|javascript:submitComment()|" class="btn btn-primary">提交评论</button>-->
 

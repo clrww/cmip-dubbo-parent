@@ -19,6 +19,17 @@ public class BusUserBean implements Serializable{
     public Boolean logicalDeleted;
     public String passWord;
     public String mail;
+    public String imageUrl;
+
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
 
     public String getMail() {
         return mail;

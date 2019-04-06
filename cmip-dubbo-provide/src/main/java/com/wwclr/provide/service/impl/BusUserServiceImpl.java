@@ -65,6 +65,7 @@ public class BusUserServiceImpl  extends BaseService implements BusUserInterface
             BusUser busUser=transferObjectIgnoreCase(busUserBean, BusUser.class);
             BusUser busUser1= (BusUser)busUserMapper.findUserByUserNameAndPassWord(busUser);
             bean=transferObjectIgnoreCase(busUser1,BusUserBean.class);
+            redisTemplate.opsForValue().set(bean.getUserName(), JSONObject.toJSONString(bean));
         }else {
             bean=busUserBean1;
         }

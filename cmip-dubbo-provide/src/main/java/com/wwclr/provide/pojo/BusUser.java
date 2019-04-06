@@ -75,6 +75,21 @@ public class BusUser {
      */
     public String mail;
 
+    /**
+     * 用户密码
+     */
+    @Column(name = "imageUrl")
+    public String imageUrl;
+
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     public Integer getId() {
         return id;
     }
