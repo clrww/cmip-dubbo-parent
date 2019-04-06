@@ -20,6 +20,7 @@
 
 
 
+
 	  <!-- For IE6-8 -->
     <!--[if lte IE 8]>
       <link href="../../static/blogcss/ie.css" rel="stylesheet">
@@ -31,11 +32,11 @@
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="../../static/blogimg/ico/favicon.ico" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../static/blogimg/ico/apple-touch-icon-144-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../static/blogimg/ico/apple-touch-icon-114-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../static/blogimg/ico/apple-touch-icon-72-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" href="../../static/blogimg/ico/apple-touch-icon-57-precomposed.png" />
+    <link rel="shortcut icon" href="../../static/blogimg/ico/favicon1.ico" />
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../static/blogimg/ico/apple-touch-icon-144-precomposed.png" />-->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../static/blogimg/ico/apple-touch-icon-114-precomposed.png" />-->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../static/blogimg/ico/apple-touch-icon-72-precomposed.png" />-->
+    <!--<link rel="apple-touch-icon-precomposed" href="../../static/blogimg/ico/apple-touch-icon-57-precomposed.png" />-->
 
     <style type="text/css">
 	.auto-style1 {
@@ -89,7 +90,7 @@
 				</li>
 
 				<li  th:unless="${user}">
-					<p><a href="#" data-toggle="modal" data-target="#loginModalLive" style="font-size: 20px">请登录</a></p>
+					<p><a  data-toggle="modal" data-target="#blogLoginModalLive" style="font-size: 20px">请登录</a></p>
 				</li>
 
 
@@ -220,7 +221,7 @@
       </div><!-- span3 -->
       <div class="span9">
         <div class="separator">
- 		  <h3>全部博客</h3>
+ 		  <h2>全部博客</h2>
         </div><!-- separator -->
         <span></span>
       </div><!-- span9 -->
@@ -278,19 +279,19 @@
 	            <div class="thumb-post view">
 					<img th:src="${drugPostRecordBean.imageUrl}" alt=""/>
 					<!--<img src="../../static/blogimg/blog/img01.jpg" alt="" />-->
-	              <div class="mask">
-			        <div class="mask-icon">
-			    	  <div class="quartercircletopleft-mask"><a href="#"></a></div>
-			    	  <div class="quartercircletopright-mask"><a href="#"></a></div>
-			    	  <div class="quartercirclebottomright-mask"><a href="#"></a></div>
-			    	  <div class="quartercirclebottomleft-mask"><a href="#"></a></div>
-			    	  <a href="blog-post.html" class="link-icon"></a>
-				    </div><!-- mask-icon -->
-				  </div><!-- mask -->
-	              <div class="post-date-meta">
-                	<span class="month">July</span>
-              		<span class="date">05</span>
-            	  </div><!-- post-date-meta -->
+	              <!--<div class="mask">-->
+			        <!--<div class="mask-icon">-->
+			    	  <!--<div class="quartercircletopleft-mask"><a href="#"></a></div>-->
+			    	  <!--<div class="quartercircletopright-mask"><a href="#"></a></div>-->
+			    	  <!--<div class="quartercirclebottomright-mask"><a href="#"></a></div>-->
+			    	  <!--<div class="quartercirclebottomleft-mask"><a href="#"></a></div>-->
+			    	  <!--<a href="blog-post.html" class="link-icon"></a>-->
+				    <!--</div>&lt;!&ndash; mask-icon &ndash;&gt;-->
+				  <!--</div>&lt;!&ndash; mask &ndash;&gt;-->
+	              <!--<div class="post-date-meta">-->
+                	<!--<span class="month">July</span>-->
+              		<!--<span class="date">05</span>-->
+            	  <!--</div>&lt;!&ndash; post-date-meta &ndash;&gt;-->
 	        	</div><!-- thumb-post -->
 	        	<div class="entry-text">
 				  <h3><a href="" th:text="${drugPostRecordBean.title}"></a></h3>
@@ -651,119 +652,120 @@
         <div class="widget well">
           <form method="get" id="searchform" action="http://html.color-theme.com/linkup" />
             <div class="input-prepend">
-              <span class="add-on"><i class="icon-search"></i></span><input class="search-box" id="search-box" type="text" name="name" value="To search type and hit enter" onfocus="if(this.value=='To search type and hit enter')this.value='';" onblur="if(this.value=='')this.value='To search type and hit enter';" />
+              <span class="add-on"><i class="icon-search"></i></span><input class="search-box" id="search-box" type="text" name="name" value="查找你感兴趣的博客" onfocus="if(this.value=='查找你感兴趣的博客')this.value='';" onblur="if(this.value=='')this.value='查找你感兴趣的博客';" />
         	</div>
           </form>
         </div><!-- widget -->
 
 	    <!-- About -->
         <div class="widget well">
-          <h5>About</h5>
-          <p class="last">Claystone is <span class="label">Responsive</span> HTML Template, makes perfect for a variety of purposes, although focused towards Photographers and those using Portfolios to display their past and present work collections.</p>
+          <h5>关于</h5>
+          <!--<p class="last">Claystone is <span class="label">Responsive</span> HTML Template, makes perfect for a variety of purposes, although focused towards Photographers and those using Portfolios to display their past and present work collections.</p>-->
+		<p>欢迎来到浙江中医药信息化平台，可以选择你喜欢的帖子进行查看哦，也可以评论哦！</p>
 		</div><!-- .widget -->
 
 		<!-- Categories -->
         <div class="widget widget-list well">
-          <h5>Categories</h5>
+          <h5>排序</h5>
           <ul class="nav nav-list">
-          <li><a href="#"><i class="icon-list-alt"></i> Home</a></li>
-          <li><a href="#"><i class="icon-list-alt"></i> Library</a></li>
-          <li><a href="#"><i class="icon-list-alt"></i> Applications</a></li>
-          <li><a href="#"><i class="icon-list-alt"></i> Misc</a></li>
+          <li><a href="#"><i class="icon-list-alt"></i>最热门</a></li>
+          <li><a href="#"><i class="icon-list-alt"></i>最新</a></li>
+          <li><a href="#"><i class="icon-list-alt"></i>评论最多</a></li>
+          <li><a href="#"><i class="icon-list-alt"></i>点赞最多</a></li>
         </ul>
         </div><!-- widget -->
 
 		<!-- Popular Posts -->
-	    <div class="widget well">
-	      <h5>Popular Posts</h5>
-		  <ul class="popular-posts">
-		    <li>
-		      <a href="#"><img src="../../static/blogimg/blog/widgets/img01-40x40.jpg" alt="" /></a>
-		      <a href="#">Domino Theory</a>
-		      <span class="date">June 24, 2012</span>
-		    </li>
-		    <li>
-		      <a href="#"><img src="../../static/blogimg/blog/widgets/img02-40x40.jpg" alt="" /></a>
-		      <a href="#">Crossing Paths</a>
-		      <span class="date">June 22, 2012</span>
-		    </li>
-		    <li>
-		      <a href="#"><img src="../../static/blogimg/blog/widgets/img03-40x40.jpg" alt="" /></a>
-		      <a href="#">Corporate Equality Index</a>
-		      <span class="date">May 09, 2012</span>
-		    </li>
-		  </ul>
-	    </div><!-- widget -->
+	    <!--<div class="widget well">-->
+	      <!--<h5>Popular Posts</h5>-->
+		  <!--<ul class="popular-posts">-->
+		    <!--<li>-->
+		      <!--<a href="#"><img src="../../static/blogimg/blog/widgets/img01-40x40.jpg" alt="" /></a>-->
+		      <!--<a href="#">Domino Theory</a>-->
+		      <!--<span class="date">June 24, 2012</span>-->
+		    <!--</li>-->
+		    <!--<li>-->
+		      <!--<a href="#"><img src="../../static/blogimg/blog/widgets/img02-40x40.jpg" alt="" /></a>-->
+		      <!--<a href="#">Crossing Paths</a>-->
+		      <!--<span class="date">June 22, 2012</span>-->
+		    <!--</li>-->
+		    <!--<li>-->
+		      <!--<a href="#"><img src="../../static/blogimg/blog/widgets/img03-40x40.jpg" alt="" /></a>-->
+		      <!--<a href="#">Corporate Equality Index</a>-->
+		      <!--<span class="date">May 09, 2012</span>-->
+		    <!--</li>-->
+		  <!--</ul>-->
+	    <!--</div>&lt;!&ndash; widget &ndash;&gt;-->
 	    
 	    <!-- Popular tags -->
         <div class="widget well">
-          <h5>Popular tags</h5>
+          <h5>标签</h5>
 		  <ul class="tags clearfix">
-      	    <li><a href="#">quote</a></li>
-	        <li><a href="#">copyright</a></li>
-	        <li><a href="#">brand</a></li>
-	        <li><a href="#">tag</a></li>
-	        <li><a href="#">design</a></li>
-	        <li><a href="#">graphics</a></li>
-	        <li><a href="#">battle</a></li>
-	        <li><a href="#">envato</a></li>
+      	    <li><a href="#">中药</a></li>
+	        <li><a href="#">西药</a></li>
+	        <li><a href="#">滋补</a></li>
+	        <li><a href="#">养生</a></li>
+	        <li><a href="#">健脾</a></li>
+	        <li><a href="#">消化</a></li>
+	        <li><a href="#">人参</a></li>
+	        <li><a href="#">当归</a></li>
 		  </ul>
-          <small><a href="#">View all tags</a></small>
+          <!--<small><a href="#">View all tags</a></small>-->
 		</div><!-- .widget -->
 		
 		<!-- Tabbed widget -->
-        <div class="widget well">
-          <h5>Tabbed widget</h5>
-		  <p><em>Bring your tabs to life with a simple plugin to toggle between content via tabs. Bootstrap integrates tabbable tabs in four styles: top (default), right, bottom, and left.</em></p>
-		  <div class="tabbable">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#tab1" data-toggle="tab">Section</a></li>
-              <li><a href="#tab2" data-toggle="tab">Section 2</a></li>
-              <li><a href="#tab3" data-toggle="tab">Section 3</a></li>
-            </ul>
-            <div class="tab-content">
-              <div class="tab-pane active" id="tab1">
-                <p class="last">Donec venenatis blandit consequat. Vivamus placerat condimentum ligula, adipiscing luctus dolor adipiscing non. Suspendisse dictum porta lorem, ac iaculis nisl porttitor at.</p>
-              </div><!-- tab-pane -->
-              <div class="tab-pane" id="tab2">
-                <ul class="nav nav-list">
-          		  <li class="nav-header">List header</li>
-          		  <li class="active"><a href="#"><i class="icon-white icon-home"></i> Home</a></li>
-          		  <li><a href="#"><i class="icon-book"></i> Library</a></li>
-          		  <li><a href="#"><i class="icon-pencil"></i> Applications</a></li>
-          		  <li class="nav-header">Another list header</li>
-          		  <li><a href="#"><i class="icon-user"></i> Profile</a></li>
-          		  <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
-          		  <li class="divider"></li>
-          		  <li><a href="#"><i class="icon-flag"></i> Help</a></li>
-        		</ul>
-              </div><!-- tab-pane -->
-              <div class="tab-pane" id="tab3">
-                <ul class="tags clearfix">
-      	    	  <li><a href="#">quote</a></li>
-	        	  <li><a href="#">copyright</a></li>
-	        	  <li><a href="#">brand</a></li>
-	        	  <li><a href="#">tag</a></li>
-	        	  <li><a href="#">design</a></li>
-	        	  <li><a href="#">graphics</a></li>
-	        	  <li><a href="#">battle</a></li>
-	        	  <li><a href="#">envato</a></li>
-		  		</ul>
-              </div><!-- tab-pane -->
-            </div><!-- tab-content -->
-          </div><!-- tabbable -->
-		</div><!-- widget -->
+        <!--<div class="widget well">-->
+          <!--<h5>Tabbed widget</h5>-->
+		  <!--<p><em>Bring your tabs to life with a simple plugin to toggle between content via tabs. Bootstrap integrates tabbable tabs in four styles: top (default), right, bottom, and left.</em></p>-->
+		  <!--<div class="tabbable">-->
+            <!--<ul class="nav nav-tabs">-->
+              <!--<li class="active"><a href="#tab1" data-toggle="tab">Section</a></li>-->
+              <!--<li><a href="#tab2" data-toggle="tab">Section 2</a></li>-->
+              <!--<li><a href="#tab3" data-toggle="tab">Section 3</a></li>-->
+            <!--</ul>-->
+            <!--<div class="tab-content">-->
+              <!--<div class="tab-pane active" id="tab1">-->
+                <!--<p class="last">Donec venenatis blandit consequat. Vivamus placerat condimentum ligula, adipiscing luctus dolor adipiscing non. Suspendisse dictum porta lorem, ac iaculis nisl porttitor at.</p>-->
+              <!--</div>&lt;!&ndash; tab-pane &ndash;&gt;-->
+              <!--<div class="tab-pane" id="tab2">-->
+                <!--<ul class="nav nav-list">-->
+          		  <!--<li class="nav-header">List header</li>-->
+          		  <!--<li class="active"><a href="#"><i class="icon-white icon-home"></i> Home</a></li>-->
+          		  <!--<li><a href="#"><i class="icon-book"></i> Library</a></li>-->
+          		  <!--<li><a href="#"><i class="icon-pencil"></i> Applications</a></li>-->
+          		  <!--<li class="nav-header">Another list header</li>-->
+          		  <!--<li><a href="#"><i class="icon-user"></i> Profile</a></li>-->
+          		  <!--<li><a href="#"><i class="icon-cog"></i> Settings</a></li>-->
+          		  <!--<li class="divider"></li>-->
+          		  <!--<li><a href="#"><i class="icon-flag"></i> Help</a></li>-->
+        		<!--</ul>-->
+              <!--</div>&lt;!&ndash; tab-pane &ndash;&gt;-->
+              <!--<div class="tab-pane" id="tab3">-->
+                <!--<ul class="tags clearfix">-->
+      	    	  <!--<li><a href="#">quote</a></li>-->
+	        	  <!--<li><a href="#">copyright</a></li>-->
+	        	  <!--<li><a href="#">brand</a></li>-->
+	        	  <!--<li><a href="#">tag</a></li>-->
+	        	  <!--<li><a href="#">design</a></li>-->
+	        	  <!--<li><a href="#">graphics</a></li>-->
+	        	  <!--<li><a href="#">battle</a></li>-->
+	        	  <!--<li><a href="#">envato</a></li>-->
+		  		<!--</ul>-->
+              <!--</div>&lt;!&ndash; tab-pane &ndash;&gt;-->
+            <!--</div>&lt;!&ndash; tab-content &ndash;&gt;-->
+          <!--</div>&lt;!&ndash; tabbable &ndash;&gt;-->
+		<!--</div>&lt;!&ndash; widget &ndash;&gt;-->
 
 		<!-- Accordion widget -->
         <div class="widget well">
-          <h5>Accordion widget</h5>
-		  <p><em>Get base styles and flexible support for collapsible components like accordions and navigation.</em></p>
+          <h5>精华帖</h5>
+		  <p><em>每周5晚上自动更新本周最热门人气最高帖子</em></p>
       	  <!-- Example accordion -->
 		  <div class="accordion" id="accordion2">
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                  Collapsible Group Item #1
+                  枸杞泡茶有哪些功效？
                 </a>
               </div>
               <div id="collapseOne" class="accordion-body collapse" style="height: 0px; ">
@@ -775,7 +777,7 @@
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                  Collapsible Group Item #2
+                  减肥茶真的有用吗？
                 </a>
               </div>
               <div id="collapseTwo" class="accordion-body collapse" style="height: 0px; ">
@@ -787,12 +789,12 @@
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                  Collapsible Group Item #3
+                  胃不好可以喝中药吗？
                 </a>
               </div>
               <div id="collapseThree" class="accordion-body in collapse" style="height: auto; ">
                 <div class="accordion-inner">
-                  3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. 
+                  <!--胃不好的人尽量少喝-->
                 </div>
               </div>
             </div>
@@ -802,134 +804,135 @@
 		
 		<!-- Progress bars -->
         <div class="widget well">
-          <h5>Progress bars</h5>
-          <p>Progress bars use CSS3 gradients, transitions, and animations to achieve all their effects. These features are not supported in IE7-9 or older versions of Firefox.</p>
-          <div class="progress progress-info progress-striped" style="margin-bottom: 9px;">
-            <div class="bar" style="width: 20%">CSS3</div>
+          <h5>调查表</h5>
+          <!--<p>Progress bars use CSS3 gradients, transitions, and animations to achieve all their effects. These features are not supported in IE7-9 or older versions of Firefox.</p>-->
+         	<p>中药和西药可以一起吃吗？</p>
+			<div class="progress progress-info progress-striped" style="margin-bottom: 9px;">
+            <div class="bar" style="width: 20%">可以</div>
          </div>
          <div class="progress progress-success progress-striped" style="margin-bottom: 9px;">
-           <div class="bar" style="width: 40%">HTML5</div>
+           <div class="bar" style="width: 40%">不能</div>
           </div>
           <div class="progress progress-warning progress-striped" style="margin-bottom: 9px;">
-            <div class="bar" style="width: 60%">jQuery</div>
+            <div class="bar" style="width: 30%">应该可以</div>
           </div>
           <div class="progress progress-danger progress-striped active" style="margin-bottom: 0px;">
-            <div class="bar" style="width: 100%">Responsive Design</div>
+            <div class="bar" style="width: 50%">不知道</div>
           </div>
         </div><!-- widget -->
 
-		<!-- Twitter Feed -->
         <div class="widget well">
-          <h5>Twitter Feed</h5>
+          <h5>付费专区</h5>
           <div class="tweet"></div>
-          <small><a href="#">View all tweets</a></small>
-        </div><!-- widget -->
+          <small><a href="#">问名医</a></small>
+			<small><a href="#">预约挂号</a></small>
 
-		<!-- Flickr Photos -->
+		</div>
+
         <div class="widget well">
-          <h5>Flickr Photos</h5>
+          <h5>会员专区</h5>
 		  <ul class="flickr thumbs"></ul>
-          <small><a href="#">View photostream</a></small>
-        </div><!-- widget -->
+          <small><a href="#">置顶发帖</a></small>
+			<small><a href="#">帖子防删</a></small>
 
-		<!-- Facebook Recommendations -->
-<!--        <div class="widget well">
-		  <div class="fb-recommendations" data-site="http://themeforest.net/user/ZERGE/" data-app-id="297648427000173" data-height="300" data-header="true" data-colorscheme="dark" data-border-color="#5F636A" data-font="arial"></div>
-        </div> --> <!-- widget -->
+		</div>
 
-		<!-- Facebook Like -->
-<!--        <div class="widget well">
-		  <div class="fb-like-box" data-href="http://www.facebook.com/envato" data-colorscheme="dark" data-show-faces="true" data-border-color="#5F636A" data-stream="false" data-header="true"></div>
-        </div> --> <!-- widget -->
-        
-		<!-- Video Widget -->
-        <div class="widget video well">
-          <h5>Video Widget</h5>
-		  <iframe src="http://player.vimeo.com/video/27643876?title=0&amp;byline=0&amp;portrait=0&amp;color=FFFC00" height="140"></iframe>
-        </div><!-- widget -->
+
+
 
 		<!-- Advertising -->
-        <div class="widget well">
-          <h5>Advertising</h5>
-          <ul class="ads clearfix">
-            <li class="ads-std"><a href="http://themeforest.net?ref=zerge"><img src="../../static/blogimg/ads/tf_225x104_v2.jpg" alt="" title="Ads" /></a></li>
-            <li class="ads-125"><a href="http://themeforest.net?ref=zerge" class="first"><img src="../../static/blogimg/ads/3docean-125x125-03-stock-3d-models.jpg" alt="" title="Ads" /></a> <a href="http://themeforest.net?ref=zerge"><img src="../../static/blogimg/ads/3docean-125x125-06-stock-3d-models.jpg" alt="" title="Ads" /></a></li>
-            <li class="ads-std"><a href="http://themeforest.net?ref=zerge"><img src="../../static/blogimg/ads/3docean-300x250-09-stock-3d-models.jpg" alt="" title="Ads" /></a></li>
-  		  </ul>
-        </div><!-- widget -->
+        <!--<div class="widget well">-->
+          <!--<h5>Advertising</h5>-->
+          <!--<ul class="ads clearfix">-->
+            <!--<li class="ads-std"><a href="http://themeforest.net?ref=zerge"><img src="../../static/blogimg/ads/tf_225x104_v2.jpg" alt="" title="Ads" /></a></li>-->
+            <!--<li class="ads-125"><a href="http://themeforest.net?ref=zerge" class="first"><img src="../../static/blogimg/ads/3docean-125x125-03-stock-3d-models.jpg" alt="" title="Ads" /></a> <a href="http://themeforest.net?ref=zerge"><img src="../../static/blogimg/ads/3docean-125x125-06-stock-3d-models.jpg" alt="" title="Ads" /></a></li>-->
+            <!--<li class="ads-std"><a href="http://themeforest.net?ref=zerge"><img src="../../static/blogimg/ads/3docean-300x250-09-stock-3d-models.jpg" alt="" title="Ads" /></a></li>-->
+  		  <!--</ul>-->
+        <!--</div>&lt;!&ndash; widget &ndash;&gt;-->
       </div><!-- span3 -->
 	</div><!-- row -->
 
 
 <!-- Footer
 ================================================== -->
-  <footer class="footer row">
-    <div class="span3">
-      <div class="logo-footer widget">
-        <h5>Contact Info</h5>
-		<ul id="contact-info" class="clearfix">
-		  <li><i class="icon-map-marker icon-white"></i><address>12345 / Some Street, Portland, USA</address></li>
-		  <li><i class="icon-user icon-white"></i>phone: +1 (44)  123-45-67</li>
-		  <li><i class="icon-headphones icon-white"></i><a href="skype:echo123?call">Skype Me</a></li>
-		  <li><i class="icon-envelope icon-white"></i><a href="mailto:support@color-theme.com">support@color-theme.com</a></li>
-		</ul>
-      </div><!-- logo-footer -->
-    </div><!-- span3 -->
-    
-    <div class="span9 footer-widgets clearfix">
-	  <div class="widget">
-	    <h5>Popular Posts</h5>
-		<ul class="popular-posts">
-		  <li>
-		    <a href="#"><img src="../../static/blogimg/blog/widgets/img01-40x40.jpg" alt="" /></a>
-		    <a href="#">Domino Theory</a>
-		    <span class="date">June 24, 2012</span>
-		  </li>
-		  <li>
-		    <a href="#"><img src="../../static/blogimg/blog/widgets/img02-40x40.jpg" alt="" /></a>
-		    <a href="#">Crossing Paths</a>
-		    <span class="date">June 22, 2012</span>
-		  </li>
-		  <li>
-		    <a href="#"><img src="../../static/blogimg/blog/widgets/img03-40x40.jpg" alt="" /></a>
-		    <a href="#">Corporate Equality Index</a>
-		    <span class="date">May 09, 2012</span>
-		  </li>
-		</ul>
-	  </div><!-- .widget -->
+  <!--<footer class="footer row">-->
+    <!--<div class="span3">-->
+      <!--<div class="logo-footer widget">-->
+        <!--<h5>Contact Info</h5>-->
+		<!--<ul id="contact-info" class="clearfix">-->
+		  <!--<li><i class="icon-map-marker icon-white"></i><address>12345 / Some Street, Portland, USA</address></li>-->
+		  <!--<li><i class="icon-user icon-white"></i>phone: +1 (44)  123-45-67</li>-->
+		  <!--<li><i class="icon-headphones icon-white"></i><a href="skype:echo123?call">Skype Me</a></li>-->
+		  <!--<li><i class="icon-envelope icon-white"></i><a href="mailto:support@color-theme.com">support@color-theme.com</a></li>-->
+		<!--</ul>-->
+      <!--</div>&lt;!&ndash; logo-footer &ndash;&gt;-->
+    <!--</div>&lt;!&ndash; span3 &ndash;&gt;-->
+    <!---->
+    <!--<div class="span9 footer-widgets clearfix">-->
+	  <!--<div class="widget">-->
+	    <!--<h5>Popular Posts</h5>-->
+		<!--<ul class="popular-posts">-->
+		  <!--<li>-->
+		    <!--<a href="#"><img src="../../static/blogimg/blog/widgets/img01-40x40.jpg" alt="" /></a>-->
+		    <!--<a href="#">Domino Theory</a>-->
+		    <!--<span class="date">June 24, 2012</span>-->
+		  <!--</li>-->
+		  <!--<li>-->
+		    <!--<a href="#"><img src="../../static/blogimg/blog/widgets/img02-40x40.jpg" alt="" /></a>-->
+		    <!--<a href="#">Crossing Paths</a>-->
+		    <!--<span class="date">June 22, 2012</span>-->
+		  <!--</li>-->
+		  <!--<li>-->
+		    <!--<a href="#"><img src="../../static/blogimg/blog/widgets/img03-40x40.jpg" alt="" /></a>-->
+		    <!--<a href="#">Corporate Equality Index</a>-->
+		    <!--<span class="date">May 09, 2012</span>-->
+		  <!--</li>-->
+		<!--</ul>-->
+	  <!--</div>&lt;!&ndash; .widget &ndash;&gt;-->
 
-	  <div class="widget">
-	    <h5>Latest Posts</h5>
-		<ul class="latest-posts">
-		  <li>
-		    <a href="#"><img src="../../static/blogimg/blog/widgets/img04-40x40.jpg" alt="" /></a>
-		    <a href="#">The Peace Corps</a>
-		    <span class="date">Jule 02, 2012</span>		  
-		  </li>
-		  <li>
-		    <a href="#"><img src="../../static/blogimg/blog/widgets/img01-40x40.jpg" alt="" /></a>
-		    <a href="#">Domino Theory</a>
-		    <span class="date">June 24, 2012</span>
-		  </li>
-		  <li>
-		    <a href="#"><img src="../../static/blogimg/blog/widgets/img05-40x40.jpg" alt="" /></a>
-		    <a href="#">Flickr Eggs</a>
-		    <span class="date">May 14, 2012</span>
-		  </li>
-		</ul>
-	  </div><!-- .widget -->
+	  <!--<div class="widget">-->
+	    <!--<h5>Latest Posts</h5>-->
+		<!--<ul class="latest-posts">-->
+		  <!--<li>-->
+		    <!--<a href="#"><img src="../../static/blogimg/blog/widgets/img04-40x40.jpg" alt="" /></a>-->
+		    <!--<a href="#">The Peace Corps</a>-->
+		    <!--<span class="date">Jule 02, 2012</span>		  -->
+		  <!--</li>-->
+		  <!--<li>-->
+		    <!--<a href="#"><img src="../../static/blogimg/blog/widgets/img01-40x40.jpg" alt="" /></a>-->
+		    <!--<a href="#">Domino Theory</a>-->
+		    <!--<span class="date">June 24, 2012</span>-->
+		  <!--</li>-->
+		  <!--<li>-->
+		    <!--<a href="#"><img src="../../static/blogimg/blog/widgets/img05-40x40.jpg" alt="" /></a>-->
+		    <!--<a href="#">Flickr Eggs</a>-->
+		    <!--<span class="date">May 14, 2012</span>-->
+		  <!--</li>-->
+		<!--</ul>-->
+	  <!--</div>&lt;!&ndash; .widget &ndash;&gt;-->
 
-	  <div class="widget">
-	    <h5>Flickr Photos</h5>
-	    <ul class="flickr thumbs"></ul>
-	  </div><!-- .widget -->
-	  
-    </div><!-- footer-widgets -->
-  </footer>
+	  <!--<div class="widget">-->
+	    <!--<h5>Flickr Photos</h5>-->
+	    <!--<ul class="flickr thumbs"></ul>-->
+	  <!--</div>&lt;!&ndash; .widget &ndash;&gt;-->
+	  <!---->
+    <!--</div>&lt;!&ndash; footer-widgets &ndash;&gt;-->
+  <!--</footer>-->
 
-  <div id="bottom-panel" class="clearfix">&copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></div>
-  
+
+
+
+
+
+  <!--<div id="bottom-panel" class="clearfix">&copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></div>-->
+  <p style="font-size: 14px;color: #000;letter-spacing: 2px;margin: 0;padding: 0;text-align: center">Copyright &copy; 2019.Design By ChengXiaoJuan</p>
   </div><!-- /container -->
+
+
+
+
+
+
 
 
 
@@ -939,7 +942,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="../../static/blogjs/jquery.easing.1.3.js"></script>
 	<script src="../../static/blogjs/superfish.js"></script>
-    <script src="../../static/blogjs/bootstrap.min.js"></script>
+    <!--<script src="../../static/blogjs/bootstrap.min.js"></script>-->
 	<script src="../../static/blogjs/jquery.tweet.js"></script>
 	<script src="../../static/blogjs/jflickrfeed.min.js"></script>
 	<script src="../../static/blogjs/jquery.flexslider-min.js"></script>
@@ -949,6 +952,49 @@
 
     <!-- Support CSS3 Media Queries for IE 6-8 -->
 	<script src="../../static/blogjs/respond.min.js"></script>
+
+
+
+  <!--登陆模态框-->
+  <div id="blogLoginModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="blogLoginModalLiveLabel" aria-hidden="false">
+	  <div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			  <div class="modal-header">
+				  <h4 class="modal-title" id="blogLoginModalLiveLabel" data-blast="color">请登录</h4>
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+				  </button>
+			  </div>
+
+			  <form th:action="@{/th/loginForIndex}"  id="loginform"  th:method="post">
+
+				  <div class="modal-body">
+					  <!--<img src="../../static/images/b2.jpg" alt="" class="img-fluid">-->
+					  <!--<p>请你登陆咯兄弟</p>-->
+					  <h2>用户名：</h2>
+					  <!--<input name="*{userName}" th:field="*{userName}"/>-->
+					  <!--<h2>密码：</h2>-->
+					  <!--<input name="*{passWord}" th:field="*{passWord}"/>-->
+					  <input name="userName"/>
+					  <h2>密码：</h2>
+					  <input name="passWord" type="password"/>
+					  <a id="errorText" style="display: none;color: red">账号或密码不正确</a>
+				  </div>
+
+				  <div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					  <!--<button type="submit" class="btn btn-primary">登陆</button>-->
+					  <button type="button" th:onclick="|javascript:login()|"  class="btn btn-primary">登陆</button>
+
+				  </div>
+
+			  </form>
+
+		  </div>
+	  </div>
+  </div>
+
+
 
 	<script>
 	  jQuery.noConflict()(function($){
@@ -1003,5 +1049,8 @@
         };
 	</script>
 <div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
-</body>
+
+  <script src="../../static/blogjs/bootstrap.min.js"></script>
+
+  </body>
 </html>
