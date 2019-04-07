@@ -79,7 +79,7 @@
 
             <li th:if="${user}">
               <span class="fas fa-phone-volume" style="font-size: 20px"></span>
-              <p th:text="${user.phone}" style="font-size: 20px"></p>
+              <p th:text="${user.mobilePhone}" style="font-size: 20px"></p>
             </li>
 
             <li th:if="${user}">
@@ -839,7 +839,7 @@
 
           <div class="row text-center contact-wls-detail">
             <div class="col-md-6 form-group contact-forms">
-              <input type="text"  name="phone" placeholder="手机号" >
+              <input type="text" id="phone" name="mobilePhone" placeholder="手机号" onblur="checkPhone()">
             </div>
             <div class="col-md-6 form-group contact-forms">
               <select name="job">
@@ -860,7 +860,7 @@
           <!--</div>-->
           <div class="sent-butnn text-center">
             <!--<button type="button" class="btn btn-block" th:onclick="|javascript:register()|"  data-blast="bgColor">注册</button>-->
-            <button type="submit" class="btn btn-block"  data-blast="bgColor">注册</button>
+            <button type="button" class="btn btn-block" onclick="registerAndCheck()"  data-blast="bgColor">注册</button>
           </div>
         </form>
       </div>
@@ -1215,7 +1215,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="loginModalLiveLabel" data-blast="color">请登录</h4>
+        <h4 class="modal-title" id="loginModalLiveLabel" data-blast="color" style="font-family: 'Microsoft YaHei UI'">请登录</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -1226,12 +1226,12 @@
         <div class="modal-body">
           <!--<img src="../../static/images/b2.jpg" alt="" class="img-fluid">-->
           <!--<p>请你登陆咯兄弟</p>-->
-          <h2>用户名：</h2>
+          <h4 style="font-family: 'Microsoft YaHei UI'">用户名：</h4>
           <!--<input name="*{userName}" th:field="*{userName}"/>-->
           <!--<h2>密码：</h2>-->
           <!--<input name="*{passWord}" th:field="*{passWord}"/>-->
           <input name="userName"/>
-          <h2>密码：</h2>
+          <h4 style="font-family: 'Microsoft YaHei UI'">密码：</h4>
           <input name="passWord" type="password"/>
           <a id="errorText" style="display: none;color: red">账号或密码不正确</a>
         </div>
@@ -1250,6 +1250,18 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  function checkPhone(){
+    var phone = document.getElementById('phone').value;
+    if(!(/^1[34578]\d{9}$/.test(phone))){
+      alert("手机号码有误，请重填");
+      return false;
+    }
+  }
+
+</script>
 
 <script  type="text/javascript">
   function login() {
@@ -1277,6 +1289,20 @@
     });
   }
 </script>
+
+
+<script  type="text/javascript">
+  function registerAndCheck() {
+    var phone = document.getElementById('phone').value;
+    if(!(/^1[34578]\d{9}$/.test(phone))){
+      alert("手机号码有误，请重填");
+      return false;
+    }else{
+      $("#registerform").submit();
+    }
+  }
+</script>
+
 
 <script  type="text/javascript">
   function register() {

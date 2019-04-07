@@ -22,7 +22,8 @@ public class BusUser {
     /**
      * 电话
      */
-    public Integer phone;
+    @Column(name = "mobilePhone")
+    public String mobilePhone;
 
     /**
      * 年龄
@@ -114,12 +115,12 @@ public class BusUser {
         this.userName = userName;
     }
 
-    public Integer getPhone() {
-        return phone;
+    public String getMobilePhone() {
+        return mobilePhone;
     }
 
-    public void setPhone(Integer phone) {
-        this.phone = phone;
+    public void setMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
     }
 
     public Integer getAge() {

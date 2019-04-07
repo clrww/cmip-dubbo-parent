@@ -31,7 +31,7 @@ public class UserController {
                 busUserBean.setUserId("123456");
                 busUserBean.setAge(26);
                 busUserBean.setUserName("wwclr");
-                busUserBean.setPhone(10086);
+                busUserBean.setMobilePhone("10086");
                 LOGGER.info("UserController  saveUser ={}", JSONObject.toJSON(busUserBean));
                 busUserInterface.saveUser(busUserBean);
         }

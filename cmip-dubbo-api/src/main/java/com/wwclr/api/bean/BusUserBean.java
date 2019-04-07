@@ -9,7 +9,7 @@ public class BusUserBean implements Serializable{
     public Integer id;
     public String userId;
     public String userName;
-    public Integer phone;
+    public String mobilePhone;
     public Integer age;
     public Integer job;
     public Integer memberCode;
@@ -71,12 +71,12 @@ public class BusUserBean implements Serializable{
         this.userName = userName;
     }
 
-    public Integer getPhone() {
-        return phone;
+    public String getMobilePhone() {
+        return mobilePhone;
     }
 
-    public void setPhone(Integer phone) {
-        this.phone = phone;
+    public void setMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
     }
 
     public Integer getAge() {

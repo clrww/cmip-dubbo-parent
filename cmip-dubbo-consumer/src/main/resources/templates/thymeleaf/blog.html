@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Styles -->
-
+	  <link href="../../static/css/fontawesome-all.min.css" rel="stylesheet" type="text/css" media="all">
 
     <link href="../../static/blogcss/bootstrap.css" rel="stylesheet" />
     <link href="../../static/blogcss/bootstrap-responsive.css" rel="stylesheet" />
@@ -106,16 +106,16 @@
 
 				<li th:if="${user}">
 					<span class="fas fa-phone-volume" style="font-size: 20px"></span>
-					<p th:text="${user.phone}" style="font-size: 20px"></p>
+					<p th:text="${user.mobilePhone}" style="font-size: 20px"></p>
 				</li>
 
 				<li th:if="${user}">
 					<span class="fas fa-envelope" style="font-size: 20px"></span>
-					<p><a href="mailto:888888@163.com" th:text="${user.mail}" style="font-size: 20px"></a></p>
+					<p><a href="mailto:888888@163.com" th:text="${user.mail}" style="font-size: 20px;color: #fff"></a></p>
 				</li>
 
 				<li th:if="${user}" style="float: right">
-					<p><a th:href="@{/th/index}"   style="font-size: 20px;">退出</a></p>
+					<p><a th:href="@{/th/index}"   style="font-size: 20px;color: #fff">退出</a></p>
 				</li>
 			</ul>
 		</div>

@@ -45,45 +45,56 @@
 
 	  <script>
 		  function dianzan(id) {
-			  $.ajax({
-				  type: "POST",
-				  dataType: "text",
-				  url: "/comment/dianzanComment?id="+id+"&event=zan",
-				  data: id,
-				  success: function (data) {
-					  var jsonObj = JSON.parse( data );
+			 var fw= $("#dianzanSpan"+id).css("font-weight");
+			  if(fw=="900"){
+				  alert("您已经点过赞了，只能点一次哦")
+			  }else{
+				  $.ajax({
+					  type: "POST",
+					  dataType: "text",
+					  url: "/comment/dianzanComment?id="+id+"&event=zan",
+					  data: id,
+					  success: function (data) {
+						  var jsonObj = JSON.parse( data );
 //					  alert("成功"+jsonObj.zan);
 
-					  $("#dianzanA"+id).text(jsonObj.zan)
-					  $("#dianzanSpan"+id).css("font-weight","900")
-
-//					  $("#dianzanA").text(jsonObj.zan)
-//					  $("#dianzanSpan").css("font-weight","900")
-				  },
-				  error : function(data) {
+						  $("#dianzanA"+id).text(jsonObj.zan)
+						  $("#dianzanSpan"+id).css("font-weight","900")
+						  $("#dianzanSpan"+id).css("color","#ea1d5d")
+					  },
+					  error : function(data) {
 //					  alert("失败"+data);
-				  }
-			  });
+					  }
+				  });
+
+			  }
+
 		  }
 	  </script>
 
 	  <script>
 		  function cai(id) {
-			  $.ajax({
-				  type: "POST",
-				  dataType: "text",
-				  url: "/comment/dianzanComment?id="+id+"&event=cai",
-				  data: id,
-				  success: function (data) {
-					  var jsonObj = JSON.parse( data );
+			  var fw= $("#caiSpan"+id).css("font-weight");
+			  if(fw=="900"){
+				  alert("您已经踩了，只能踩一次哦")
+			  }else {
+				  $.ajax({
+					  type: "POST",
+					  dataType: "text",
+					  url: "/comment/dianzanComment?id=" + id + "&event=cai",
+					  data: id,
+					  success: function (data) {
+						  var jsonObj = JSON.parse(data);
 //					  alert("成功"+jsonObj.cai);
-					  $("#caiA"+id).text(jsonObj.cai)
-					  $("#caiSpan"+id).css("font-weight","900")
-				  },
-				  error : function(data) {
-					  alert("失败"+data);
-				  }
-			  });
+						  $("#caiA" + id).text(jsonObj.cai)
+						  $("#caiSpan" + id).css("font-weight", "900")
+						  $("#caiSpan"+id).css("color","#ea1d5d")
+					  },
+					  error: function (data) {
+						  alert("失败" + data);
+					  }
+				  });
+			  }
 		  }
 	  </script>
 
@@ -147,16 +158,16 @@
 
 				  <li th:if="${user}">
 					  <span class="fas fa-phone-volume" style="font-size: 20px"></span>
-					  <p th:text="${user.phone}" style="font-size: 20px"></p>
+					  <p th:text="${user.mobilePhone}" style="font-size: 20px"></p>
 				  </li>
 
 				  <li th:if="${user}">
 					  <span class="fas fa-envelope" style="font-size: 20px"></span>
-					  <p><a href="mailto:888888@163.com" th:text="${user.mail}" style="font-size: 20px"></a></p>
+					  <p><a href="mailto:888888@163.com" th:text="${user.mail}" style="font-size: 20px;color: #fff"></a></p>
 				  </li>
 
 				  <li th:if="${user}" style="float: right">
-					  <p><a th:href="@{/th/index}"   style="font-size: 20px;">退出</a></p>
+					  <p><a th:href="@{/th/index}"   style="font-size: 20px;color: #fff">退出</a></p>
 				  </li>
 			  </ul>
 		  </div>
@@ -465,9 +476,9 @@
 					  <!--<p class="last">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
 				  </div>
 				  <div style="float: right;margin-top: -20px">
-					  <span class="fas fa-thumbs-up" th:id="dianzanSpan+${comment.id}" style="font-weight: normal" th:onclick="|javascript:dianzan(${comment.id})|"></span>:<a th:id="dianzanA+${comment.id}" th:text="${comment.getStarNumber}"></a>
-					  <span class="fas fa-thumbs-down" th:id="caiSpan+${comment.id}" style="font-weight: normal" th:onclick="|javascript:cai(${comment.id})|"></span>:<a th:id="caiA+${comment.id}" th:text="${comment.getCaiStarNumber}"></a>
-					  <span class="author">回复</a></span>
+					  <span class="fas fa-thumbs-up"  th:id="dianzanSpan+${comment.id}" style="font-weight: normal;cursor: pointer" href="" th:onclick="|javascript:dianzan(${comment.id})|"></span>:<a th:id="dianzanA+${comment.id}" th:text="${comment.getStarNumber}"></a>
+					  <span class="fas fa-thumbs-down" th:id="caiSpan+${comment.id}" style="font-weight: normal;cursor: pointer" th:onclick="|javascript:cai(${comment.id})|"></span>:<a th:id="caiA+${comment.id}" th:text="${comment.getCaiStarNumber}"></a>
+					  <span class="author" style="cursor: pointer">回复</a></span>
 
 				  </div>
 			  </div>
@@ -582,8 +593,8 @@
 
 
 			<div class="span6">
-			  <textarea id="textarea" rows="5" name="commentContent" class="span6"></textarea>
-				<a style="float: right">是否匿名</a>
+			  <textarea id="textarea" rows="5" name="commentContent" class="span6" required=""></textarea>
+				<a style="float: right;cursor: pointer">是否匿名</a>
 				<!--<input type="checkbox" name="ifNiMing"   style="width: 30px;float: right">-->
 
 				<!--因为checkbox不点击则不会赋值给后台，后台得到null无法判断，所以用js来控制是否选中，是true，否false-->

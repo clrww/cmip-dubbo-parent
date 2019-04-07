@@ -5,7 +5,7 @@
     <result column="id" jdbcType="INTEGER" property="id" />
     <result column="userId" jdbcType="VARCHAR" property="userId" />
     <result column="userName" jdbcType="VARCHAR" property="userName" />
-    <result column="phone" jdbcType="INTEGER" property="phone" />
+    <result column="mobilePhone" jdbcType="INTEGER" property="mobilePhone" />
     <result column="age" jdbcType="INTEGER" property="age" />
     <result column="job" jdbcType="INTEGER" property="job" />
     <result column="memberCode" jdbcType="INTEGER" property="memberCode" />
@@ -21,8 +21,8 @@
   <insert id="saveUser" parameterType="com.wwclr.provide.pojo.BusUser">
     <![CDATA[
 INSERT INTO bus_user
-(userId,userName,passWord,phone,age,job,memberCode,role,createTime,mail,lastModify,logicalDeleted,imageUrl ) VALUES
-( #{busUser.userId},#{busUser.userName},#{busUser.passWord},#{busUser.phone},#{busUser.age},#{busUser.job},#{busUser.memberCode},#{busUser.role},#{busUser.createTime},#{busUser.mail},#{busUser.lastModify},#{busUser.logicalDeleted},#{busUser.imageUrl} )
+(userId,userName,passWord,mobilePhone,age,job,memberCode,role,createTime,mail,lastModify,logicalDeleted,imageUrl ) VALUES
+( #{busUser.userId},#{busUser.userName},#{busUser.passWord},#{busUser.mobilePhone},#{busUser.age},#{busUser.job},#{busUser.memberCode},#{busUser.role},#{busUser.createTime},#{busUser.mail},#{busUser.lastModify},#{busUser.logicalDeleted},#{busUser.imageUrl} )
 ]]>
 </insert>
   <!--<select id="findAllUser" resultType="com.wwclr.provide.pojo.BusUser">-->
