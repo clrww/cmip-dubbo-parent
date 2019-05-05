@@ -127,6 +127,19 @@ public class ThymeleafController extends BaseService{
                                 busUserBean.setRole(0);//非会员角色
                                 busUserBean.setCreateTime(new Date());
                                 busUserBean.setLogicalDeleted(true);
+                                switch (busUserBean.job)
+                                {
+                                        case 1:
+                                                busUserBean.setImageUrl("../../static/blogimg/blog/liudehua.jpg");
+                                                break;
+                                        case 2:
+                                                busUserBean.setImageUrl("../../static/blogimg/blog/jinchengwu.jpg");
+                                                break;
+                                        case 3:
+                                                busUserBean.setImageUrl("../../static/blogimg/blog/linzhiying.jpg");
+                                                break;
+                                        default:break;
+                                }
                                 busUserInterface.saveUser(busUserBean);
                                 modelAndView.addObject("registerStatus",1);
                                 modelAndView.addObject("message","注册成功");
@@ -190,6 +203,41 @@ public class ThymeleafController extends BaseService{
                 }
                 return modelAndView;
         }
+
+
+
+        /**
+         * 进入主页
+         */
+        @RequestMapping("/blogToIndex")
+        public Object blogToIndex(String userName){
+                ModelAndView modelAndView=new ModelAndView();
+                try {
+                        BusUserBean busUserBean1=new BusUserBean();
+                        if(!StringUtils.isEmpty(userName)){
+                                if(redisTemplate.hasKey(userName)){
+                                        busUserBean1=JSONObject.parseObject(redisTemplate.opsForValue().get(userName),BusUserBean.class);
+                                        modelAndView.addObject("user",busUserBean1);
+
+                                }
+                        }
+
+                        List<DrugPostRecordBean> drugPostRecordBeanList=drugPostRecordInterface.findTopThreeRecord();
+                        List<BusDrugDetailBean> busDrugDetailBeanList=busDrugDetailInterface.findAllBusDrug();
+                        modelAndView.addObject("drugPostRecordBeanList",drugPostRecordBeanList);
+                        modelAndView.addObject("busDrugDetailBeanList",busDrugDetailBeanList);
+
+                        modelAndView.setViewName("thymeleaf/index");
+//                        LOGGER.info("ThymeleafController  index  bean={}", JSONObject.toJSON(bean));
+                }catch (Exception e){
+                        e.printStackTrace();
+                }
+                return  modelAndView;
+        }
+
+
+
+
 
         /**
          //         * 生成userId--日期+随机4位字符串
