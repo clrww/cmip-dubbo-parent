@@ -107,7 +107,7 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="hedder-up">
-        <h1 ><a href="index.html" class="navbar-brand" data-blast="color">中医药信息化</a></h1>
+        <h1 ><a class="navbar-brand" data-blast="color">中医药信息展示平台</a></h1>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -912,7 +912,7 @@
                 <li><a  th:text="${record.userName}"></a></li>
                 <br>
                 <li class="mr-1"><a href="#about" class="scroll" data-blast="color" th:text="${#dates.format(record.createTime,'yyyy-MM-dd')}"></a></li>
-                <li><a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="color" th:text="${record.getBrowseNumber}"></a></li>
+                <li><a href="#"  data-blast="color" th:text="${record.getBrowseNumber}"></a></li>
               </ul>
             </div>
           </div>
